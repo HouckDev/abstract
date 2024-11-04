@@ -10,7 +10,7 @@ public class UserInterface {
   public UserInterface(App newOwningApp) {
     this.owningApp = newOwningApp;
     
-    JFrame frame = new JFrame("Space Sim");
+    JFrame frame = new JFrame("AbstractGame");
     frame.getContentPane().setLayout(new BorderLayout());
     mainPanel = new UIPanel();
     
