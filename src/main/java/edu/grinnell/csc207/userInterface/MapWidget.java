@@ -94,12 +94,12 @@ public class MapWidget extends Widget {
     row3.add(hall3);
     row3.add(room4);
 
-    setLayout(new BorderLayout()); 
+    //setLayout(new BorderLayout()); 
     Box mainList = Box.createVerticalBox();
     mainList.add(row1);
     mainList.add(row2);
     mainList.add(row3);
-    getContentPane().add(mainList, BorderLayout.NORTH);
+    getContentPane().add(mainList);
 
     setSize(300,300);
     setVisible(true);
