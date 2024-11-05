@@ -20,19 +20,13 @@ public class UserInterface {
     Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
     double width = screenSize.getWidth();
     double height = screenSize.getHeight();
-
-    JFrame frame = new JFrame("AbstractGame");
-    frame.getContentPane().setLayout(new BorderLayout());
-    mainPanel = new UIPanel();
-    frame.getContentPane().add(mainPanel);
-    //frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
-    frame.setSize(300,300);
-    //frame.setUndecorated(true);
-    frame.setVisible(true);
-    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     
     // Add initial widgets
-    AlertPopupWidget testPopup = new AlertPopupWidget();
+
+    TerminalWidget terminal = new TerminalWidget(this);
+    terminal.setLocation(((int) width / 2) - (terminal.getWidth() / 2), ((int) height / 2) - (terminal.getHeight() / 2));
+    
+    AlertPopupWidget testPopup = new AlertPopupWidget(this);
     testPopup.setLocation(((int) width / 2) - (testPopup.getWidth() / 2), ((int) height / 2) - (testPopup.getHeight() / 2));
     
   } // UserInterface(App)

@@ -8,7 +8,8 @@ import javax.swing.JFrame;
 import edu.grinnell.csc207.UserInterface.UIPanel;
 
 public class AlertPopupWidget extends Widget {
-  public AlertPopupWidget() {
+  public AlertPopupWidget(UserInterface owningUserInterface) {
+    super(owningUserInterface);
     setTitle("Alert");
     getContentPane().setLayout(new BorderLayout());
     //mainPanel = new UIPanel();
