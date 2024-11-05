@@ -22,16 +22,30 @@ public class MapWidget extends Widget {
 
     getContentPane().setForeground(new Color(64, 255, 128));
     getContentPane().setBackground(new Color(8, 32, 16));
-    Box horizontalBox = Box.createHorizontalBox();
-    Box verticalBox = Box.createVerticalBox();
+    Box room1 = Box.createVerticalBox();
 
-    verticalBox.add(new TerminalLabel("+---+"));
-    verticalBox.add(new TerminalLabel("|   |"));
-    verticalBox.add(new TerminalLabel("+---+"));
+    room1.add(new TerminalLabel("+---+"));
+    room1.add(new TerminalLabel("|   |"));
+    room1.add(new TerminalLabel("+---+"));
+    
+    Box hall1 = Box.createVerticalBox();
+
+    hall1.add(new TerminalLabel("     "));
+    hall1.add(new TerminalLabel("-[ ]-"));
+    hall1.add(new TerminalLabel("     "));
+
+    Box room2 = Box.createVerticalBox();
+
+    room2.add(new TerminalLabel("+---+"));
+    room2.add(new TerminalLabel("|   |"));
+    room2.add(new TerminalLabel("+---+"));
+
+    Box horizontalBox = Box.createHorizontalBox();
+    horizontalBox.add(room1);
+    horizontalBox.add(hall1);
+    horizontalBox.add(room2);
 
     setLayout(new BorderLayout()); 
-    horizontalBox.add(verticalBox);
-
     getContentPane().add(horizontalBox, BorderLayout.NORTH);
 
     setSize(300,300);
