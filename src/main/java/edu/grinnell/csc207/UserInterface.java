@@ -22,18 +22,22 @@ public class UserInterface {
     frame.setVisible(true);
     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     
+
     AlertPopupWidget testPopup = new AlertPopupWidget();
     
   } // UserInterface(App)
 
   public class UIPanel extends JPanel {
     public UIPanel() {
+      // Setup basic terminal UI
       Box horizontalBox = Box.createHorizontalBox();
       horizontalBox.add(new Label(">:"));
       horizontalBox.add(new JTextField(20));
 
       add(horizontalBox);
-    }
-  }
+      setForeground(new Color(64, 255, 128));
+      setBackground(new Color(8, 32, 16));
+    } //UIPanel
+  } // UIPanel
 } // UserInterface
 
