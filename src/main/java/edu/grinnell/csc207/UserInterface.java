@@ -25,9 +25,11 @@ public class UserInterface {
 
     TerminalWidget terminal = new TerminalWidget(this);
     terminal.setLocation(((int) width / 2) - (terminal.getWidth() / 2), ((int) height / 2) - (terminal.getHeight() / 2));
-    
+
     AlertPopupWidget testPopup = new AlertPopupWidget(this);
     testPopup.setLocation(((int) width / 2) - (testPopup.getWidth() / 2), ((int) height / 2) - (testPopup.getHeight() / 2));
+    MapWidget mapWidget = new MapWidget(this);
+    mapWidget.setLocation(((int) width / 2) - (mapWidget.getWidth() / 2), ((int) height / 4) - (mapWidget.getHeight() / 2));
     
   } // UserInterface(App)
 

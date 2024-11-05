@@ -23,7 +23,7 @@ public class TerminalWidget extends Widget {
     getContentPane().setBackground(new Color(8, 32, 16));
 
     Box horizontalBox = Box.createHorizontalBox();
-    horizontalBox.add(new Label(">:"));
+    horizontalBox.add(new TerminalLabel(">:"));
 
     JTextField commandField = new JTextField(20);
     commandField.setForeground(new Color(64, 255, 128));
