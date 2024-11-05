@@ -1,10 +1,14 @@
 package edu.grinnell.csc207;
 
 import javax.swing.Box;
+import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class UserInterface {
   App owningApp;
@@ -37,7 +41,15 @@ public class UserInterface {
       commandField.setBackground(new Color(0, 0, 0));
       horizontalBox.add(commandField);
 
-      Button confirmButton = new Button("Commit");
+      JButton confirmButton = new JButton("Commit");
+
+      //Test button input, advance turn on commit pressed
+      confirmButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+              owningApp.game.advanceTurn();
+            }
+        });
       confirmButton.setBackground(new Color(0, 0, 0));
 
       horizontalBox.add(confirmButton);
