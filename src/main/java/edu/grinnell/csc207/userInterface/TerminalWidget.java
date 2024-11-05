@@ -1,4 +1,4 @@
-package edu.grinnell.csc207;
+package edu.grinnell.csc207.userInterface;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -11,7 +11,7 @@ import javax.swing.Box;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JTextField;
-import edu.grinnell.csc207.UserInterface.UIPanel;
+import edu.grinnell.csc207.userInterface.UserInterface.UIPanel;
 
 public class TerminalWidget extends Widget {
   public TerminalWidget(UserInterface owningUserInterface) {
@@ -37,7 +37,7 @@ public class TerminalWidget extends Widget {
     confirmButton.addActionListener(new ActionListener() {
           @Override
           public void actionPerformed(ActionEvent e) {
-            getUserInterface().owningApp.game.advanceTurn();
+            getUserInterface().owningApp.getCurrentGame().advanceTurn();
           }
       });
     confirmButton.setBackground(new Color(0, 0, 0));

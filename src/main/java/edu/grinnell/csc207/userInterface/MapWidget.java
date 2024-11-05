@@ -1,4 +1,4 @@
-package edu.grinnell.csc207;
+package edu.grinnell.csc207.userInterface;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -12,7 +12,7 @@ import javax.swing.Box;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JTextField;
-import edu.grinnell.csc207.UserInterface.UIPanel;
+import edu.grinnell.csc207.userInterface.UserInterface.UIPanel;
 
 public class MapWidget extends Widget {
   public MapWidget(UserInterface owningUserInterface) {

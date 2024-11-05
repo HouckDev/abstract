@@ -1,11 +1,11 @@
-package edu.grinnell.csc207;
+package edu.grinnell.csc207.userInterface;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 import javax.swing.JFrame;
-import edu.grinnell.csc207.UserInterface.UIPanel;
+import edu.grinnell.csc207.userInterface.UserInterface.UIPanel;
 
 public class AlertPopupWidget extends Widget {
   public AlertPopupWidget(UserInterface owningUserInterface) {

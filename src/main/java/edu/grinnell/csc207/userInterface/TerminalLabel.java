@@ -1,4 +1,4 @@
-package edu.grinnell.csc207;
+package edu.grinnell.csc207.userInterface;
 
 import java.awt.Font;
 import java.awt.Label;

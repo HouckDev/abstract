@@ -1,5 +1,7 @@
 package edu.grinnell.csc207;
 
+import edu.grinnell.csc207.userInterface.UserInterface;
+
 /**
  * App
  * Represents the game app, manages the game object
@@ -13,6 +15,10 @@ public class App {
 
     // The object representing the game
     Game game;
+
+    public Game getCurrentGame() {
+        return game;
+    }
 
     // The object representing the user interface
     UserInterface userInterface; 

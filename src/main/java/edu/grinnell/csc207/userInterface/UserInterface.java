@@ -1,4 +1,4 @@
-package edu.grinnell.csc207;
+package edu.grinnell.csc207.userInterface;
 
 import javax.swing.Box;
 import javax.swing.JButton;
@@ -6,6 +6,7 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
+import edu.grinnell.csc207.App;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -49,7 +50,7 @@ public class UserInterface {
       confirmButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-              owningApp.game.advanceTurn();
+              owningApp.getCurrentGame().advanceTurn();
             }
         });
       confirmButton.setBackground(new Color(0, 0, 0));
