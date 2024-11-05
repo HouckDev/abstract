@@ -22,6 +22,7 @@ public class MapWidget extends Widget {
 
     getContentPane().setForeground(new Color(64, 255, 128));
     getContentPane().setBackground(new Color(8, 32, 16));
+    // row 1
     Box room1 = Box.createVerticalBox();
 
     room1.add(new TerminalLabel("+---+"));
@@ -40,13 +41,65 @@ public class MapWidget extends Widget {
     room2.add(new TerminalLabel("|   |"));
     room2.add(new TerminalLabel("+---+"));
 
-    Box horizontalBox = Box.createHorizontalBox();
-    horizontalBox.add(room1);
-    horizontalBox.add(hall1);
-    horizontalBox.add(room2);
+    Box row1 = Box.createHorizontalBox();
+    row1.add(room1);
+    row1.add(hall1);
+    row1.add(room2);
+    
+    // row 2
+    Box hall2 = Box.createVerticalBox();
+
+    hall2.add(new TerminalLabel("  |  "));
+    hall2.add(new TerminalLabel(" [ ] "));
+    hall2.add(new TerminalLabel("  |  "));
+    
+    Box empty1 = Box.createVerticalBox();
+
+    empty1.add(new TerminalLabel("     "));
+    empty1.add(new TerminalLabel("     "));
+    empty1.add(new TerminalLabel("     "));
+
+    Box empty2 = Box.createVerticalBox();
+
+    empty2.add(new TerminalLabel("     "));
+    empty2.add(new TerminalLabel("     "));
+    empty2.add(new TerminalLabel("     "));
+
+    Box row2 = Box.createHorizontalBox();
+    row2.add(hall2);
+    row2.add(empty1);
+    row2.add(empty2);
+
+    // row 3
+    Box room3 = Box.createVerticalBox();
+
+    room3.add(new TerminalLabel("+---+"));
+    room3.add(new TerminalLabel("|   |"));
+    room3.add(new TerminalLabel("+---+"));
+    
+    Box hall3 = Box.createVerticalBox();
+
+    hall3.add(new TerminalLabel("     "));
+    hall3.add(new TerminalLabel("-[ ]-"));
+    hall3.add(new TerminalLabel("     "));
+
+    Box room4 = Box.createVerticalBox();
+
+    room4.add(new TerminalLabel("+---+"));
+    room4.add(new TerminalLabel("|   |"));
+    room4.add(new TerminalLabel("+---+"));
+
+    Box row3 = Box.createHorizontalBox();
+    row3.add(room3);
+    row3.add(hall3);
+    row3.add(room4);
 
     setLayout(new BorderLayout()); 
-    getContentPane().add(horizontalBox, BorderLayout.NORTH);
+    Box mainList = Box.createVerticalBox();
+    mainList.add(row1);
+    mainList.add(row2);
+    mainList.add(row3);
+    getContentPane().add(mainList, BorderLayout.NORTH);
 
     setSize(300,300);
     setVisible(true);
