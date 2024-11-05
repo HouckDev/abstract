@@ -16,6 +16,11 @@ public class UserInterface {
   public UserInterface(App newOwningApp) {
     this.owningApp = newOwningApp;
     
+    //Get screen dimensions
+    Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+    double width = screenSize.getWidth();
+    double height = screenSize.getHeight();
+
     JFrame frame = new JFrame("AbstractGame");
     frame.getContentPane().setLayout(new BorderLayout());
     mainPanel = new UIPanel();
@@ -26,8 +31,9 @@ public class UserInterface {
     frame.setVisible(true);
     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     
-
+    // Add initial widgets
     AlertPopupWidget testPopup = new AlertPopupWidget();
+    testPopup.setLocation(((int) width / 2) - (testPopup.getWidth() / 2), ((int) height / 2) - (testPopup.getHeight() / 2));
     
   } // UserInterface(App)
 
