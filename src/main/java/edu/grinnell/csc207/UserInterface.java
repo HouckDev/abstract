@@ -22,6 +22,8 @@ public class UserInterface {
     frame.setVisible(true);
     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     
+    AlertPopupWidget testPopup = new AlertPopupWidget();
+    
   } // UserInterface(App)
 
   public class UIPanel extends JPanel {
