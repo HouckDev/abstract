@@ -5,9 +5,9 @@ import java.awt.Color;
 import javax.swing.JFrame;
 import edu.grinnell.csc207.UserInterface.UIPanel;
 
-public class AlertPopupWidget extends JFrame {
+public class AlertPopupWidget extends Widget {
   public AlertPopupWidget() {
-    super("Alert");
+    setTitle("Alert");
     getContentPane().setLayout(new BorderLayout());
     //mainPanel = new UIPanel();
     //getContentPane().add(mainPanel);
