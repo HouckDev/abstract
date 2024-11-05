@@ -32,7 +32,15 @@ public class UserInterface {
       // Setup basic terminal UI
       Box horizontalBox = Box.createHorizontalBox();
       horizontalBox.add(new Label(">:"));
-      horizontalBox.add(new JTextField(20));
+
+      JTextField commandField = new JTextField(20);
+      commandField.setBackground(new Color(0, 0, 0));
+      horizontalBox.add(commandField);
+
+      Button confirmButton = new Button("Commit");
+      confirmButton.setBackground(new Color(0, 0, 0));
+
+      horizontalBox.add(confirmButton);
 
       add(horizontalBox);
       setForeground(new Color(64, 255, 128));
