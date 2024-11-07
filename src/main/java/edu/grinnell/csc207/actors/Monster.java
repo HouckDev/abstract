@@ -13,7 +13,7 @@ import edu.grinnell.csc207.rooms.Room;
 
 public class Monster extends Actor {
 
-  private static final int ROOM_COUNT = 8;
+  private static final int AGGRESSION_COUNTER = 8;
 
   // create a new monster
   public Monster(Level newLevel) {
@@ -36,21 +36,23 @@ public class Monster extends Actor {
     if (getCurrentRoom() instanceof OfficeRoom) {
       // STUB
     } // if
-    while (getOwningLevel().getLevelRooms().get(getPosition()[0] + directions[direction][0],
-        getPosition()[1] + directions[direction][1]) == null) {
+    int movesCounter = 0;
+    while ((getOwningLevel().getLevelRooms().get(getPosition()[0] + directions[direction][0],
+        getPosition()[1] + directions[direction][1]) == null) || (movesCounter == AGGRESSION_COUNTER)) {
       direction = (int) (Math.random() * directions.length);
+      movesCounter += 1;
     } // while
     (getOwningLevel().getLevelRooms().get(getPosition()[0] + directions[direction][0],
         getPosition()[1] + directions[direction][1])).addActor(this);
   } // advanceTurn
 
-  static void arrayShuffle(int[][] array) {
-    Random randomizer = new Random();
-    for (int i = array.length - 1; i > 0; i--) {
-      int index = randomizer.nextInt(i + 1);
-      int[] tmp = array[index];
-      array[index] = array[i];
-      array[i] = tmp;
-    }
-  } // arrayShuffle
+  // static void arrayShuffle(int[][] array) {
+  //   Random randomizer = new Random();
+  //   for (int i = array.length - 1; i > 0; i--) {
+  //     int index = randomizer.nextInt(i + 1);
+  //     int[] tmp = array[index];
+  //     array[index] = array[i];
+  //     array[i] = tmp;
+  //   }
+  // } // arrayShuffle
 } // Monster
