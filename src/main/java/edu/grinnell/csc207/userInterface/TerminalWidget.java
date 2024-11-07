@@ -10,10 +10,12 @@ import java.awt.event.ActionListener;
 import javax.swing.Box;
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JScrollPane;
 import javax.swing.JTextField;
 import edu.grinnell.csc207.userInterface.UserInterface.UIPanel;
 
 public class TerminalWidget extends Widget {
+  Box consoleLog;
   public TerminalWidget(UserInterface owningUserInterface) {
     super(owningUserInterface);
     setTitle("Terminal");
@@ -43,8 +45,18 @@ public class TerminalWidget extends Widget {
     confirmButton.setBackground(new Color(0, 0, 0));
 
     horizontalBox.add(confirmButton);
+    // construct console log
+    consoleLog = Box.createVerticalBox();
+    consoleLog.add(new TerminalLabel("> Game Begin"));
+    consoleLog.setBackground(new Color(8, 32, 16));
+    JScrollPane scrollPane = new JScrollPane(consoleLog);
+    
+    // construct main ui
+    Box mainBox = Box.createVerticalBox();
+    mainBox.add(scrollPane);
+    mainBox.add(horizontalBox);
 
-    add(horizontalBox);
+    add(mainBox);
     
     setSize(300,300);
     setVisible(true);
