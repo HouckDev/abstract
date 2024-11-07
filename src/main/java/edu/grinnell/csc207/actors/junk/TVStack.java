@@ -1,5 +1,6 @@
 package edu.grinnell.csc207.actors.junk;
 
+import edu.grinnell.csc207.App;
 import edu.grinnell.csc207.Level;
 
 public class TVStack extends Junk{
@@ -13,8 +14,8 @@ public class TVStack extends Junk{
   } // TVStack
   
   @Override
-  public String getDisplayText() {
-    return "Stack of cracked TV's";
+  public void getDisplayText() {
+    App.runningApp.getUserInterface().getTerminal().addConsoleOutput("Stack of cracked TV's");
   }
   
 }

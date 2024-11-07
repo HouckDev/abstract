@@ -9,6 +9,7 @@ import edu.grinnell.csc207.Level;
 import edu.grinnell.csc207.TurnInterface;
 import edu.grinnell.csc207.actors.Actor;
 import edu.grinnell.csc207.matrix.Matrix;
+import edu.grinnell.csc207.userInterface.DefaultStyle;
 import edu.grinnell.csc207.userInterface.TerminalLabel;
 
 /**
@@ -88,9 +89,9 @@ public class Room implements TurnInterface, CommandInterface {
       for (int i = 0; i < this.contents.size(); i++) {
         Actor actor = this.contents.get(i);
         if (Math.random() > 0.8) {
-          App.runningApp.getUserInterface().getTerminal().addConsoleOutput(i + ":" + "SYS$ERROR");
+          App.runningApp.getUserInterface().getTerminal().addConsoleOutput(i + ":" + "SYS$ERROR",DefaultStyle.getErrorTextColor());
         } else {
-          App.runningApp.getUserInterface().getTerminal().addConsoleOutput(i + ":" + actor.getDisplayText());
+          actor.getDisplayText();
         } // if else
       } // for
       return "";

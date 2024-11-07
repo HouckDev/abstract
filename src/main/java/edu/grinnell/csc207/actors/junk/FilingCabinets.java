@@ -1,5 +1,6 @@
 package edu.grinnell.csc207.actors.junk;
 
+import edu.grinnell.csc207.App;
 import edu.grinnell.csc207.Level;
 
 public class FilingCabinets extends Junk{
@@ -13,8 +14,8 @@ public class FilingCabinets extends Junk{
   } // FilingCabinets
   
   @Override
-  public String getDisplayText() {
-    return "Cabinets";
+  public void getDisplayText() {
+    App.runningApp.getUserInterface().getTerminal().addConsoleOutput("Cabinets");
   }
   
 }

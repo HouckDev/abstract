@@ -7,8 +7,15 @@ public class DefaultStyle {
   public static Color getTextColor() {
     return TEXT_COLOR;
   } // getTextColor
+
   private static final Color BACKGROUND_COLOR = new Color(8, 32, 16);
   public static Color getBackgroundColor() {
     return BACKGROUND_COLOR;
   } // getBackgroundColor
+
+  private static final Color ERRORTEXT_COLOR = new Color(255, 32, 128);
+  public static Color getErrorTextColor() {
+    return ERRORTEXT_COLOR;
+  } // getBackgroundColor
+
 } // DefaultStyle

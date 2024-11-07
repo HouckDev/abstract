@@ -93,4 +93,14 @@ public class TerminalWidget extends Widget {
     validate();
     vertical.setValue(vertical.getMaximum());
   }
+  
+
+  public void addConsoleOutput(String s,Color c) {
+    JScrollBar vertical = scrollPane.getVerticalScrollBar();
+    TerminalLabel newLabel = new TerminalLabel(s);
+    newLabel.setForeground(c);
+    consoleLog.add(newLabel);
+    validate();
+    vertical.setValue(vertical.getMaximum());
+  }
 }

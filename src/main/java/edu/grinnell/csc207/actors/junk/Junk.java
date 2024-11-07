@@ -1,5 +1,6 @@
 package edu.grinnell.csc207.actors.junk;
 
+import edu.grinnell.csc207.App;
 import edu.grinnell.csc207.Level;
 import edu.grinnell.csc207.actors.Actor;
 
@@ -15,7 +16,7 @@ public class Junk extends Actor {
   } // door
 
   @Override
-  public String getDisplayText() {
-    return "JUNK";
+  public void getDisplayText() {
+    App.runningApp.getUserInterface().getTerminal().addConsoleOutput("JUNK");
   }
 } // Door 

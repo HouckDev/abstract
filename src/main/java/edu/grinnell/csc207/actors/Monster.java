@@ -1,11 +1,13 @@
 package edu.grinnell.csc207.actors;
 
 import java.util.Random;
+import edu.grinnell.csc207.App;
 import edu.grinnell.csc207.Level;
 import edu.grinnell.csc207.matrix.MatrixV0;
 import edu.grinnell.csc207.rooms.Hallway;
 import edu.grinnell.csc207.rooms.OfficeRoom;
 import edu.grinnell.csc207.rooms.Room;
+import edu.grinnell.csc207.userInterface.DefaultStyle;
 
 /**
  * Monster Represents a monster actor Can be prevented by doors and detected by motion sensors
@@ -21,8 +23,8 @@ public class Monster extends Actor {
   } // monster
 
   @Override
-  public String getDisplayText() {
-    return "SYS$ERROR";
+  public void getDisplayText() {
+    App.runningApp.getUserInterface().getTerminal().addConsoleOutput("SYS$ERROR",DefaultStyle.getErrorTextColor());
   }
 
   /**

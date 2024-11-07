@@ -22,8 +22,8 @@ public class MotionSensor extends Actor {
   } // MotionSensor
 
   @Override
-  public String getDisplayText() {
-    return "SENSOR";
+  public void getDisplayText() {
+    App.runningApp.getUserInterface().getTerminal().addConsoleOutput( "SENSOR");
   }
 
   /**

@@ -1,5 +1,6 @@
 package edu.grinnell.csc207.actors;
 
+import edu.grinnell.csc207.App;
 import edu.grinnell.csc207.Level;
 
 public class Player extends Actor{
@@ -9,8 +10,8 @@ public class Player extends Actor{
   } // player
   
   @Override
-  public String getDisplayText() {
-    return "Human [You]";
+  public void getDisplayText() {
+    App.runningApp.getUserInterface().getTerminal().addConsoleOutput( "Human [You]");
   }
 } // Player
 

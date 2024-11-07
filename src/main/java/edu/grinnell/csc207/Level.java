@@ -1,5 +1,6 @@
 package edu.grinnell.csc207;
 
+import edu.grinnell.csc207.rooms.FacilityRoom;
 import edu.grinnell.csc207.rooms.Hallway;
 import edu.grinnell.csc207.rooms.OfficeRoom;
 import edu.grinnell.csc207.rooms.Room;
@@ -32,7 +33,7 @@ public class Level implements TurnInterface {
    */
   public Level() {
     // Initialize the room matrix
-    this.level = new MatrixV0<Room>(7, 7);
+    this.level = new MatrixV0<Room>(9, 9);
     // Generate the rooms
     int rootX = (this.level.width() - 1) / 2;
     int rootY = (this.level.height() - 1) / 2;
@@ -51,7 +52,7 @@ public class Level implements TurnInterface {
       this.level.set(rootX + (directions[direction][0] * 1), rootY + (directions[direction][1] * 1),
           new Hallway(this));
       this.level.set(rootX + (directions[direction][0] * 2), rootY + (directions[direction][1] * 2),
-          new Room(this));
+          new FacilityRoom(this));
       rootX = rootX + (directions[direction][0] * 2);
       rootY = rootY + (directions[direction][1] * 2);
     }

@@ -1,5 +1,6 @@
 package edu.grinnell.csc207.actors;
 
+import edu.grinnell.csc207.App;
 import edu.grinnell.csc207.Level;
 
 /**
@@ -44,7 +45,7 @@ public class Door extends Actor {
    */
   @Override
   public String parseCommand(String command) {
-    if (command.equals("Close")) {
+    if (command.equals("CLOSE")) {
       this.isClosed = true;
       this.timer = (int) (Math.random()) * 2 + 2;
       return "DOOR CLOSED";
@@ -54,12 +55,12 @@ public class Door extends Actor {
   } // parseCommand
 
   @Override
-  public String getDisplayText() {
+  public void getDisplayText() {
     if (isClosed()) {
-      return "DOOR [Closed]";
+      App.runningApp.getUserInterface().getTerminal().addConsoleOutput( "DOOR [Closed]");
 
     } else {
-      return "DOOR [Open]";
+      App.runningApp.getUserInterface().getTerminal().addConsoleOutput( "DOOR [Open]");
 
     }
   }
