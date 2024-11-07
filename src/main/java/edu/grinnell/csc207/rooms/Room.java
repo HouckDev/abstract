@@ -1,8 +1,10 @@
 package edu.grinnell.csc207.rooms;
 
 import java.util.ArrayList;
-import javax.swing.JPanel;
+import javax.swing.Box;
+import javax.swing.JComponent;
 import edu.grinnell.csc207.actors.Actor;
+import edu.grinnell.csc207.userInterface.TerminalLabel;
 
 /**
  * Room
@@ -16,7 +18,13 @@ public class Room {
    * Constructs a new Widget to represent this room in the map
    * @return the widget to represent this room
    */
-  public JPanel constructMapWidget() {
-      return null;
+  public JComponent constructMapWidget() {
+    Box roomWidget = Box.createVerticalBox();
+
+    roomWidget.add(new TerminalLabel("+---+"));
+    roomWidget.add(new TerminalLabel("|   |"));
+    roomWidget.add(new TerminalLabel("+---+"));
+    
+    return roomWidget;
   } // constructMapWidget
 } // Room
