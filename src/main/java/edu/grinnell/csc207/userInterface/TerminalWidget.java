@@ -11,37 +11,44 @@ import javax.swing.JScrollPane;
 import javax.swing.JTextField;
 
 public class TerminalWidget extends Widget {
-  Box consoleLog;
+  /**
+   * Constant for the command prompt length.
+   */
+  private final int commandPromptLength = 20;
 
-  public TerminalWidget(UserInterface owningUserInterface) {
+  /**
+   * Constructs a new terminal widget.
+   * @param owningUserInterface
+   */
+  public TerminalWidget(final UserInterface owningUserInterface) {
     super(owningUserInterface);
     setTitle("Terminal");
     // Setup basic terminal UI
 
-    getContentPane().setForeground(new Color(64, 255, 128));
-    getContentPane().setBackground(new Color(8, 32, 16));
+    getContentPane().setForeground(DefaultStyle.textColor);
+    getContentPane().setBackground(DefaultStyle.backgroundColor);
 
     Box horizontalBox = Box.createHorizontalBox();
     horizontalBox.add(new TerminalLabel(">:"));
 
-    JTextField commandField = new JTextField(20);
-    commandField.setForeground(new Color(64, 255, 128));
+    JTextField commandField = new JTextField(commandPromptLength);
+    commandField.setForeground(DefaultStyle.textColor);
     commandField.setBackground(new Color(0, 0, 0));
     horizontalBox.add(commandField);
 
     // construct confirm button
     JButton confirmButton = new JButton("Commit");
-    confirmButton.setForeground(new Color(64, 255, 128));
+    confirmButton.setForeground(DefaultStyle.textColor);
     confirmButton.setBackground(new Color(0, 0, 0));
 
     horizontalBox.add(confirmButton);
     // construct console log
-    consoleLog = Box.createVerticalBox();
+    Box consoleLog = Box.createVerticalBox();
     for (int i = 0; i < 9; i++) {
       consoleLog.add(new TerminalLabel(""));
     }
     consoleLog.add(new TerminalLabel("> Game Begin"));
-    consoleLog.setBackground(new Color(8, 32, 16));
+    consoleLog.setBackground(DefaultStyle.backgroundColor);
     JScrollPane scrollPane = new JScrollPane(consoleLog);
     // construct main ui
     Box mainBox = Box.createVerticalBox();
@@ -55,12 +62,12 @@ public class TerminalWidget extends Widget {
     // Test button input, advance turn on commit pressed
     confirmButton.addActionListener(new ActionListener() {
       @Override
-      public void actionPerformed(ActionEvent e) {
+      public void actionPerformed(final ActionEvent e) {
         consoleLog.add(new TerminalLabel("> " + commandField.getText()));
         JScrollBar vertical = scrollPane.getVerticalScrollBar();
         validate();
         vertical.setValue(vertical.getMaximum());
-        getUserInterface().owningApp.getCurrentGame().advanceTurn();
+        getUserInterface().getOwningApp().getCurrentGame().advanceTurn();
       }
     });
 

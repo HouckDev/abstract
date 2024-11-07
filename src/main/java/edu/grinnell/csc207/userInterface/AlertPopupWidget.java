@@ -8,13 +8,13 @@ public class AlertPopupWidget extends Widget {
     super(owningUserInterface);
     setTitle("Alert");
     getContentPane().setLayout(new BorderLayout());
-    //mainPanel = new UIPanel();
-    //getContentPane().add(mainPanel);
-    //frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
+    // mainPanel = new UIPanel();
+    // getContentPane().add(mainPanel);
+    // frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
 
-    setSize(300,200);
-    //frame.setUndecorated(true);
-    getContentPane().setBackground( Color.RED );
+    setSize(300, 200);
+    // frame.setUndecorated(true);
+    getContentPane().setBackground(Color.RED);
     setVisible(true);
   }
 }
