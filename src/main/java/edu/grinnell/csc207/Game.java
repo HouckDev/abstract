@@ -46,11 +46,14 @@ public class Game implements TurnInterface, CommandInterface {
    */
   public String parseCommand(String command) {
     String[] commandList = command.split(" ",2);
-    
+    String nextCommand = "";
+    if (commandList.length > 0) {
+      nextCommand = commandList[1];
+    }
     for (int y = 0; y < getCurrentLevel().getLevelRooms().height(); y++) {
       for (int x = 0; x < getCurrentLevel().getLevelRooms().height(); x++) {
         if (getCurrentLevel().getLevelRooms().get(y, x) != null && getCurrentLevel().getLevelRooms().get(y, x).getRoomID().equals(commandList[0])) {
-          return getCurrentLevel().getLevelRooms().get(y, x).parseCommand(commandList[1]);
+          return getCurrentLevel().getLevelRooms().get(y, x).parseCommand(nextCommand);
         }
       }
     }
