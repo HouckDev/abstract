@@ -88,8 +88,9 @@ public class Room implements TurnInterface, CommandInterface {
       App.runningApp.getUserInterface().getTerminal().addConsoleOutput("ROOM CONTENTS:");
       for (int i = 0; i < this.contents.size(); i++) {
         Actor actor = this.contents.get(i);
+        App.runningApp.getUserInterface().getTerminal().addConsoleOutput(i + ":");
         if (Math.random() > 0.8) {
-          App.runningApp.getUserInterface().getTerminal().addConsoleOutput(i + ":" + "SYS$ERROR",DefaultStyle.getErrorTextColor());
+          App.runningApp.getUserInterface().getTerminal().addConsoleOutput("SYS$ERROR",DefaultStyle.getErrorTextColor());
         } else {
           actor.getDisplayText();
         } // if else
