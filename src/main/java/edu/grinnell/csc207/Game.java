@@ -1,5 +1,7 @@
 package edu.grinnell.csc207;
 
+import edu.grinnell.csc207.actors.Door;
+
 /**
  * Game
  * Holds and updates the game state, contains the parameters for difficulty, etc.
@@ -34,6 +36,16 @@ public class Game implements TurnInterface {
    * @param command
    */
   public void recieveCommandPrompt(String command) {
+    // 001 LIST
+    // > D1 - Door [Opened]
+    // > M1 - Motion Sensor
+
+    // 001 D1 CLOSE
+    // > Door D1 Closed
+
+    // [Room ID] [Action]
+    // [Room ID] [Actor ID] [Action]
+
     //STUB implement command functions
     this.advanceTurn();
   } //recieveCommandPrompt
