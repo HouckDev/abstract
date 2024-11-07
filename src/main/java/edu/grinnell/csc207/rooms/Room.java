@@ -23,7 +23,7 @@ public class Room implements TurnInterface {
   } // getContents
 
   /**
-   * Add an actor to this room
+   * Add an actor to this room, move it from the previous room
    * @param newActor
    */
   public void addActor(Actor newActor) {
