@@ -32,8 +32,13 @@ public class Level implements TurnInterface {
 
   @Override
   public void advanceTurn() {
-    // TODO Auto-generated method stub
-    throw new UnsupportedOperationException("Unimplemented method 'advanceTurn'");
-  }
+    for (int y = 0; y < getLevelRooms().height(); y++) {
+      for (int x = 0; x < getLevelRooms().height(); x++) {
+        if (getLevelRooms().get(y, x) != null ) {
+          getLevelRooms().get(y, x).advanceTurn();
+        } // if
+      } // for
+    } // for
+  } // advanceTurn
 
 } // Level

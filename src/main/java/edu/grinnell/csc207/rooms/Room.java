@@ -3,6 +3,7 @@ package edu.grinnell.csc207.rooms;
 import java.util.ArrayList;
 import javax.swing.Box;
 import javax.swing.JComponent;
+import edu.grinnell.csc207.TurnInterface;
 import edu.grinnell.csc207.actors.Actor;
 import edu.grinnell.csc207.userInterface.TerminalLabel;
 
@@ -10,7 +11,7 @@ import edu.grinnell.csc207.userInterface.TerminalLabel;
  * Room
  * Represents a room, contains a list of actors reprsenting the contents
  */
-public class Room {
+public class Room implements TurnInterface{
   ArrayList<Actor> contents = new ArrayList<Actor>();
 
   /**
@@ -29,4 +30,11 @@ public class Room {
     
     return roomWidget;
   } // constructMapWidget
+
+  @Override
+  public void advanceTurn() {
+    for (Actor actor : this.contents) {
+      actor.advanceTurn();
+    } // for
+  } // advanceTurn
 } // Room

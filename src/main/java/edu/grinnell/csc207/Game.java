@@ -26,7 +26,6 @@ public class Game implements TurnInterface {
 
   @Override
   public void advanceTurn() {
-    // TODO Auto-generated method stub
-    throw new UnsupportedOperationException("Unimplemented method 'advanceTurn'");
+    level.advanceTurn();
   }
 } // Game
