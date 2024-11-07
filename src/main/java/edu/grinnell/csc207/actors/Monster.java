@@ -19,7 +19,7 @@ public class Monster extends Actor {
   }
 
   /**
-   * Advance the monster's movement to a valid room.
+   * Advance the monster's movement to a valid room without a closed door.
    * 
    */
   @Override
