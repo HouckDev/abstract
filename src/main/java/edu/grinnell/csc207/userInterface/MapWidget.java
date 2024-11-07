@@ -7,7 +7,8 @@ import edu.grinnell.csc207.rooms.Room;
 
 public class MapWidget extends Widget {
   /**
-   * Constructs a new MapWidget
+   * Constructs a new MapWidget.
+   * 
    * @param owningUserInterface
    */
   public MapWidget(final UserInterface owningUserInterface) {
@@ -97,7 +98,7 @@ public class MapWidget extends Widget {
     // getContentPane().add(mainList);
     Box mainList = Box.createVerticalBox();
     MatrixV0<Room> roomMatrix =
-        this.userInterface.getOwningApp().getCurrentGame().getCurrentLevel().getLevelRooms();
+        this.getUserInterface().getOwningApp().getCurrentGame().getCurrentLevel().getLevelRooms();
     for (int y = 0; y < roomMatrix.height(); y++) {
       Box row = Box.createHorizontalBox();
       for (int x = 0; x < roomMatrix.height(); x++) {

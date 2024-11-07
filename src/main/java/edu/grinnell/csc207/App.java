@@ -4,16 +4,30 @@ import edu.grinnell.csc207.userInterface.UserInterface;
 
 /**
  * App
- * Represents the game app, manages the game object
+ * Represents the game app, manages the game object.
  */
 public class App {
 
-    // The object representing the user interface
-    UserInterface userInterface;
+    /**
+     * The userInterface that is active.
+     */
+    private UserInterface userInterface;
 
-    // The object representing the game
-    Game game;
+    /**
+     * @return the active user interface
+     */
+    public UserInterface getUserInterface() {
+        return userInterface;
+    } // getUserInterface
 
+    /**
+     * The current game the app is running.
+     */
+    private Game game;
+
+    /**
+     * @return the current game
+     */
     public Game getCurrentGame() {
         return this.game;
     } // getCurrentGame

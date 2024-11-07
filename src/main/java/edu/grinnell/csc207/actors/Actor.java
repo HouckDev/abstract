@@ -4,21 +4,32 @@ import edu.grinnell.csc207.Level;
 import edu.grinnell.csc207.TurnInterface;
 
 /**
- * Actor
- * Base class for an 'actor', an object that has a tangible prescense in the game level
+ * Actor Base class for an 'actor', an object that has a 
+ * tangible prescense in the game level.
  */
 public class Actor implements TurnInterface {
 
-  // The level that this actor is in
-  Level owningLevel;
+  /**
+   * The level that this actor is in.
+   */
+  private Level owningLevel;
 
+  /**
+   * @return the owning level
+   */
+  public Level getOwningLevel() {
+    return owningLevel;
+  } // getOwningLevle
+
+  /**
+   * Constructs a new actor within a level.
+   * 
+   * @param newlevel
+   */
   public Actor(Level newlevel) {
     this.owningLevel = newlevel;
-  }
+  } // Actor
 
   @Override
-  public void advanceTurn() {
-    // TODO Auto-generated method stub
-    throw new UnsupportedOperationException("Unimplemented method 'advanceTurn'");
-  }
-}
+  public void advanceTurn() {} // advanceTurn
+} // Actor

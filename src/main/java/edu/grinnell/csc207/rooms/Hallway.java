@@ -14,7 +14,7 @@ public class Hallway extends Room {
     roomWidget.add(new TerminalLabel("-[ ]-"));
     roomWidget.add(new TerminalLabel("     "));
     roomWidget.add(new TerminalLabel("     "));
-    
+
     return roomWidget;
-  }
-}
+  } // Hallway
+} // Hallway

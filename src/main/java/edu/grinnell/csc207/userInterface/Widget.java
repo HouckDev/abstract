@@ -10,7 +10,7 @@ public class Widget extends JFrame {
   /**
    * The user interface that owns this widget.
    */
-  protected UserInterface userInterface;
+  private UserInterface userInterface;
 
   /**
    * @return this objects owning ui.

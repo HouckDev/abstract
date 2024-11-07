@@ -4,7 +4,11 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 
 public class AlertPopupWidget extends Widget {
-  public AlertPopupWidget(UserInterface owningUserInterface) {
+  /**
+   * Constructs a new alert Popup.
+   * @param owningUserInterface
+   */
+  public AlertPopupWidget(final UserInterface owningUserInterface) {
     super(owningUserInterface);
     setTitle("Alert");
     getContentPane().setLayout(new BorderLayout());
@@ -16,5 +20,5 @@ public class AlertPopupWidget extends Widget {
     // frame.setUndecorated(true);
     getContentPane().setBackground(Color.RED);
     setVisible(true);
-  }
-}
+  } // AlertPopupWidget
+} // AlertPopupWidget

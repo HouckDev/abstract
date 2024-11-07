@@ -8,15 +8,20 @@ import edu.grinnell.csc207.actors.Actor;
 import edu.grinnell.csc207.userInterface.TerminalLabel;
 
 /**
- * Room
- * Represents a room, contains a list of actors reprsenting the contents
+ * Room Represents a room, contains a list of actors reprsenting the contents.
  */
-public class Room implements TurnInterface{
-  ArrayList<Actor> contents = new ArrayList<Actor>();
+public class Room implements TurnInterface {
+  private ArrayList<Actor> contents = new ArrayList<Actor>();
 
   /**
-   * constructMapWidget
-   * Constructs a new Widget to represent this room in the map
+   * @return the contents of this room
+   */
+  public ArrayList<Actor> getContents() {
+    return contents;
+  } // getContents
+
+  /**
+   * constructMapWidget Constructs a new Widget to represent this room in the map.
    * @return the widget to represent this room
    */
   public JComponent constructMapWidget() {
@@ -27,7 +32,7 @@ public class Room implements TurnInterface{
     roomWidget.add(new TerminalLabel("|   |"));
     roomWidget.add(new TerminalLabel("|   |"));
     roomWidget.add(new TerminalLabel("+---+"));
-    
+
     return roomWidget;
   } // constructMapWidget
 
