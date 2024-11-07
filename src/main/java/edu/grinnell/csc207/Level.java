@@ -22,7 +22,8 @@ public class Level implements TurnInterface {
    * Generate a new level given the default parameters
    */
   public Level() {
-
+    // Generate the rooms
+    level.set(0, 0, new Room());
   } // Level
 
 
