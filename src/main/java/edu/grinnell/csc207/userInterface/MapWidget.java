@@ -1,20 +1,10 @@
 package edu.grinnell.csc207.userInterface;
 
-import java.awt.BorderLayout;
 import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.Font;
-import java.awt.Label;
-import java.awt.Toolkit;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import javax.swing.Box;
-import javax.swing.JButton;
 import javax.swing.JFrame;
-import javax.swing.JTextField;
 import edu.grinnell.csc207.matrix.MatrixV0;
 import edu.grinnell.csc207.rooms.Room;
-import edu.grinnell.csc207.userInterface.UserInterface.UIPanel;
 
 public class MapWidget extends Widget {
   public MapWidget(UserInterface owningUserInterface) {

@@ -1,21 +1,14 @@
 package edu.grinnell.csc207.userInterface;
 
-import java.awt.BorderLayout;
 import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.Label;
-import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.Box;
-import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JFrame;
-import javax.swing.JPanel;
 import javax.swing.JScrollBar;
 import javax.swing.JScrollPane;
 import javax.swing.JTextField;
-import edu.grinnell.csc207.userInterface.UserInterface.UIPanel;
 
 public class TerminalWidget extends Widget {
   Box consoleLog;
