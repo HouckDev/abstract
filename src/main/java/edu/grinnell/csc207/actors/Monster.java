@@ -1,5 +1,6 @@
 package edu.grinnell.csc207.actors;
 
+import java.util.Random;
 import edu.grinnell.csc207.Level;
 import edu.grinnell.csc207.matrix.MatrixV0;
 import edu.grinnell.csc207.rooms.Hallway;
@@ -23,7 +24,7 @@ public class Monster extends Actor {
   public String getDisplayText() {
     return "SYS$ERROR";
   }
-  
+
   /**
    * Advance the monster's movement to a valid room without a closed door.
    * 
@@ -34,7 +35,7 @@ public class Monster extends Actor {
     int direction = (int) (Math.random() * directions.length);
     if (getCurrentRoom() instanceof OfficeRoom) {
       // STUB
-    } // if 
+    } // if
     while (getOwningLevel().getLevelRooms().get(getPosition()[0] + directions[direction][0],
         getPosition()[1] + directions[direction][1]) == null) {
       direction = (int) (Math.random() * directions.length);
@@ -51,4 +52,5 @@ public class Monster extends Actor {
       array[index] = array[i];
       array[i] = tmp;
     }
+  } // arrayShuffle
 } // Monster
