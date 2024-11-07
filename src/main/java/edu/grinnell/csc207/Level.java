@@ -1,7 +1,7 @@
 package edu.grinnell.csc207;
 
-import edu.grinnell.csc207.matrix.Matrix;
 import edu.grinnell.csc207.rooms.Room;
+import edu.grinnell.csc207.matrix.MatrixV0;
 
 /**
  * Level
@@ -11,9 +11,9 @@ public class Level implements TurnInterface {
   /**
    * Matrix of room layouts
    */
-  Matrix<Room> level;
+  MatrixV0<Room> level;
 
-  public Matrix<Room> getLevelRooms() {
+  public MatrixV0<Room> getLevelRooms() {
     return level;
   } // getLevelRooms
 
@@ -22,8 +22,11 @@ public class Level implements TurnInterface {
    * Generate a new level given the default parameters
    */
   public Level() {
+    // Initialize the room matrix
+    this.level = new MatrixV0<Room>(5,5);
+
     // Generate the rooms
-    level.set(0, 0, new Room());
+    this.level.set(0, 0, new Room());
   } // Level
 
 

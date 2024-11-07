@@ -8,10 +8,8 @@ import edu.grinnell.csc207.userInterface.UserInterface;
  */
 public class App {
 
-    // Launch the app
-    public static void main(String[] args) {
-        App app = new App();
-    } // main
+    // The object representing the user interface
+    UserInterface userInterface;
 
     // The object representing the game
     Game game;
@@ -20,12 +18,15 @@ public class App {
         return game;
     } // getCurrentGame
 
-    // The object representing the user interface
-    UserInterface userInterface; 
-
+    // Launch the app
+    public static void main(String[] args) {
+        App app = new App();
+    } // main
 
     // Initialize the app
     public App() {
+        
+        this.game = new Game();
         this.userInterface = new UserInterface(this);
         this.game = null;
     } // App

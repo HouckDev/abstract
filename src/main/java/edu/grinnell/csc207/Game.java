@@ -21,7 +21,7 @@ public class Game implements TurnInterface {
    * Start a new game with default parameters
    */
   public Game() {
-
+    this.level = new Level();
   } // Game
 
   @Override
