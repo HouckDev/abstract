@@ -8,6 +8,7 @@ public class UserInterface {
   /**
    * the application this UI is connected to.
    */
+  TerminalWidget terminal;
   private App owningApp;
 
   /**
@@ -31,7 +32,7 @@ public class UserInterface {
 
     // Add initial widgets
 
-    TerminalWidget terminal = new TerminalWidget(this);
+    terminal = new TerminalWidget(this);
     terminal.setLocation(((int) width / 2) - (terminal.getWidth() / 2),
         ((int) height / 2) - (terminal.getHeight() / 2));
 
