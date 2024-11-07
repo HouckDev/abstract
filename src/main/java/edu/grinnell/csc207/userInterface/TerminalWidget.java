@@ -67,7 +67,8 @@ public class TerminalWidget extends Widget {
         JScrollBar vertical = scrollPane.getVerticalScrollBar();
         validate();
         vertical.setValue(vertical.getMaximum());
-        getUserInterface().getOwningApp().getCurrentGame().advanceTurn();
+        getUserInterface().getOwningApp().getCurrentGame().recieveCommandPrompt(commandField.getText());
+        commandField.setText("");
       }
     });
 
