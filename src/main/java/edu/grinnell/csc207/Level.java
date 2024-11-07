@@ -37,7 +37,7 @@ public class Level implements TurnInterface {
     // Generate the rooms
     int rootX = (this.level.width() - 1) / 2;
     int rootY = (this.level.height() - 1) / 2;
-    this.level.set(rootX, rootY, new Room(this));
+    this.level.set(rootX, rootY, new FacilityRoom(this));
     for (int i = 0; i < ROOM_COUNT; i++) {
       int[][] directions = {{1, 0}, {0, 1}, {-1, 0}, {0, -1}};
       int direction = (int) (Math.random() * directions.length);
