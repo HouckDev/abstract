@@ -119,7 +119,11 @@ public class MapWidget extends Widget {
     } // for
 
     getContentPane().add(mainList);
-    setSize(300, 650);
+    setSize(
+        this.getUserInterface().getOwningApp().getCurrentGame().getCurrentLevel().getLevelRooms()
+            .width() * 75,
+        this.getUserInterface().getOwningApp().getCurrentGame().getCurrentLevel().getLevelRooms()
+            .height() * 125);
     setVisible(true);
     setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
   } // MapWidget

@@ -11,7 +11,7 @@ public class Level implements TurnInterface {
   /**
    * The default room count.
    */
-  private static final int ROOM_COUNT = 5;
+  private static final int ROOM_COUNT = 8;
 
   /**
    * Matrix of room layouts.
@@ -31,18 +31,18 @@ public class Level implements TurnInterface {
    */
   public Level() {
     // Initialize the room matrix
-    this.level = new MatrixV0<Room>(5, 5);
+    this.level = new MatrixV0<Room>(7, 7);
     // Generate the rooms
-    int rootX = this.level.width() / 2;
-    int rootY = this.level.height() / 2;
+    int rootX = (this.level.width() - 1) / 2;
+    int rootY = (this.level.height() - 1) / 2;
     this.level.set(rootX, rootY, new Room());
     for (int i = 0; i < ROOM_COUNT; i++) {
       int[][] directions = {{1, 0}, {0, 1}, {-1, 0}, {0, -1}};
       int direction = (int) (Math.random() * directions.length);
       while (rootX + (directions[direction][0] * 2) < 0
-          || rootX + (directions[direction][0] * 2) > this.level.width()
+          || rootX + (directions[direction][0] * 2) >= this.level.width()
           || rootY + (directions[direction][1] * 2) < 0
-          || rootY + (directions[direction][1] * 2) > this.level.height()
+          || rootY + (directions[direction][1] * 2) >= this.level.height()
 
       ) {
         direction = (int) (Math.random() * directions.length);
@@ -51,7 +51,8 @@ public class Level implements TurnInterface {
           new Hallway());
       this.level.set(rootX + (directions[direction][0] * 2), rootY + (directions[direction][1] * 2),
           new Room());
-
+      rootX = rootX + (directions[direction][0] * 2);
+      rootY = rootY + (directions[direction][1] * 2);
     }
   } // Level
 
