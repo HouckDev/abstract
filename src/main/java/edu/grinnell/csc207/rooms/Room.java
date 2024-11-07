@@ -16,6 +16,11 @@ import edu.grinnell.csc207.userInterface.TerminalLabel;
 public class Room implements TurnInterface, CommandInterface {
   private ArrayList<Actor> contents = new ArrayList<Actor>();
   Level owningLevel;
+  String roomID = "";
+  public String getRoomID() {
+    return roomID;
+  }
+
   /**
    * @return the contents of this room
    */

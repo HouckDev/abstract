@@ -10,7 +10,7 @@ import edu.grinnell.csc207.actors.Door;
  * player inputs actions every turn via a console input
  * game ends if the monster enters the same room as the player
  */
-public class Game implements TurnInterface {
+public class Game implements TurnInterface, CommandInterface {
 
   /**
    * The level the game is running.
@@ -35,7 +35,7 @@ public class Game implements TurnInterface {
    * Parse a command action from the terminal.
    * @param command
    */
-  public void recieveCommandPrompt(String command) {
+  public boolean parseCommand(String command) {
     // 001 LIST
     // > D1 - Door [Opened]
     // > M1 - Motion Sensor
@@ -46,8 +46,18 @@ public class Game implements TurnInterface {
     // [Room ID] [Action]
     // [Room ID] [Actor ID] [Action]
 
-    //STUB implement command functions
+    
+    String[] commandList = command.split(" ",2);
+    
+    for (int y = 0; y < getCurrentLevel().getLevelRooms().height(); y++) {
+      for (int x = 0; x < getCurrentLevel().getLevelRooms().height(); x++) {
+        if (getCurrentLevel().getLevelRooms().get(y, x).getRoomID().equals(commandList[0])) {
+          return getCurrentLevel().getLevelRooms().get(y, x).parseCommand(commandList[1]);
+        }
+      }
+    }
     this.advanceTurn();
+    return false;
   } //recieveCommandPrompt
 
   @Override
