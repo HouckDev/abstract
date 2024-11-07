@@ -21,7 +21,18 @@ public class Room implements TurnInterface {
     return contents;
   } // getContents
 
-  
+  /**
+   * Add an actor to this room
+   * @param newActor
+   */
+  public void addActor(Actor newActor) {
+    newActor.setCurrentRoom(this);
+    getContents().add(newActor);
+  } // addActor
+
+  public void removeActor(Actor newActor) {
+    getContents().remove(newActor);
+  } // removeActor
 
   /**
    * constructMapWidget Constructs a new Widget to represent this room in the map.

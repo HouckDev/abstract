@@ -1,6 +1,7 @@
 package edu.grinnell.csc207;
 
 import edu.grinnell.csc207.rooms.Hallway;
+import edu.grinnell.csc207.rooms.OfficeRoom;
 import edu.grinnell.csc207.rooms.Room;
 import edu.grinnell.csc207.matrix.MatrixV0;
 
@@ -54,6 +55,10 @@ public class Level implements TurnInterface {
       rootX = rootX + (directions[direction][0] * 2);
       rootY = rootY + (directions[direction][1] * 2);
     }
+    // Place the Player Office
+    this.level.set(rootX,rootY,
+        new OfficeRoom());
+
   } // Level
 
 

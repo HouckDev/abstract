@@ -18,6 +18,21 @@ public class Actor implements TurnInterface {
    */
   private Room currentRoom;
 
+
+  /**
+   * @param currentRoom the room
+   */
+  public Room getCurrentRoom() {
+    return currentRoom;
+  } // getCurrentRoom
+
+  /**
+   * @param currentRoom the room to be set to
+   */
+  public void setCurrentRoom(Room currentRoom) {
+    this.currentRoom = currentRoom;
+  }
+
   /**
    * @return the owning level
    */
@@ -34,10 +49,6 @@ public class Actor implements TurnInterface {
       }
     }
     return null;
-  }
-
-  public Room getCurrentRoom() {
-    return currentRoom;
   }
 
   /**
