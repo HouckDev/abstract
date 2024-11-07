@@ -5,6 +5,7 @@ import javax.swing.Box;
 import javax.swing.JComponent;
 import edu.grinnell.csc207.TurnInterface;
 import edu.grinnell.csc207.actors.Actor;
+import edu.grinnell.csc207.matrix.Matrix;
 import edu.grinnell.csc207.userInterface.TerminalLabel;
 
 /**
@@ -20,8 +21,11 @@ public class Room implements TurnInterface {
     return contents;
   } // getContents
 
+  
+
   /**
    * constructMapWidget Constructs a new Widget to represent this room in the map.
+   * 
    * @return the widget to represent this room
    */
   public JComponent constructMapWidget() {

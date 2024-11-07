@@ -2,10 +2,10 @@ package edu.grinnell.csc207.actors;
 
 import edu.grinnell.csc207.Level;
 import edu.grinnell.csc207.TurnInterface;
+import edu.grinnell.csc207.rooms.Room;
 
 /**
- * Actor Base class for an 'actor', an object that has a 
- * tangible prescense in the game level.
+ * Actor Base class for an 'actor', an object that has a tangible prescense in the game level.
  */
 public class Actor implements TurnInterface {
 
@@ -13,6 +13,10 @@ public class Actor implements TurnInterface {
    * The level that this actor is in.
    */
   private Level owningLevel;
+  /**
+   * The room that this actor is in
+   */
+  private Room currentRoom;
 
   /**
    * @return the owning level
@@ -20,6 +24,21 @@ public class Actor implements TurnInterface {
   public Level getOwningLevel() {
     return owningLevel;
   } // getOwningLevle
+
+  public int[] getPosition() {
+    for (int y = 0; y < getOwningLevel().getLevelRooms().height(); y++) {
+      for (int x = 0; x < getOwningLevel().getLevelRooms().height(); x++) {
+        if (getOwningLevel().getLevelRooms().get(y, x) == getCurrentRoom()) {
+          return new int[]{x,y};
+        }
+      }
+    }
+    return null;
+  }
+
+  public Room getCurrentRoom() {
+    return currentRoom;
+  }
 
   /**
    * Constructs a new actor within a level.
