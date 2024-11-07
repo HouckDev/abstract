@@ -77,7 +77,9 @@ public class Room implements TurnInterface, CommandInterface {
 
   @Override
   public void advanceTurn() {
-    for (Actor actor : this.contents) {
+    ArrayList<Actor> temp = getContents();
+    for (int i = 0 ; i < temp.size(); i++) {
+      Actor actor = temp.get(i);
       actor.advanceTurn();
     } // for
   } // advanceTurn

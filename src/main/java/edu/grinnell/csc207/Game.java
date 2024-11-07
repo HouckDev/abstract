@@ -15,6 +15,10 @@ import edu.grinnell.csc207.rooms.Room;
 public class Game implements TurnInterface, CommandInterface {
   int playerActions = 3;
 
+  public void setPlayerActions(int playerActions) {
+    this.playerActions = playerActions;
+  }
+
   public int getPlayerActions() {
     return playerActions;
   } // getPlayerActions
@@ -92,9 +96,6 @@ public class Game implements TurnInterface, CommandInterface {
         } // if
       } // if
     } // for
-    playerActions--;
-    App.runningApp.getUserInterface().getTerminal()
-        .addConsoleOutput("ACTIONS LEFT: " + playerActions);
     return "ERROR";
   } // recieveCommandPrompt
 
