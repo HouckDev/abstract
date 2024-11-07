@@ -72,6 +72,10 @@ public class TerminalWidget extends Widget {
         addConsoleOutput("" + getUserInterface().getOwningApp().getCurrentGame().parseCommand(commandField.getText()));
         
         commandField.setText("");
+        if (App.runningApp.getCurrentGame().getPlayerActions() <= 0) {
+          App.runningApp.getCurrentGame().advanceTurn();
+    
+        }
       }
     });
 
