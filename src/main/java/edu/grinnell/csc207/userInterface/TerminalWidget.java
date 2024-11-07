@@ -9,6 +9,7 @@ import javax.swing.JFrame;
 import javax.swing.JScrollBar;
 import javax.swing.JScrollPane;
 import javax.swing.JTextField;
+import edu.grinnell.csc207.App;
 
 public class TerminalWidget extends Widget {
   /**
@@ -67,9 +68,13 @@ public class TerminalWidget extends Widget {
       @Override
       public void actionPerformed(final ActionEvent e) {
         addConsoleOutput("> " + commandField.getText());
-        addConsoleOutput("> " + getUserInterface().getOwningApp().getCurrentGame().parseCommand(commandField.getText()));
+        addConsoleOutput("" + getUserInterface().getOwningApp().getCurrentGame().parseCommand(commandField.getText()));
         
         commandField.setText("");
+        if (App.runningApp.getCurrentGame().getPlayerActions() <= 0) {
+          App.runningApp.getCurrentGame().advanceTurn();
+    
+        }
       }
     });
 

@@ -13,6 +13,10 @@ import edu.grinnell.csc207.actors.Door;
 public class Game implements TurnInterface, CommandInterface {
   int playerActions = 3;
 
+  public int getPlayerActions() {
+    return playerActions;
+  } // getPlayerActions
+
   /**
    * The level the game is running.
    */
@@ -32,22 +36,15 @@ public class Game implements TurnInterface, CommandInterface {
     this.level = new Level();
   } // Game
 
+  public void beginGame() {
+    App.runningApp.getUserInterface().getTerminal().addConsoleOutput("ACTIONS LEFT: " + playerActions);
+  }
+
   /**
    * Parse a command action from the terminal.
    * @param command
    */
   public String parseCommand(String command) {
-    // 001 LIST
-    // > D1 - Door [Opened]
-    // > M1 - Motion Sensor
-
-    // 001 D1 CLOSE
-    // > Door D1 Closed
-
-    // [Room ID] [Action]
-    // [Room ID] [Actor ID] [Action]
-
-    
     String[] commandList = command.split(" ",2);
     
     for (int y = 0; y < getCurrentLevel().getLevelRooms().height(); y++) {
@@ -58,17 +55,15 @@ public class Game implements TurnInterface, CommandInterface {
       }
     }
     playerActions--;
-    
-    if (playerActions <= 0) {
-      this.advanceTurn();
-
-    }
+    App.runningApp.getUserInterface().getTerminal().addConsoleOutput("ACTIONS LEFT: " + playerActions);
     return "ERROR";
   } //recieveCommandPrompt
 
   @Override
   public void advanceTurn() {
     playerActions = 3;
+    App.runningApp.getUserInterface().getTerminal().addConsoleOutput("+" + playerActions + " ACTIONS");
     level.advanceTurn();
+    App.runningApp.getUserInterface().getTerminal().addConsoleOutput("The Creature Moves...");
   } // advanceTurn
 } // Game

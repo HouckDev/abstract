@@ -8,7 +8,15 @@ public class UserInterface {
   /**
    * the application this UI is connected to.
    */
-  TerminalWidget terminal;
+  private TerminalWidget terminal;
+
+  /**
+   * @return the terminal widget
+   */
+  public TerminalWidget getTerminal() {
+    return terminal;
+  } // getTerminal
+
   private App owningApp;
 
   /**
