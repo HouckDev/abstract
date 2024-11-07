@@ -27,19 +27,28 @@ public class Room implements TurnInterface {
    * @param newActor
    */
   public void addActor(Actor newActor) {
-    newActor.getCurrentRoom().removeActor(newActor);
+    if (newActor.getCurrentRoom() != null) {
+      newActor.getCurrentRoom().removeActor(newActor);
+    } // if
     newActor.setCurrentRoom(this);
     getContents().add(newActor);
   } // addActor
 
+  /**
+   * @param newActor the actor to remove
+   */
   public void removeActor(Actor newActor) {
     newActor.setCurrentRoom(null);
     getContents().remove(newActor);
   } // removeActor
 
+  /**
+   * Construct a new room
+   * @param newOwningLevel
+   */
   public Room(Level newOwningLevel) {
     this.owningLevel = newOwningLevel;
-  }
+  } // Room
 
   /**
    * constructMapWidget Constructs a new Widget to represent this room in the map.
