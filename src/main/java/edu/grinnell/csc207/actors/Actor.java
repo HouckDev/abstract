@@ -65,7 +65,7 @@ public class Actor implements TurnInterface, CommandInterface {
   public void advanceTurn() {} // advanceTurn
 
   @Override
-  public boolean parseCommand(String command) {
-    return false;
+  public String parseCommand(String command) {
+    return "ERROR: Command Not Valid";
   }
 } // Actor

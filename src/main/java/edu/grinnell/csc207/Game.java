@@ -35,7 +35,7 @@ public class Game implements TurnInterface, CommandInterface {
    * Parse a command action from the terminal.
    * @param command
    */
-  public boolean parseCommand(String command) {
+  public String parseCommand(String command) {
     // 001 LIST
     // > D1 - Door [Opened]
     // > M1 - Motion Sensor
@@ -57,7 +57,7 @@ public class Game implements TurnInterface, CommandInterface {
       }
     }
     this.advanceTurn();
-    return false;
+    return "ERROR";
   } //recieveCommandPrompt
 
   @Override

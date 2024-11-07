@@ -4,5 +4,5 @@ public interface CommandInterface {
   /**
    * Parse a command from the terminal.
    */
-  boolean parseCommand(String command); // advanceTurn
+  String parseCommand(String command); // advanceTurn
 }

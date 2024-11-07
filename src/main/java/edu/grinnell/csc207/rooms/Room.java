@@ -81,12 +81,12 @@ public class Room implements TurnInterface, CommandInterface {
   } // advanceTurn
 
   @Override
-  public boolean parseCommand(String command) {
+  public String parseCommand(String command) {
     String[] commandList = command.split(" ",2);
     int value = Integer.parseInt(commandList[0]);
     if (value > 0 && value < getContents().size()) {
       return getContents().get(value).parseCommand(commandList[1]);
     }
-    return false;
+    return "ERROR";
   }
 } // Room
