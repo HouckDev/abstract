@@ -8,12 +8,19 @@ import edu.grinnell.csc207.matrix.MatrixV0;
  * Level Holds a matrix of all the rooms in the game, also contains other enviormental info.
  */
 public class Level implements TurnInterface {
+  /**
+   * The default room count.
+   */
   private static final int ROOM_COUNT = 5;
+
   /**
    * Matrix of room layouts.
    */
   MatrixV0<Room> level;
 
+  /**
+   * @return the room matrix of this level
+   */
   public MatrixV0<Room> getLevelRooms() {
     return level;
   } // getLevelRooms

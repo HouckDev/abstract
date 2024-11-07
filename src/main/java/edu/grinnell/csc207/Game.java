@@ -10,15 +10,20 @@ package edu.grinnell.csc207;
  */
 public class Game implements TurnInterface {
 
-  // The object represeting the game level
+  /**
+   * The level the game is running.
+   */
   Level level;
 
+  /**
+   * @return the current level
+   */
   public Level getCurrentLevel() {
     return level;
-  }
+  } // getCurrentLevel
 
   /**
-   * Start a new game with default parameters
+   * Start a new game with default parameters.
    */
   public Game() {
     this.level = new Level();
@@ -27,5 +32,5 @@ public class Game implements TurnInterface {
   @Override
   public void advanceTurn() {
     level.advanceTurn();
-  }
+  } // advanceTurn
 } // Game
