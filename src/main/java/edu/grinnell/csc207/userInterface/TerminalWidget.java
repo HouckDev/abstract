@@ -25,20 +25,20 @@ public class TerminalWidget extends Widget {
     setTitle("Terminal");
     // Setup basic terminal UI
 
-    getContentPane().setForeground(DefaultStyle.textColor);
-    getContentPane().setBackground(DefaultStyle.backgroundColor);
+    getContentPane().setForeground(DefaultStyle.getTextColor());
+    getContentPane().setBackground(DefaultStyle.getBackgroundColor());
 
     Box horizontalBox = Box.createHorizontalBox();
     horizontalBox.add(new TerminalLabel(">:"));
 
     JTextField commandField = new JTextField(commandPromptLength);
-    commandField.setForeground(DefaultStyle.textColor);
+    commandField.setForeground(DefaultStyle.getTextColor());
     commandField.setBackground(new Color(0, 0, 0));
     horizontalBox.add(commandField);
 
     // construct confirm button
     JButton confirmButton = new JButton("Commit");
-    confirmButton.setForeground(DefaultStyle.textColor);
+    confirmButton.setForeground(DefaultStyle.getTextColor());
     confirmButton.setBackground(new Color(0, 0, 0));
 
     horizontalBox.add(confirmButton);
@@ -48,7 +48,7 @@ public class TerminalWidget extends Widget {
       consoleLog.add(new TerminalLabel(""));
     }
     consoleLog.add(new TerminalLabel("> Game Begin"));
-    consoleLog.setBackground(DefaultStyle.backgroundColor);
+    consoleLog.setBackground(DefaultStyle.getBackgroundColor());
     JScrollPane scrollPane = new JScrollPane(consoleLog);
     // construct main ui
     Box mainBox = Box.createVerticalBox();

@@ -1,15 +1,16 @@
 package edu.grinnell.csc207;
 
+import edu.grinnell.csc207.rooms.Hallway;
 import edu.grinnell.csc207.rooms.Room;
 import edu.grinnell.csc207.matrix.MatrixV0;
 
 /**
- * Level
- * Holds a matrix of all the rooms in the game, also contains other enviormental info
+ * Level Holds a matrix of all the rooms in the game, also contains other enviormental info.
  */
 public class Level implements TurnInterface {
+  private static final int ROOM_COUNT = 5;
   /**
-   * Matrix of room layouts
+   * Matrix of room layouts.
    */
   MatrixV0<Room> level;
 
@@ -19,14 +20,32 @@ public class Level implements TurnInterface {
 
 
   /**
-   * Generate a new level given the default parameters
+   * Generate a new level given the default parameters.
    */
   public Level() {
     // Initialize the room matrix
-    this.level = new MatrixV0<Room>(5,5);
-
+    this.level = new MatrixV0<Room>(5, 5);
     // Generate the rooms
-    this.level.set(0, 0, new Room());
+    int rootX = this.level.width() / 2;
+    int rootY = this.level.height() / 2;
+    this.level.set(rootX, rootY, new Room());
+    for (int i = 0; i < ROOM_COUNT; i++) {
+      int[][] directions = {{1, 0}, {0, 1}, {-1, 0}, {0, -1}};
+      int direction = (int) (Math.random() * directions.length);
+      while (rootX + (directions[direction][0] * 2) < 0
+          || rootX + (directions[direction][0] * 2) > this.level.width()
+          || rootY + (directions[direction][1] * 2) < 0
+          || rootY + (directions[direction][1] * 2) > this.level.height()
+
+      ) {
+        direction = (int) (Math.random() * directions.length);
+      }
+      this.level.set(rootX + (directions[direction][0] * 1), rootY + (directions[direction][1] * 1),
+          new Hallway());
+      this.level.set(rootX + (directions[direction][0] * 2), rootY + (directions[direction][1] * 2),
+          new Room());
+
+    }
   } // Level
 
 
@@ -34,7 +53,7 @@ public class Level implements TurnInterface {
   public void advanceTurn() {
     for (int y = 0; y < getLevelRooms().height(); y++) {
       for (int x = 0; x < getLevelRooms().height(); x++) {
-        if (getLevelRooms().get(y, x) != null ) {
+        if (getLevelRooms().get(y, x) != null) {
           getLevelRooms().get(y, x).advanceTurn();
         } // if
       } // for

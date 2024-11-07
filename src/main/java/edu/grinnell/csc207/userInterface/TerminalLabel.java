@@ -16,6 +16,6 @@ public class TerminalLabel extends Label {
 
     Font terminalFont = new Font(Font.MONOSPACED, Font.PLAIN, 12);
     setFont(terminalFont);
-    setForeground(DefaultStyle.textColor);
+    setForeground(DefaultStyle.getTextColor());
   } // TerminalLabel
 } // TerminalLabel

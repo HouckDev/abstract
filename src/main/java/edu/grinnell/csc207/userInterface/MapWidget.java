@@ -6,13 +6,17 @@ import edu.grinnell.csc207.matrix.MatrixV0;
 import edu.grinnell.csc207.rooms.Room;
 
 public class MapWidget extends Widget {
-  public MapWidget(UserInterface owningUserInterface) {
+  /**
+   * Constructs a new MapWidget
+   * @param owningUserInterface
+   */
+  public MapWidget(final UserInterface owningUserInterface) {
     super(owningUserInterface);
     setTitle("Map");
     // Setup basic terminal UI
 
-    getContentPane().setForeground(DefaultStyle.textColor);
-    getContentPane().setBackground(DefaultStyle.backgroundColor);
+    getContentPane().setForeground(DefaultStyle.getTextColor());
+    getContentPane().setBackground(DefaultStyle.getBackgroundColor());
     // // row 1
     // Box room1 = Box.createVerticalBox();
 
@@ -114,7 +118,7 @@ public class MapWidget extends Widget {
     } // for
 
     getContentPane().add(mainList);
-    setSize(400, 600);
+    setSize(300, 600);
     setVisible(true);
     setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
   } // MapWidget
