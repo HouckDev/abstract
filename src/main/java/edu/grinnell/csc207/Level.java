@@ -13,7 +13,7 @@ public class Level implements TurnInterface {
   /**
    * The default room count.
    */
-  private static final int ROOM_COUNT = 8;
+  private static final int ROOM_COUNT = 32;
 
   /**
    * Matrix of room layouts.
@@ -35,8 +35,8 @@ public class Level implements TurnInterface {
     // Initialize the room matrix
     this.level = new MatrixV0<Room>(9, 9);
     // Generate the rooms
-    int rootX = (this.level.width() - 1) / 2;
-    int rootY = (this.level.height() - 1) / 2;
+    int rootX = (int) (Math.random() * (this.level.width() / 2)) * 2;
+    int rootY = (int) (Math.random() * (this.level.height() / 2)) * 2;
     this.level.set(rootX, rootY, new FacilityRoom(this));
     for (int i = 0; i < ROOM_COUNT; i++) {
       int[][] directions = {{1, 0}, {0, 1}, {-1, 0}, {0, -1}};
