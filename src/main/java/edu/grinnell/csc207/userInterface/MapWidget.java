@@ -12,6 +12,8 @@ import javax.swing.Box;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JTextField;
+import edu.grinnell.csc207.matrix.MatrixV0;
+import edu.grinnell.csc207.rooms.Room;
 import edu.grinnell.csc207.userInterface.UserInterface.UIPanel;
 
 public class MapWidget extends Widget {
@@ -101,10 +103,29 @@ public class MapWidget extends Widget {
     // mainList.add(row3);
     // getContentPane().add(mainList);
     Box mainList = Box.createVerticalBox();
-    mainList.add(this.userInterface.owningApp.getCurrentGame().getCurrentLevel().getLevelRooms().get(0, 0).constructMapWidget());
+    MatrixV0<Room> roomMatrix = this.userInterface.owningApp.getCurrentGame().getCurrentLevel().getLevelRooms();
+    for (int y = 0; y < roomMatrix.height(); y++) {
+      Box row = Box.createHorizontalBox();
+      for (int x = 0; x < roomMatrix.height(); x++) {
+        if (roomMatrix.get(y, x) != null) {
+          row.add(roomMatrix.get(y, x).constructMapWidget());
+        } else { // construct an empty space widget
+          Box emptyRoomWidget = Box.createVerticalBox();
+          emptyRoomWidget.add(new TerminalLabel("     "));
+          emptyRoomWidget.add(new TerminalLabel("     "));
+          emptyRoomWidget.add(new TerminalLabel("  +  "));
+          emptyRoomWidget.add(new TerminalLabel("     "));
+          emptyRoomWidget.add(new TerminalLabel("     "));
+          row.add(emptyRoomWidget);
+        } // if else
+      } // for
+
+      mainList.add(row);
+    } // for
+
     getContentPane().add(mainList);
     setSize(300,300);
     setVisible(true);
     setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-  }
-}
+  } // MapWidget
+} // MapWidget

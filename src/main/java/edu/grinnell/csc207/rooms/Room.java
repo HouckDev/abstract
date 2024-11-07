@@ -23,6 +23,8 @@ public class Room {
 
     roomWidget.add(new TerminalLabel("+---+"));
     roomWidget.add(new TerminalLabel("|   |"));
+    roomWidget.add(new TerminalLabel("|   |"));
+    roomWidget.add(new TerminalLabel("|   |"));
     roomWidget.add(new TerminalLabel("+---+"));
     
     return roomWidget;
