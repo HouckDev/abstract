@@ -47,7 +47,7 @@ public class TerminalWidget extends Widget {
     for (int i = 0; i < 9; i++) {
       consoleLog.add(new TerminalLabel(""));
     }
-    consoleLog.add(new TerminalLabel("> Game Begin"));
+    consoleLog.add(new TerminalLabel("USER LOGGED IN"));
     consoleLog.setBackground(DefaultStyle.getBackgroundColor());
     JScrollPane scrollPane = new JScrollPane(consoleLog);
     // construct main ui

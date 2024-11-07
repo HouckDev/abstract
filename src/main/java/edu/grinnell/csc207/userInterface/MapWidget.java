@@ -119,7 +119,7 @@ public class MapWidget extends Widget {
     } // for
 
     getContentPane().add(mainList);
-    setSize(300, 600);
+    setSize(300, 650);
     setVisible(true);
     setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
   } // MapWidget
