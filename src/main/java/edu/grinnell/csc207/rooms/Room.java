@@ -83,10 +83,14 @@ public class Room implements TurnInterface, CommandInterface {
   @Override
   public String parseCommand(String command) {
     String[] commandList = command.split(" ",2);
+    if (commandList[1] == "Motion") {
+      return "Motion Sensor Added To Room " + this.getRoomID();
+    }
     int value = Integer.parseInt(commandList[0]);
     if (value > 0 && value < getContents().size()) {
       return getContents().get(value).parseCommand(commandList[1]);
     }
     return "ERROR";
   }
+
 } // Room
