@@ -54,9 +54,9 @@ public class Game implements TurnInterface, CommandInterface {
         if (getCurrentLevel().getLevelRooms().get(y, x) instanceof OfficeRoom) {
           tmpOfficeX = x;
           tmpOfficeY = y;
-        }
-      }
-    }
+        } // if
+      } // for
+    } // for
     for (int y = 0; y < getCurrentLevel().getLevelRooms().height(); y++) {
       for (int x = 0; x < getCurrentLevel().getLevelRooms().height(); x++) {
         if (getCurrentLevel().getLevelRooms().get(y, x) != null) {
@@ -89,9 +89,9 @@ public class Game implements TurnInterface, CommandInterface {
         if (getCurrentLevel().getLevelRooms().get(y, x) != null
             && getCurrentLevel().getLevelRooms().get(y, x).getRoomID().equals(commandList[0])) {
           return getCurrentLevel().getLevelRooms().get(y, x).parseCommand(nextCommand);
-        }
-      }
-    }
+        } // if
+      } // if
+    } // for
     playerActions--;
     App.runningApp.getUserInterface().getTerminal()
         .addConsoleOutput("ACTIONS LEFT: " + playerActions);
