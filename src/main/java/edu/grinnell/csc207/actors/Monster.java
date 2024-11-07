@@ -19,6 +19,11 @@ public class Monster extends Actor {
     super(newLevel);
   } // monster
 
+  @Override
+  public String getDisplayText() {
+    return "SYS$ERROR";
+  }
+  
   /**
    * Advance the monster's movement to a valid room without a closed door.
    * 

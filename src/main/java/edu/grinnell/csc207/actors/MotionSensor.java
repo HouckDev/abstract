@@ -21,6 +21,11 @@ public class MotionSensor extends Actor {
     super(newLevel);
   } // MotionSensor
 
+  @Override
+  public String getDisplayText() {
+    return "SENSOR";
+  }
+
   /**
    * If a motion sensor is triggered, send an alert to the user.
    * 

@@ -19,7 +19,9 @@ public class Actor implements TurnInterface, CommandInterface {
    */
   private Room currentRoom;
 
-
+  public String getDisplayText() {
+    return "Actor";  
+  }
   /**
    * @param currentRoom the room
    */

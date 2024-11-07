@@ -3,6 +3,7 @@ package edu.grinnell.csc207.rooms;
 import java.util.ArrayList;
 import javax.swing.Box;
 import javax.swing.JComponent;
+import edu.grinnell.csc207.App;
 import edu.grinnell.csc207.CommandInterface;
 import edu.grinnell.csc207.Level;
 import edu.grinnell.csc207.TurnInterface;
@@ -82,6 +83,16 @@ public class Room implements TurnInterface, CommandInterface {
 
   @Override
   public String parseCommand(String command) {
+    if (command.isBlank()) {
+      for (Actor actor : this.contents) {
+        if (Math.random() > 0.8) {
+          App.runningApp.getUserInterface().getTerminal().addConsoleOutput("SYS$ERROR");
+        } else {
+          App.runningApp.getUserInterface().getTerminal().addConsoleOutput(actor.getDisplayText());
+        } // if else
+      } // for
+      return "";
+    }
     String[] commandList = command.split(" ",2);
     if (commandList[0].equals("Motion")) {
       return "Motion Sensor Added To Room " + this.getRoomID();

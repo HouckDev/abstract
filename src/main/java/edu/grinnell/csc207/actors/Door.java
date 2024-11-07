@@ -53,6 +53,17 @@ public class Door extends Actor {
     } // else
   } // parseCommand
 
+  @Override
+  public String getDisplayText() {
+    if (isClosed()) {
+      return "DOOR [Closed]";
+
+    } else {
+      return "DOOR [Open]";
+
+    }
+  }
+
   /**
    * Advance the timer for the door
    * 
