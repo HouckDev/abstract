@@ -9,12 +9,17 @@ import javax.swing.JFrame;
 import javax.swing.JScrollBar;
 import javax.swing.JScrollPane;
 import javax.swing.JTextField;
+import edu.grinnell.csc207.App;
 
 public class TerminalWidget extends Widget {
   /**
    * Constant for the command prompt length.
    */
   private final int commandPromptLength = 20;
+
+  Box consoleLog;
+
+  JScrollPane scrollPane;
 
   /**
    * Constructs a new terminal widget.
@@ -43,13 +48,13 @@ public class TerminalWidget extends Widget {
 
     horizontalBox.add(confirmButton);
     // construct console log
-    Box consoleLog = Box.createVerticalBox();
+    consoleLog = Box.createVerticalBox();
     for (int i = 0; i < 9; i++) {
       consoleLog.add(new TerminalLabel(""));
-    } // for
+    }
     consoleLog.add(new TerminalLabel("USER LOGGED IN"));
     consoleLog.setBackground(DefaultStyle.getBackgroundColor());
-    JScrollPane scrollPane = new JScrollPane(consoleLog);
+    scrollPane = new JScrollPane(consoleLog);
     // construct main ui
     Box mainBox = Box.createVerticalBox();
     mainBox.add(scrollPane);
@@ -63,18 +68,15 @@ public class TerminalWidget extends Widget {
     confirmButton.addActionListener(new ActionListener() {
       @Override
       public void actionPerformed(final ActionEvent e) {
-        consoleLog.add(new TerminalLabel("> " + commandField.getText()));
-        JScrollBar vertical = scrollPane.getVerticalScrollBar();
-        consoleLog.add(new TerminalLabel("> " + getUserInterface().getOwningApp().getCurrentGame().parseCommand(commandField.getText())));
-        validate();
-        vertical.setValue(vertical.getMaximum());
+        addConsoleOutput("> " + commandField.getText());
+        addConsoleOutput("" + getUserInterface().getOwningApp().getCurrentGame().parseCommand(commandField.getText()));
         
         commandField.setText("");
-      } // actionPerformed
+      }
     });
 
     setSize(300, 300);
     setVisible(true);
     setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-  } // TerminalWidget
-} // TerminalWidget
+  }
+}
