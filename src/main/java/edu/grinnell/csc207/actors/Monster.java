@@ -42,4 +42,13 @@ public class Monster extends Actor {
     (getOwningLevel().getLevelRooms().get(getPosition()[0] + directions[direction][0],
         getPosition()[1] + directions[direction][1])).addActor(this);
   } // advanceTurn
+
+  static void arrayShuffle(int[][] array) {
+    Random randomizer = new Random();
+    for (int i = array.length - 1; i > 0; i--) {
+      int index = randomizer.nextInt(i + 1);
+      int[] tmp = array[index];
+      array[index] = array[i];
+      array[i] = tmp;
+    }
 } // Monster
