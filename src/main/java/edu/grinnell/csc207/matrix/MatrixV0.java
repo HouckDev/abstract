@@ -17,6 +17,7 @@ public class MatrixV0<T> implements Matrix<T> {
   T[][] contents;
   int defaultWidth;
   T defaultObject;
+
   // +--------------+------------------------------------------------
   // | Constructors |
   // +--------------+
@@ -116,8 +117,10 @@ public class MatrixV0<T> implements Matrix<T> {
    */
   @SuppressWarnings("unchecked")
   public void insertRow(int row) {
-    T[] vals = (T[]) Array.newInstance(Object.class,this.width()); 
-    for (int i = 0; i < vals.length; i++) {vals[i] = this.defaultObject;}
+    T[] vals = (T[]) Array.newInstance(Object.class, this.width());
+    for (int i = 0; i < vals.length; i++) {
+      vals[i] = this.defaultObject;
+    }
     try {
       this.insertRow(row, vals);
     } catch (ArraySizeException e) {
@@ -137,7 +140,9 @@ public class MatrixV0<T> implements Matrix<T> {
    */
   @SuppressWarnings("unchecked")
   public void insertRow(int row, T[] vals) throws ArraySizeException {
-    if (vals.length != this.width()) {throw new ArraySizeException();}
+    if (vals.length != this.width()) {
+      throw new ArraySizeException();
+    }
     T[][] tempContents = (T[][]) Array.newInstance(Object.class, this.height() + 1, this.width());
 
     for (int y = 0; y < this.height(); y++) {
@@ -166,8 +171,10 @@ public class MatrixV0<T> implements Matrix<T> {
    */
   @SuppressWarnings("unchecked")
   public void insertCol(int col) {
-    T[] vals = (T[]) Array.newInstance(Object.class,this.height()); 
-    for (int i = 0; i < vals.length; i++) {vals[i] = this.defaultObject;}
+    T[] vals = (T[]) Array.newInstance(Object.class, this.height());
+    for (int i = 0; i < vals.length; i++) {
+      vals[i] = this.defaultObject;
+    }
     try {
       this.insertCol(col, vals);
     } catch (ArraySizeException e) {
@@ -187,7 +194,9 @@ public class MatrixV0<T> implements Matrix<T> {
    */
   @SuppressWarnings("unchecked")
   public void insertCol(int col, T[] vals) throws ArraySizeException {
-    if (vals.length != this.height()) {throw new ArraySizeException();}
+    if (vals.length != this.height()) {
+      throw new ArraySizeException();
+    }
     T[][] tempContents = (T[][]) Array.newInstance(Object.class, this.height(), this.width() + 1);
 
     for (int y = 0; y < this.height(); y++) {
@@ -223,7 +232,7 @@ public class MatrixV0<T> implements Matrix<T> {
     for (int y = 0; y < this.height(); y++) {
       for (int x = 0; x < this.width(); x++) {
         if (y == row) {
-          
+
         } else if (y > row) {
           tempContents[y - 1][x] = this.contents[y][x];
         } else {
@@ -253,7 +262,7 @@ public class MatrixV0<T> implements Matrix<T> {
     for (int y = 0; y < this.height(); y++) {
       for (int x = 0; x < this.width(); x++) {
         if (x == col) {
-          
+
         } else if (x > col) {
           tempContents[y][x - 1] = this.contents[y][x];
         } else {
@@ -322,7 +331,7 @@ public class MatrixV0<T> implements Matrix<T> {
    * @return a copy of the matrix.
    */
   public Matrix clone() {
-    MatrixV0<T> temp = new MatrixV0<>(this.width(), this.height(),this.defaultObject);
+    MatrixV0<T> temp = new MatrixV0<>(this.width(), this.height(), this.defaultObject);
     for (int y = 0; y < this.height(); y++) {
       for (int x = 0; x < this.width(); x++) {
         temp.set(y, x, defaultObject);
@@ -341,16 +350,26 @@ public class MatrixV0<T> implements Matrix<T> {
    *         false otherwise.
    */
   public boolean equals(Object other) {
-    if (!(other instanceof MatrixV0)) {return false;}
+    if (!(other instanceof MatrixV0)) {
+      return false;
+    }
     Matrix<T> cast = (MatrixV0<T>) other;
-    if (this.height() != cast.height()) {return false;}
-    if (this.width() != cast.width()) {return false;}
+    if (this.height() != cast.height()) {
+      return false;
+    }
+    if (this.width() != cast.width()) {
+      return false;
+    }
     for (int y = 0; y < this.height(); y++) {
       for (int x = 0; x < this.width(); x++) {
         if (get(y, x) == null) {
-          if (!(cast.get(y, x) == null)) {return false;}
+          if (!(cast.get(y, x) == null)) {
+            return false;
+          }
         } else {
-          if (!get(y, x).equals(cast.get(y, x))) {return false;}
+          if (!get(y, x).equals(cast.get(y, x))) {
+            return false;
+          }
         }
       }
     }
