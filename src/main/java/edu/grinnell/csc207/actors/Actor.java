@@ -1,5 +1,6 @@
 package edu.grinnell.csc207.actors;
 
+import edu.grinnell.csc207.CommandInterface;
 import edu.grinnell.csc207.Level;
 import edu.grinnell.csc207.TurnInterface;
 import edu.grinnell.csc207.rooms.Room;
@@ -7,7 +8,7 @@ import edu.grinnell.csc207.rooms.Room;
 /**
  * Actor Base class for an 'actor', an object that has a tangible prescense in the game level.
  */
-public class Actor implements TurnInterface {
+public class Actor implements TurnInterface, CommandInterface {
 
   /**
    * The level that this actor is in.
@@ -62,4 +63,9 @@ public class Actor implements TurnInterface {
 
   @Override
   public void advanceTurn() {} // advanceTurn
+
+  @Override
+  public boolean parseCommand(String command) {
+    return false;
+  }
 } // Actor

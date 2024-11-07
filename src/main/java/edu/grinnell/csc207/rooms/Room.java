@@ -3,6 +3,7 @@ package edu.grinnell.csc207.rooms;
 import java.util.ArrayList;
 import javax.swing.Box;
 import javax.swing.JComponent;
+import edu.grinnell.csc207.CommandInterface;
 import edu.grinnell.csc207.Level;
 import edu.grinnell.csc207.TurnInterface;
 import edu.grinnell.csc207.actors.Actor;
@@ -12,7 +13,7 @@ import edu.grinnell.csc207.userInterface.TerminalLabel;
 /**
  * Room Represents a room, contains a list of actors reprsenting the contents.
  */
-public class Room implements TurnInterface {
+public class Room implements TurnInterface, CommandInterface {
   private ArrayList<Actor> contents = new ArrayList<Actor>();
   Level owningLevel;
   /**
@@ -73,4 +74,10 @@ public class Room implements TurnInterface {
       actor.advanceTurn();
     } // for
   } // advanceTurn
+
+  @Override
+  public boolean parseCommand(String command) {
+    // TODO Auto-generated method stub
+    throw new UnsupportedOperationException("Unimplemented method 'parseCommand'");
+  }
 } // Room
