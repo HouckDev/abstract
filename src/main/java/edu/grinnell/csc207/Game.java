@@ -11,6 +11,7 @@ import edu.grinnell.csc207.actors.Door;
  * game ends if the monster enters the same room as the player
  */
 public class Game implements TurnInterface, CommandInterface {
+  int playerActions = 3;
 
   /**
    * The level the game is running.
@@ -56,12 +57,18 @@ public class Game implements TurnInterface, CommandInterface {
         }
       }
     }
-    this.advanceTurn();
+    playerActions--;
+    
+    if (playerActions <= 0) {
+      this.advanceTurn();
+
+    }
     return "ERROR";
   } //recieveCommandPrompt
 
   @Override
   public void advanceTurn() {
+    playerActions = 3;
     level.advanceTurn();
   } // advanceTurn
 } // Game
