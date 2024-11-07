@@ -16,7 +16,7 @@ public class OfficeRoom extends Room {
     Box roomWidget = Box.createVerticalBox();
 
     roomWidget.add(new TerminalLabel("+---+"));
-    roomWidget.add(new TerminalLabel("|   |"));
+    roomWidget.add(new TerminalLabel("|" + this.getRoomID() +"|"));
     roomWidget.add(new TerminalLabel("| @ |"));
     roomWidget.add(new TerminalLabel("|   |"));
     roomWidget.add(new TerminalLabel("+---+"));

@@ -15,7 +15,7 @@ public class Hallway extends Room {
 
     roomWidget.add(new TerminalLabel("     "));
     roomWidget.add(new TerminalLabel("     "));
-    roomWidget.add(new TerminalLabel("-[ ]-"));
+    roomWidget.add(new TerminalLabel("-" + this.getRoomID() + "-"));
     roomWidget.add(new TerminalLabel("     "));
     roomWidget.add(new TerminalLabel("     "));
 

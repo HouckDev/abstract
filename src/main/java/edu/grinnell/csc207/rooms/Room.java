@@ -16,7 +16,7 @@ import edu.grinnell.csc207.userInterface.TerminalLabel;
 public class Room implements TurnInterface, CommandInterface {
   private ArrayList<Actor> contents = new ArrayList<Actor>();
   Level owningLevel;
-  String roomID = "";
+  String roomID = String.valueOf((int) (Math.random()*10)) + String.valueOf((int) (Math.random()*10)) + String.valueOf((int) (Math.random()*10));
   public String getRoomID() {
     return roomID;
   }
@@ -65,7 +65,7 @@ public class Room implements TurnInterface, CommandInterface {
     Box roomWidget = Box.createVerticalBox();
 
     roomWidget.add(new TerminalLabel("+---+"));
-    roomWidget.add(new TerminalLabel("|   |"));
+    roomWidget.add(new TerminalLabel("|" + this.getRoomID() +"|"));
     roomWidget.add(new TerminalLabel("|   |"));
     roomWidget.add(new TerminalLabel("|   |"));
     roomWidget.add(new TerminalLabel("+---+"));
