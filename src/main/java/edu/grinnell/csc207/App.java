@@ -7,7 +7,7 @@ import edu.grinnell.csc207.userInterface.UserInterface;
  * Represents the game app, manages the game object.
  */
 public class App {
-
+    public static App runningApp;
     /**
      * The userInterface that is active.
      */
@@ -34,7 +34,7 @@ public class App {
 
     // Launch the app
     public static void main(String[] args) {
-        App app = new App();
+        runningApp = new App();
     } // main
 
     // Initialize the app
