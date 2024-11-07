@@ -29,6 +29,15 @@ public class Game implements TurnInterface {
     this.level = new Level();
   } // Game
 
+  /**
+   * Parse a command action from the terminal.
+   * @param command
+   */
+  public void recieveCommandPrompt(String command) {
+    //STUB implement command functions
+    this.advanceTurn();
+  } //recieveCommandPrompt
+
   @Override
   public void advanceTurn() {
     level.advanceTurn();
