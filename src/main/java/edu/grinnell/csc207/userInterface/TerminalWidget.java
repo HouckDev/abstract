@@ -65,9 +65,10 @@ public class TerminalWidget extends Widget {
       public void actionPerformed(final ActionEvent e) {
         consoleLog.add(new TerminalLabel("> " + commandField.getText()));
         JScrollBar vertical = scrollPane.getVerticalScrollBar();
+        consoleLog.add(new TerminalLabel("> " + getUserInterface().getOwningApp().getCurrentGame().parseCommand(commandField.getText())));
         validate();
         vertical.setValue(vertical.getMaximum());
-        getUserInterface().getOwningApp().getCurrentGame().parseCommand(commandField.getText());
+        
         commandField.setText("");
       }
     });
