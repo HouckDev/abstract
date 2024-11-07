@@ -84,11 +84,13 @@ public class Room implements TurnInterface, CommandInterface {
   @Override
   public String parseCommand(String command) {
     if (command.isBlank()) {
-      for (Actor actor : this.contents) {
+      App.runningApp.getUserInterface().getTerminal().addConsoleOutput("ROOM CONTENTS:");
+      for (int i = 0; i < this.contents.size(); i++) {
+        Actor actor = this.contents.get(i);
         if (Math.random() > 0.8) {
-          App.runningApp.getUserInterface().getTerminal().addConsoleOutput("SYS$ERROR");
+          App.runningApp.getUserInterface().getTerminal().addConsoleOutput(i + ":" + "SYS$ERROR");
         } else {
-          App.runningApp.getUserInterface().getTerminal().addConsoleOutput(actor.getDisplayText());
+          App.runningApp.getUserInterface().getTerminal().addConsoleOutput(i + ":" + actor.getDisplayText());
         } // if else
       } // for
       return "";
