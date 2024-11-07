@@ -124,7 +124,7 @@ public class MapWidget extends Widget {
     } // for
 
     getContentPane().add(mainList);
-    setSize(300,300);
+    setSize(400,600);
     setVisible(true);
     setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
   } // MapWidget

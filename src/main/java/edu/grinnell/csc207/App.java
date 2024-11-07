@@ -15,7 +15,7 @@ public class App {
     Game game;
 
     public Game getCurrentGame() {
-        return game;
+        return this.game;
     } // getCurrentGame
 
     // Launch the app
@@ -28,6 +28,6 @@ public class App {
         
         this.game = new Game();
         this.userInterface = new UserInterface(this);
-        this.game = null;
+        //this.game = null;
     } // App
 } // App
