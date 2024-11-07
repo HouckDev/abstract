@@ -37,22 +37,42 @@ public class Monster extends Actor {
       // STUB
     } // if
     int movesCounter = 0;
-    while ((getOwningLevel().getLevelRooms().get(getPosition()[0] + directions[direction][0],
-        getPosition()[1] + directions[direction][1]) == null) || (movesCounter == AGGRESSION_COUNTER)) {
+
+    boolean isNotValid = true;
+
+    while (isNotValid || (movesCounter == AGGRESSION_COUNTER)) {
       direction = (int) (Math.random() * directions.length);
       movesCounter += 1;
+
+      Room currentDesiredRoom = getOwningLevel().getLevelRooms().get(
+          getPosition()[0] + directions[direction][0], getPosition()[1] + directions[direction][1]);
+
+      isNotValid = (currentDesiredRoom == null);
+
+      if (!isNotValid) {
+        for (Actor actor : currentDesiredRoom.getContents()) {
+          if (actor instanceof Door) {
+            if (((Door) actor).isClosed())
+            isNotValid = true;
+          } // if
+        } // for
+      } // if
     } // while
-    (getOwningLevel().getLevelRooms().get(getPosition()[0] + directions[direction][0],
-        getPosition()[1] + directions[direction][1])).addActor(this);
+
+    if (!(movesCounter == AGGRESSION_COUNTER)) {
+      (getOwningLevel().getLevelRooms().get(getPosition()[0] + directions[direction][0],
+          getPosition()[1] + directions[direction][1])).addActor(this);
+          System.out.println("DEBUG: Monster moved to " + getCurrentRoom().getRoomID());
+    } // if
   } // advanceTurn
 
   // static void arrayShuffle(int[][] array) {
-  //   Random randomizer = new Random();
-  //   for (int i = array.length - 1; i > 0; i--) {
-  //     int index = randomizer.nextInt(i + 1);
-  //     int[] tmp = array[index];
-  //     array[index] = array[i];
-  //     array[i] = tmp;
-  //   }
+  // Random randomizer = new Random();
+  // for (int i = array.length - 1; i > 0; i--) {
+  // int index = randomizer.nextInt(i + 1);
+  // int[] tmp = array[index];
+  // array[index] = array[i];
+  // array[i] = tmp;
+  // }
   // } // arrayShuffle
 } // Monster
