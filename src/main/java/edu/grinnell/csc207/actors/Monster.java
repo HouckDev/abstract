@@ -29,7 +29,7 @@ public class Monster extends Actor {
     int direction = (int) (Math.random() * directions.length);
     if (getCurrentRoom() instanceof OfficeRoom) {
       // STUB
-    }
+    } // if 
     while (getOwningLevel().getLevelRooms().get(getPosition()[0] + directions[direction][0],
         getPosition()[1] + directions[direction][1]) == null) {
       direction = (int) (Math.random() * directions.length);

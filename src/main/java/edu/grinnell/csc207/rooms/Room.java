@@ -19,7 +19,7 @@ public class Room implements TurnInterface, CommandInterface {
   String roomID = String.valueOf((int) (Math.random()*10)) + String.valueOf((int) (Math.random()*10)) + String.valueOf((int) (Math.random()*10));
   public String getRoomID() {
     return roomID;
-  }
+  } // Room class
 
   /**
    * @return the contents of this room
@@ -85,12 +85,12 @@ public class Room implements TurnInterface, CommandInterface {
     String[] commandList = command.split(" ",2);
     if (commandList[0].equals("Motion")) {
       return "Motion Sensor Added To Room " + this.getRoomID();
-    }
+    } // if
     int value = Integer.parseInt(commandList[0]);
     if (value > 0 && value < getContents().size()) {
       return getContents().get(value).parseCommand(commandList[1]);
-    }
+    } // if
     return "ERROR";
-  }
+  } // parseCommand
 
 } // Room

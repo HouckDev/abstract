@@ -8,7 +8,7 @@ import edu.grinnell.csc207.userInterface.TerminalLabel;
 public class Hallway extends Room {
   public Hallway(Level newLevel) {
     super(newLevel);
-  }
+  } // Hallway
   @Override
   public JComponent constructMapWidget() {
     Box roomWidget = Box.createVerticalBox();

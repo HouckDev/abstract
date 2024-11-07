@@ -10,7 +10,7 @@ public class OfficeRoom extends Room {
   public OfficeRoom(Level newLevel) {
     super(newLevel);
     addActor(new Player(newLevel));
-  }
+  } // OfficeRoom
   @Override
   public JComponent constructMapWidget() {
     Box roomWidget = Box.createVerticalBox();

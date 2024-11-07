@@ -32,7 +32,7 @@ public class Actor implements TurnInterface, CommandInterface {
    */
   public void setCurrentRoom(Room currentRoom) {
     this.currentRoom = currentRoom;
-  }
+  } // setCurrentRoom
 
   /**
    * @return the owning level
@@ -46,11 +46,11 @@ public class Actor implements TurnInterface, CommandInterface {
       for (int x = 0; x < getOwningLevel().getLevelRooms().height(); x++) {
         if (getOwningLevel().getLevelRooms().get(y, x) == getCurrentRoom()) {
           return new int[]{x,y};
-        }
-      }
-    }
+        } // if
+      } // for
+    } // for
     return null;
-  }
+  } // getPosition
 
   /**
    * Constructs a new actor within a level.
@@ -67,5 +67,5 @@ public class Actor implements TurnInterface, CommandInterface {
   @Override
   public String parseCommand(String command) {
     return "ERROR: Command Not Valid";
-  }
+  } // parseCommand
 } // Actor

@@ -7,7 +7,7 @@ public class Player extends Actor{
   // create a new Player
   public Player(Level newLevel) {
     super(newLevel);
-  }
-}
+  } // player
+} // Player
 
 

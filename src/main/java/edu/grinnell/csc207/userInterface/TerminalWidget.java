@@ -46,7 +46,7 @@ public class TerminalWidget extends Widget {
     Box consoleLog = Box.createVerticalBox();
     for (int i = 0; i < 9; i++) {
       consoleLog.add(new TerminalLabel(""));
-    }
+    } // for
     consoleLog.add(new TerminalLabel("USER LOGGED IN"));
     consoleLog.setBackground(DefaultStyle.getBackgroundColor());
     JScrollPane scrollPane = new JScrollPane(consoleLog);
@@ -70,11 +70,11 @@ public class TerminalWidget extends Widget {
         vertical.setValue(vertical.getMaximum());
         
         commandField.setText("");
-      }
+      } // actionPerformed
     });
 
     setSize(300, 300);
     setVisible(true);
     setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-  }
-}
+  } // TerminalWidget
+} // TerminalWidget
