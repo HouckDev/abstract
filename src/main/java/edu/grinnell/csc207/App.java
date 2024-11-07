@@ -11,14 +11,14 @@ public class App {
     // Launch the app
     public static void main(String[] args) {
         App app = new App();
-    }// main
+    } // main
 
     // The object representing the game
     Game game;
 
     public Game getCurrentGame() {
         return game;
-    }
+    } // getCurrentGame
 
     // The object representing the user interface
     UserInterface userInterface; 
