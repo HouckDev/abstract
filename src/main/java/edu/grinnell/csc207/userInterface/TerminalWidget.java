@@ -49,11 +49,12 @@ public class TerminalWidget extends Widget {
     horizontalBox.add(confirmButton);
     // construct console log
     consoleLog = Box.createVerticalBox();
+    consoleLog = Box.createVerticalBox();
     for (int i = 0; i < 9; i++) {
       consoleLog.add(new TerminalLabel(""));
     }
-    consoleLog.add(new TerminalLabel("USER LOGGED IN"));
     consoleLog.setBackground(DefaultStyle.getBackgroundColor());
+    scrollPane = new JScrollPane(consoleLog);
     scrollPane = new JScrollPane(consoleLog);
     // construct main ui
     Box mainBox = Box.createVerticalBox();
@@ -82,5 +83,14 @@ public class TerminalWidget extends Widget {
     setSize(300, 300);
     setVisible(true);
     setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    
+    addConsoleOutput("USER LOGGED IN");
+  }
+
+  public void addConsoleOutput(String s) {
+    JScrollBar vertical = scrollPane.getVerticalScrollBar();
+    consoleLog.add(new TerminalLabel(s));
+    validate();
+    vertical.setValue(vertical.getMaximum());
   }
 }
