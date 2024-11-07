@@ -47,7 +47,7 @@ public class Door extends Actor {
   public String parseCommand(String command) {
     if (command.equals("CLOSE")) {
       this.isClosed = true;
-      this.timer = (int) (Math.random()) * 2 + 2;
+      this.timer = (int) (Math.random()) * 2 + 4;
       return "DOOR CLOSED";
     } else {
       return super.parseCommand(command);

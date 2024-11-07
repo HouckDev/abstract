@@ -100,14 +100,18 @@ public class Room implements TurnInterface, CommandInterface {
       return "";
     }
     String[] commandList = command.split(" ",2);
-    if (commandList[0].equals("Motion")) {
+    if (commandList[0].equals("MOTION")) {
       return "Motion Sensor Added To Room " + this.getRoomID();
     } // if
-    int value = Integer.parseInt(commandList[0]);
-    if (value > 0 && value < getContents().size()) {
-      return getContents().get(value).parseCommand(commandList[1]);
-    } // if
-    return "ERROR";
+    try {
+      int value = Integer.parseInt(commandList[0]);
+      if (value >= 0 && value < getContents().size()) {
+        return getContents().get(value).parseCommand(commandList[1]);
+      } // if
+      
+    } catch (Exception e) {
+    }
+    return "ERROR: INVALID OBJECT";
   } // parseCommand
 
 } // Room

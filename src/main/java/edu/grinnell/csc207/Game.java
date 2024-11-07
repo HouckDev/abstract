@@ -96,7 +96,7 @@ public class Game implements TurnInterface, CommandInterface {
         } // if
       } // if
     } // for
-    return "ERROR";
+    return "ERROR: INVALID ROOM";
   } // recieveCommandPrompt
 
   @Override

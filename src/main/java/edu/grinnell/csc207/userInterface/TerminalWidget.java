@@ -70,7 +70,7 @@ public class TerminalWidget extends Widget {
       @Override
       public void actionPerformed(final ActionEvent e) {
         addConsoleOutput("> " + commandField.getText());
-        getUserInterface().getOwningApp().getCurrentGame().parseCommand(commandField.getText());
+        addConsoleOutput(getUserInterface().getOwningApp().getCurrentGame().parseCommand(commandField.getText()));
         getUserInterface().getOwningApp().getCurrentGame().setPlayerActions(getUserInterface().getOwningApp().getCurrentGame().getPlayerActions() - 1);
         App.runningApp.getUserInterface().getTerminal()
             .addConsoleOutput("ACTIONS LEFT: " + getUserInterface().getOwningApp().getCurrentGame().getPlayerActions());
