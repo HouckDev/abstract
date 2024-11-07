@@ -22,85 +22,87 @@ public class MapWidget extends Widget {
 
     getContentPane().setForeground(new Color(64, 255, 128));
     getContentPane().setBackground(new Color(8, 32, 16));
-    // row 1
-    Box room1 = Box.createVerticalBox();
+    // // row 1
+    // Box room1 = Box.createVerticalBox();
 
-    room1.add(new TerminalLabel("+---+"));
-    room1.add(new TerminalLabel("|   |"));
-    room1.add(new TerminalLabel("+---+"));
+    // room1.add(new TerminalLabel("+---+"));
+    // room1.add(new TerminalLabel("|   |"));
+    // room1.add(new TerminalLabel("+---+"));
     
-    Box hall1 = Box.createVerticalBox();
+    // Box hall1 = Box.createVerticalBox();
 
-    hall1.add(new TerminalLabel("     "));
-    hall1.add(new TerminalLabel("-[ ]-"));
-    hall1.add(new TerminalLabel("     "));
+    // hall1.add(new TerminalLabel("     "));
+    // hall1.add(new TerminalLabel("-[ ]-"));
+    // hall1.add(new TerminalLabel("     "));
 
-    Box room2 = Box.createVerticalBox();
+    // Box room2 = Box.createVerticalBox();
 
-    room2.add(new TerminalLabel("+---+"));
-    room2.add(new TerminalLabel("|   |"));
-    room2.add(new TerminalLabel("+---+"));
+    // room2.add(new TerminalLabel("+---+"));
+    // room2.add(new TerminalLabel("|   |"));
+    // room2.add(new TerminalLabel("+---+"));
 
-    Box row1 = Box.createHorizontalBox();
-    row1.add(room1);
-    row1.add(hall1);
-    row1.add(room2);
+    // Box row1 = Box.createHorizontalBox();
+    // row1.add(room1);
+    // row1.add(hall1);
+    // row1.add(room2);
     
-    // row 2
-    Box hall2 = Box.createVerticalBox();
+    // // row 2
+    // Box hall2 = Box.createVerticalBox();
 
-    hall2.add(new TerminalLabel("  |  "));
-    hall2.add(new TerminalLabel(" [ ] "));
-    hall2.add(new TerminalLabel("  |  "));
+    // hall2.add(new TerminalLabel("  |  "));
+    // hall2.add(new TerminalLabel(" [ ] "));
+    // hall2.add(new TerminalLabel("  |  "));
     
-    Box empty1 = Box.createVerticalBox();
+    // Box empty1 = Box.createVerticalBox();
 
-    empty1.add(new TerminalLabel("     "));
-    empty1.add(new TerminalLabel("     "));
-    empty1.add(new TerminalLabel("     "));
+    // empty1.add(new TerminalLabel("     "));
+    // empty1.add(new TerminalLabel("     "));
+    // empty1.add(new TerminalLabel("     "));
 
-    Box empty2 = Box.createVerticalBox();
+    // Box empty2 = Box.createVerticalBox();
 
-    empty2.add(new TerminalLabel("     "));
-    empty2.add(new TerminalLabel("     "));
-    empty2.add(new TerminalLabel("     "));
+    // empty2.add(new TerminalLabel("     "));
+    // empty2.add(new TerminalLabel("     "));
+    // empty2.add(new TerminalLabel("     "));
 
-    Box row2 = Box.createHorizontalBox();
-    row2.add(hall2);
-    row2.add(empty1);
-    row2.add(empty2);
+    // Box row2 = Box.createHorizontalBox();
+    // row2.add(hall2);
+    // row2.add(empty1);
+    // row2.add(empty2);
 
-    // row 3
-    Box room3 = Box.createVerticalBox();
+    // // row 3
+    // Box room3 = Box.createVerticalBox();
 
-    room3.add(new TerminalLabel("+---+"));
-    room3.add(new TerminalLabel("|   |"));
-    room3.add(new TerminalLabel("+---+"));
+    // room3.add(new TerminalLabel("+---+"));
+    // room3.add(new TerminalLabel("|   |"));
+    // room3.add(new TerminalLabel("+---+"));
     
-    Box hall3 = Box.createVerticalBox();
+    // Box hall3 = Box.createVerticalBox();
 
-    hall3.add(new TerminalLabel("     "));
-    hall3.add(new TerminalLabel("-[ ]-"));
-    hall3.add(new TerminalLabel("     "));
+    // hall3.add(new TerminalLabel("     "));
+    // hall3.add(new TerminalLabel("-[ ]-"));
+    // hall3.add(new TerminalLabel("     "));
 
-    Box room4 = Box.createVerticalBox();
+    // Box room4 = Box.createVerticalBox();
 
-    room4.add(new TerminalLabel("+---+"));
-    room4.add(new TerminalLabel("|   |"));
-    room4.add(new TerminalLabel("+---+"));
+    // room4.add(new TerminalLabel("+---+"));
+    // room4.add(new TerminalLabel("|   |"));
+    // room4.add(new TerminalLabel("+---+"));
 
-    Box row3 = Box.createHorizontalBox();
-    row3.add(room3);
-    row3.add(hall3);
-    row3.add(room4);
+    // Box row3 = Box.createHorizontalBox();
+    // row3.add(room3);
+    // row3.add(hall3);
+    // row3.add(room4);
 
-    //setLayout(new BorderLayout()); 
+    // //setLayout(new BorderLayout()); 
+    // Box mainList = Box.createVerticalBox();
+    // mainList.add(row1);
+    // mainList.add(row2);
+    // mainList.add(row3);
+    // getContentPane().add(mainList);
     Box mainList = Box.createVerticalBox();
-    mainList.add(row1);
-    mainList.add(row2);
-    mainList.add(row3);
+    mainList.add(this.userInterface.owningApp.getCurrentGame().getCurrentLevel().getLevelRooms().get(0, 0).constructMapWidget());
     getContentPane().add(mainList);
-
     setSize(300,300);
     setVisible(true);
     setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

@@ -13,6 +13,10 @@ public class Level implements TurnInterface {
    */
   Matrix<Room> level;
 
+  public Matrix<Room> getLevelRooms() {
+    return level;
+  } // getLevelRooms
+
 
   /**
    * Generate a new level given the default parameters

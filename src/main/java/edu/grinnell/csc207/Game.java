@@ -13,6 +13,10 @@ public class Game implements TurnInterface {
   // The object represeting the game level
   Level level;
 
+  public Level getCurrentLevel() {
+    return level;
+  }
+
   /**
    * Start a new game with default parameters
    */
