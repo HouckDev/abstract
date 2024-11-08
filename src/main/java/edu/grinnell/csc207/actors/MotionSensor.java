@@ -37,7 +37,7 @@ public class MotionSensor extends Actor {
     double height = screenSize.getHeight();
 
     if (previousCount == getCurrentRoom().getContents().size()) {
-      AlertPopupWidget testPopup = new AlertPopupWidget(App.runningApp.getUserInterface());
+      AlertPopupWidget testPopup = new AlertPopupWidget(App.runningApp.getUserInterface(),"Motion In Room " + getCurrentRoom().getRoomID());
       testPopup.setLocation(((int) width / 2) - (testPopup.getWidth() / 2),
           ((int) height / 2) - (testPopup.getHeight() / 2));
     } // if statement
