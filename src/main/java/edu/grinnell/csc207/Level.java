@@ -10,10 +10,6 @@ import edu.grinnell.csc207.matrix.MatrixV0;
  * Level Holds a matrix of all the rooms in the game, also contains other enviormental info.
  */
 public class Level implements TurnInterface {
-  /**
-   * The default room count.
-   */
-  private static final int ROOM_COUNT = 32;
 
   /**
    * Matrix of room layouts.
@@ -39,9 +35,9 @@ public class Level implements TurnInterface {
   /**
    * Generates the level
    */
-  public void generate() {
+  public void generate(int ROOM_COUNT, int SIZE) {
     // Initialize the room matrix
-    this.level = new MatrixV0<Room>(9, 9);
+    this.level = new MatrixV0<Room>(SIZE, SIZE);
     // Generate the rooms
     int rootX = (int) (Math.random() * (this.level.width() / 2)) * 2;
     int rootY = (int) (Math.random() * (this.level.height() / 2)) * 2;

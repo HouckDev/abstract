@@ -16,8 +16,11 @@ import edu.grinnell.csc207.userInterface.MapWidget;
  * input game ends if the monster enters the same room as the player
  */
 public class Game implements TurnInterface, CommandInterface {
-  int playerActions = 3;
+  int playerActions = 5;
   private String gameState = "CONFIG";
+  private int CONFIG_MONSTER_AGGRESSION = 8;
+  private int CONFIG_LEVEL_SIZE = 9;
+  private int CONFIG_LEVEL_ROOMS = 32;
 
   public void setPlayerActions(int playerActions) {
     this.playerActions = playerActions;
@@ -61,7 +64,7 @@ public class Game implements TurnInterface, CommandInterface {
    */
   public void beginGame() {
     // generate the level
-    level.generate();
+    level.generate(CONFIG_LEVEL_ROOMS, CONFIG_LEVEL_SIZE);
     App.runningApp.getUserInterface().getTerminal()
         .addConsoleOutput("ACTIONS LEFT: " + playerActions);
 
@@ -93,7 +96,7 @@ public class Game implements TurnInterface, CommandInterface {
     } // for
 
     tempRooms.get((int) (Math.random() * tempRooms.size()))
-        .addActor(new Monster(this.getCurrentLevel()));
+        .addActor(new Monster(this.getCurrentLevel(), this.CONFIG_MONSTER_AGGRESSION));
 
     // Add the map widget
     // Get screen dimensions
@@ -111,17 +114,67 @@ public class Game implements TurnInterface, CommandInterface {
    * @param command
    */
   public String parseCommand(String command) {
-    String[] commandList = command.split(" ", 2);
+    String[] commandList = command.split(" ", 3);
     switch (getGameState()) {
       case "CONFIG":
         switch (commandList[0]) {
           case "START":
             gameState = "PLAY";
             beginGame();
-            return "STARTING GAME";
+            App.runningApp.getUserInterface().getTerminal().addConsoleOutput("YOU ARE THE '@");
+            App.runningApp.getUserInterface().getTerminal().addConsoleOutput("YOUR OFFICE IS SAFE");
+            App.runningApp.getUserInterface().getTerminal()
+                .addConsoleOutput("SURVIVE FOR AS LONG AS POSSIBLE");
+            return "";
+          case "CONFIG":
+            switch (commandList[1]) {
+              case "M_AGGRESSION":
+                int value = 8;
+                try {
+                  value = Integer.valueOf(commandList[2]);
+                  CONFIG_MONSTER_AGGRESSION = value;
+                  return "SET MONSTER AGGRESSION TO " + CONFIG_MONSTER_AGGRESSION;
+
+                } catch (Exception e) {
+                  return "SETTING MUST BE AN INT";
+                }
+              case "L_SIZE":
+                int value2 = 9;
+                try {
+                  value2 = Integer.valueOf(commandList[2]);
+                  if (value2 % 2 == 0 && value2 > 3) {
+                    throw new Exception();
+                  }
+                  CONFIG_LEVEL_SIZE = value2;
+                  return "SET LEVEL SIZE TO " + CONFIG_LEVEL_SIZE;
+
+                } catch (Exception e) {
+                  return "SETTING MUST BE AN ODD INT > 3";
+                }
+              case "L_ROOMS":
+                int value3 = 32;
+                try {
+                  value3 = Integer.valueOf(commandList[2]);
+                  CONFIG_LEVEL_ROOMS = value3;
+                  return "SET LEVEL ROOMS TO " + CONFIG_LEVEL_ROOMS;
+
+                } catch (Exception e) {
+                  return "SETTING MUST BE AN ODD INT";
+                }
+              default:
+                return "INVALID CONFIG SETTING";
+            }
           case "HELP":
             App.runningApp.getUserInterface().getTerminal()
                 .addConsoleOutput("START - Start the game");
+            App.runningApp.getUserInterface().getTerminal()
+                .addConsoleOutput("CONFIG [SETTING] - Set a config option");
+            App.runningApp.getUserInterface().getTerminal().addConsoleOutput("- M_AGGRESSION - ["
+                + CONFIG_MONSTER_AGGRESSION + "] The aggression of the monster");
+            App.runningApp.getUserInterface().getTerminal().addConsoleOutput(
+                "- L_SIZE - [" + CONFIG_LEVEL_SIZE + "] The dimensions of the level");
+            App.runningApp.getUserInterface().getTerminal().addConsoleOutput(
+                "- L_ROOMS - [" + CONFIG_LEVEL_ROOMS + "] The potential max count of rooms");
             return "";
           default:
             break;
