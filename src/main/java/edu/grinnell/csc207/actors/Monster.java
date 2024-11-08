@@ -93,6 +93,7 @@ public class Monster extends Actor {
     if (getCurrentRoom() instanceof OfficeRoom) {
       App.runningApp.getUserInterface().getTerminal()
           .addConsoleOutput("YOUR OFFICE IS NO LONGER SAFE...");
+          moves = 0;
     } // if
   } // advanceTurn
 
