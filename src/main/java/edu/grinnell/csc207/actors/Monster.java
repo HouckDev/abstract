@@ -63,7 +63,10 @@ public class Monster extends Actor {
     while (isNotValid || (movesCounter == AGGRESSION_COUNTER)) {
       direction = (int) (Math.random() * directions.length);
       movesCounter += 1;
-
+      if (!(getPosition()[0] + directions[direction][0] > 0 && getPosition()[0] + directions[direction][0] < getOwningLevel().getLevelRooms().width() && 
+      getPosition()[1] + directions[direction][1] > 0 && getPosition()[1] + directions[direction][1] < getOwningLevel().getLevelRooms().height())) {
+        continue;
+      }
       Room currentDesiredRoom = getOwningLevel().getLevelRooms().get(
           getPosition()[0] + directions[direction][0], getPosition()[1] + directions[direction][1]);
 

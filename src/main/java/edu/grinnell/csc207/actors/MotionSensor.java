@@ -33,14 +33,14 @@ public class MotionSensor extends Actor {
   @Override
   public void advanceTurn() {
 
-    if (previousCount == getCurrentRoom().getContents().size()) {
+    if (previousCount != getCurrentRoom().getContents().size()) {
       Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
       double width = screenSize.getWidth();
       double height = screenSize.getHeight();
       AlertPopupWidget testPopup = new AlertPopupWidget(App.runningApp.getUserInterface(),"Motion In Room " + getCurrentRoom().getRoomID());
       testPopup.setLocation(((int) width / 2) - (testPopup.getWidth() / 2),
           ((int) height / 2) - (testPopup.getHeight() / 2));
+          previousCount = getCurrentRoom().getContents().size();
     } // if statement
-    previousCount = getCurrentRoom().getContents().size();
   } // advanceTurn
 } // MotionSensor
