@@ -23,6 +23,7 @@ public class TerminalWidget extends Widget {
 
   /**
    * Constructs a new terminal widget.
+   * 
    * @param owningUserInterface
    */
   public TerminalWidget(final UserInterface owningUserInterface) {
@@ -70,24 +71,36 @@ public class TerminalWidget extends Widget {
       @Override
       public void actionPerformed(final ActionEvent e) {
         addConsoleOutput("> " + commandField.getText());
-        addConsoleOutput(getUserInterface().getOwningApp().getCurrentGame().parseCommand(commandField.getText()));
-        getUserInterface().getOwningApp().getCurrentGame().setPlayerActions(getUserInterface().getOwningApp().getCurrentGame().getPlayerActions() - 1);
-        App.runningApp.getUserInterface().getTerminal()
-            .addConsoleOutput("ACTIONS LEFT: " + getUserInterface().getOwningApp().getCurrentGame().getPlayerActions());
-        
-        commandField.setText("");
-        if (App.runningApp.getCurrentGame().getPlayerActions() <= 0) {
-          App.runningApp.getCurrentGame().advanceTurn();
-    
+        addConsoleOutput(getUserInterface().getOwningApp().getCurrentGame()
+            .parseCommand(commandField.getText().toUpperCase()));
+        // this is scuffed, editing the turn state from UI, but it works
+        switch (getUserInterface().getOwningApp().getCurrentGame().getGameState()) {
+          case "PLAY":
+            getUserInterface().getOwningApp().getCurrentGame().setPlayerActions(
+                getUserInterface().getOwningApp().getCurrentGame().getPlayerActions() - 1);
+            App.runningApp.getUserInterface().getTerminal().addConsoleOutput("ACTIONS LEFT: "
+                + getUserInterface().getOwningApp().getCurrentGame().getPlayerActions());
+
+            commandField.setText("");
+            if (App.runningApp.getCurrentGame().getPlayerActions() <= 0) {
+              App.runningApp.getCurrentGame().advanceTurn();
+
+            }
+
+            break;
+
+          default:
+            break;
         }
       }
     });
 
-    setSize(300, 300);
+    setSize(400, 300);
     setVisible(true);
     setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-    
+
     addConsoleOutput("USER LOGGED IN");
+    addConsoleOutput("TYPE 'HELP' TO VIEW CMDS");
   }
 
   public void addConsoleOutput(String s) {
@@ -96,9 +109,9 @@ public class TerminalWidget extends Widget {
     validate();
     vertical.setValue(vertical.getMaximum());
   }
-  
 
-  public void addConsoleOutput(String s,Color c) {
+
+  public void addConsoleOutput(String s, Color c) {
     JScrollBar vertical = scrollPane.getVerticalScrollBar();
     TerminalLabel newLabel = new TerminalLabel(s);
     newLabel.setForeground(c);

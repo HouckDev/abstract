@@ -47,9 +47,6 @@ public class UserInterface {
     // AlertPopupWidget testPopup = new AlertPopupWidget(this,"Test");
     //  testPopup.setLocation(((int) width / 2) - (testPopup.getWidth() / 2),
     //     ((int) height / 2) - (testPopup.getHeight() / 2));
-    MapWidget mapWidget = new MapWidget(this);
-    mapWidget.setLocation(((int) width / (2 * 2)) - (mapWidget.getWidth() / 2),
-        ((int) height / 2) - (mapWidget.getHeight() / 2));
   } // UserInterface(App)
 } // UserInterface
 

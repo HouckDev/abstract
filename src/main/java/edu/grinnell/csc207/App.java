@@ -35,7 +35,6 @@ public class App {
     // Launch the app
     public static void main(String[] args) {
         App.runningApp = new App();
-        App.runningApp.getCurrentGame().beginGame();
     } // main
 
     // Initialize the app

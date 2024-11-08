@@ -1,10 +1,13 @@
 package edu.grinnell.csc207;
 
+import java.awt.Dimension;
+import java.awt.Toolkit;
 import java.util.ArrayList;
 import edu.grinnell.csc207.actors.Door;
 import edu.grinnell.csc207.actors.Monster;
 import edu.grinnell.csc207.rooms.OfficeRoom;
 import edu.grinnell.csc207.rooms.Room;
+import edu.grinnell.csc207.userInterface.MapWidget;
 
 /**
  * Game Holds and updates the game state, contains the parameters for difficulty, etc. Basic game
@@ -14,9 +17,20 @@ import edu.grinnell.csc207.rooms.Room;
  */
 public class Game implements TurnInterface, CommandInterface {
   int playerActions = 3;
+  private String gameState = "CONFIG";
 
   public void setPlayerActions(int playerActions) {
     this.playerActions = playerActions;
+  }
+
+  public String getGameState() {
+    return gameState;
+
+  }
+
+  public void setGameState(String gameState) {
+    this.gameState = gameState;
+
   }
 
   public int getPlayerActions() {
@@ -46,8 +60,12 @@ public class Game implements TurnInterface, CommandInterface {
    * Begins the game by allowing the player three moves and then spawns the monster.
    */
   public void beginGame() {
+    // generate the level
+    level.generate();
     App.runningApp.getUserInterface().getTerminal()
         .addConsoleOutput("ACTIONS LEFT: " + playerActions);
+
+    // Spawn the monster
     int tmpOfficeX = 0;
     int tmpOfficeY = 0;
     int distanceX = 0;
@@ -74,7 +92,17 @@ public class Game implements TurnInterface, CommandInterface {
       } // for
     } // for
 
-    tempRooms.get((int) (Math.random() * tempRooms.size())).addActor(new Monster(this.getCurrentLevel()));
+    tempRooms.get((int) (Math.random() * tempRooms.size()))
+        .addActor(new Monster(this.getCurrentLevel()));
+
+    // Add the map widget
+    // Get screen dimensions
+    Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+    double width = screenSize.getWidth();
+    double height = screenSize.getHeight();
+    MapWidget mapWidget = new MapWidget(App.runningApp.getUserInterface());
+    mapWidget.setLocation(((int) width / (2 * 2)) - (mapWidget.getWidth() / 2),
+        ((int) height / 2) - (mapWidget.getHeight() / 2));
   } // beginGame
 
   /**
@@ -84,19 +112,50 @@ public class Game implements TurnInterface, CommandInterface {
    */
   public String parseCommand(String command) {
     String[] commandList = command.split(" ", 2);
-    String nextCommand = "";
-    if (commandList.length > 1) {
-      nextCommand = commandList[1];
+    switch (getGameState()) {
+      case "CONFIG":
+        switch (commandList[0]) {
+          case "START":
+            gameState = "PLAY";
+            beginGame();
+            return "STARTING GAME";
+          case "HELP":
+            App.runningApp.getUserInterface().getTerminal()
+                .addConsoleOutput("START - Start the game");
+            return "";
+          default:
+            break;
+        }
+        return "INVALID COMMAND";
+      case "PLAY":
+        if (command.equals("HELP")) {
+          App.runningApp.getUserInterface().getTerminal()
+              .addConsoleOutput("[ROOM #] - Inspect a room, list the objects");
+          App.runningApp.getUserInterface().getTerminal()
+              .addConsoleOutput("[ROOM #] MOTION - Add a motion sensor to a room");
+          App.runningApp.getUserInterface().getTerminal()
+              .addConsoleOutput("[ROOM #] [Object #] - Inspect an object");
+          App.runningApp.getUserInterface().getTerminal()
+              .addConsoleOutput("[ROOM #] [Object #] CLOSE - Lock a door for a few turns");
+
+        }
+        String nextCommand = "";
+        if (commandList.length > 1) {
+          nextCommand = commandList[1];
+        }
+        for (int y = 0; y < getCurrentLevel().getLevelRooms().height(); y++) {
+          for (int x = 0; x < getCurrentLevel().getLevelRooms().height(); x++) {
+            if (getCurrentLevel().getLevelRooms().get(y, x) != null
+                && getCurrentLevel().getLevelRooms().get(y, x).getRoomID().equals(commandList[0])) {
+              return getCurrentLevel().getLevelRooms().get(y, x).parseCommand(nextCommand);
+            } // if
+          } // if
+        } // for
+        return "ERROR: INVALID ROOM";
+      default:
+        break;
     }
-    for (int y = 0; y < getCurrentLevel().getLevelRooms().height(); y++) {
-      for (int x = 0; x < getCurrentLevel().getLevelRooms().height(); x++) {
-        if (getCurrentLevel().getLevelRooms().get(y, x) != null
-            && getCurrentLevel().getLevelRooms().get(y, x).getRoomID().equals(commandList[0])) {
-          return getCurrentLevel().getLevelRooms().get(y, x).parseCommand(nextCommand);
-        } // if
-      } // if
-    } // for
-    return "ERROR: INVALID ROOM";
+    return "ERROR: INVALID GAME STATE";
   } // recieveCommandPrompt
 
   @Override

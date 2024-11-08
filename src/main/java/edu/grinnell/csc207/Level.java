@@ -32,6 +32,14 @@ public class Level implements TurnInterface {
    * Generate a new level given the default parameters.
    */
   public Level() {
+    
+
+  } // Level
+
+  /**
+   * Generates the level
+   */
+  public void generate() {
     // Initialize the room matrix
     this.level = new MatrixV0<Room>(9, 9);
     // Generate the rooms
@@ -59,9 +67,7 @@ public class Level implements TurnInterface {
     // Place the Player Office
     this.level.set(rootX,rootY,
         new OfficeRoom(this));
-
-  } // Level
-
+  } // generate
 
   @Override
   public void advanceTurn() {
