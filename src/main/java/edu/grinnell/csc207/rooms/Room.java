@@ -8,6 +8,7 @@ import edu.grinnell.csc207.CommandInterface;
 import edu.grinnell.csc207.Level;
 import edu.grinnell.csc207.TurnInterface;
 import edu.grinnell.csc207.actors.Actor;
+import edu.grinnell.csc207.actors.MotionSensor;
 import edu.grinnell.csc207.matrix.Matrix;
 import edu.grinnell.csc207.userInterface.DefaultStyle;
 import edu.grinnell.csc207.userInterface.TerminalLabel;
@@ -101,6 +102,7 @@ public class Room implements TurnInterface, CommandInterface {
     }
     String[] commandList = command.split(" ",2);
     if (commandList[0].equals("MOTION")) {
+      addActor(new MotionSensor(owningLevel));
       return "Motion Sensor Added To Room " + this.getRoomID();
     } // if
     try {

@@ -20,7 +20,7 @@ import edu.grinnell.csc207.userInterface.GameOverWidget;
 public class Monster extends Actor {
 
   private int AGGRESSION_COUNTER = 8;
-
+  private int moves = 1; // 'fix' for monster insta moving across the map bcz of level iterating
   // create a new monster
   public Monster(Level newLevel, int cfg_aggression) {
     super(newLevel);
@@ -44,6 +44,8 @@ public class Monster extends Actor {
    */
   @Override
   public void advanceTurn() {
+    if (moves <= 0) {moves = 3; return;}
+    moves--;
     int[][] directions = {{1, 0}, {0, 1}, {-1, 0}, {0, -1}};
     int direction = (int) (Math.random() * directions.length);
     if (getCurrentRoom() instanceof OfficeRoom) {
@@ -60,7 +62,7 @@ public class Monster extends Actor {
 
     boolean isNotValid = true;
 
-    while (isNotValid || (movesCounter == AGGRESSION_COUNTER)) {
+    while (isNotValid && (movesCounter < AGGRESSION_COUNTER)) {
       direction = (int) (Math.random() * directions.length);
       movesCounter += 1;
       if (!(getPosition()[0] + directions[direction][0] > 0 && getPosition()[0] + directions[direction][0] < getOwningLevel().getLevelRooms().width() && 
@@ -75,8 +77,9 @@ public class Monster extends Actor {
       if (!isNotValid) {
         for (Actor actor : currentDesiredRoom.getContents()) {
           if (actor instanceof Door) {
-            if (((Door) actor).isClosed())
+            if (((Door) actor).isClosed()) {
               isNotValid = true;
+            }
           } // if
         } // for
       } // if

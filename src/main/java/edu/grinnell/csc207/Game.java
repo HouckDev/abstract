@@ -19,8 +19,8 @@ public class Game implements TurnInterface, CommandInterface {
   int playerActions = 5;
   private String gameState = "CONFIG";
   private int CONFIG_MONSTER_AGGRESSION = 8;
-  private int CONFIG_LEVEL_SIZE = 9;
-  private int CONFIG_LEVEL_ROOMS = 32;
+  private int CONFIG_LEVEL_SIZE = 7;
+  private int CONFIG_LEVEL_ROOMS = 16;
 
   public void setPlayerActions(int playerActions) {
     this.playerActions = playerActions;
