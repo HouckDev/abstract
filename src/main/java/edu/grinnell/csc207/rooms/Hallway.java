@@ -3,7 +3,6 @@ package edu.grinnell.csc207.rooms;
 import javax.swing.Box;
 import javax.swing.JComponent;
 import edu.grinnell.csc207.Level;
-import edu.grinnell.csc207.actors.Player;
 import edu.grinnell.csc207.userInterface.TerminalLabel;
 import edu.grinnell.csc207.actors.Door;
 

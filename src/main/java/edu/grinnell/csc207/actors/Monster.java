@@ -97,13 +97,4 @@ public class Monster extends Actor {
     } // if
   } // advanceTurn
 
-  // static void arrayShuffle(int[][] array) {
-  // Random randomizer = new Random();
-  // for (int i = array.length - 1; i > 0; i--) {
-  // int index = randomizer.nextInt(i + 1);
-  // int[] tmp = array[index];
-  // array[index] = array[i];
-  // array[i] = tmp;
-  // }
-  // } // arrayShuffle
 } // Monster

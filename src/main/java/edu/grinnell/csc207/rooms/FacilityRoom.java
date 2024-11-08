@@ -1,15 +1,11 @@
 package edu.grinnell.csc207.rooms;
 
-import javax.swing.Box;
-import javax.swing.JComponent;
 import edu.grinnell.csc207.Level;
-import edu.grinnell.csc207.actors.Player;
 import edu.grinnell.csc207.actors.junk.AngryStudents;
 import edu.grinnell.csc207.actors.junk.Cabybara;
 import edu.grinnell.csc207.actors.junk.FilingCabinets;
 import edu.grinnell.csc207.actors.junk.Garbage;
 import edu.grinnell.csc207.actors.junk.TVStack;
-import edu.grinnell.csc207.userInterface.TerminalLabel;
 
 public class FacilityRoom extends Room {
   public FacilityRoom(Level newLevel) {
@@ -29,14 +25,14 @@ public class FacilityRoom extends Room {
           break;
         default:
           break;
-      }
-    }
+      } // switch
+    } // for loop
     if ((Math.random() * 10) == 7) {
       addActor(new Cabybara(newLevel));
-    }
+    } // if statement
     if ((Math.random() * 100) == 69) {
       addActor(new AngryStudents(newLevel));
-    }
+    } // if statement
   } // OfficeRoom
 
 } // OfficeRoom

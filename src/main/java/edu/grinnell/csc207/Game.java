@@ -3,17 +3,18 @@ package edu.grinnell.csc207;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 import java.util.ArrayList;
-import edu.grinnell.csc207.actors.Door;
 import edu.grinnell.csc207.actors.Monster;
 import edu.grinnell.csc207.rooms.OfficeRoom;
 import edu.grinnell.csc207.rooms.Room;
 import edu.grinnell.csc207.userInterface.MapWidget;
 
 /**
- * Game Holds and updates the game state, contains the parameters for difficulty, etc. Basic game
- * premise: player is stuck in a control room, a monster is hunting for them, they can use a console
- * to influence the level around them to keep it away player inputs actions every turn via a console
- * input game ends if the monster enters the same room as the player
+ * Game Holds and updates the game state, contains the parameters
+ * for difficulty, etc. Basic game premise: player is stuck in a
+ * control room, a monster is hunting for them, they can use a console
+ * to influence the level around them to keep it away player inputs
+ * actions every turn via a console input game ends if the monster
+ * enters the same room as the player.
  */
 public class Game implements TurnInterface, CommandInterface {
   int playerActions = 5;

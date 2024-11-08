@@ -1,6 +1,6 @@
-#Thu Nov 07 15:56:27 CST 2024
-configuration*?=99AF02871155ADE7CD97EF1D7483B1DD9A15E0E9
-C\:\\Users\\paden\\Desktop\\Classwork\\CSC207\\MiniProjects\\abstract\\src\\main\\java\\edu\\grinnell\\csc207\\userInterface\\Widget.java=1731005255463
-C\:\\Users\\paden\\Desktop\\Classwork\\CSC207\\MiniProjects\\abstract\\src\\main\\java\\edu\\grinnell\\csc207\\TurnInterface.java=1731005255455
-module-resource*?\:checkstyle-xpath-suppressions.xml=81095F7A64B1B15ED18264A3C4AEAAD6D33E8812
-module-resource*?\:checkstyle-suppressions.xml=149287F203F4D771958EF512976614913CD4BDDA
+#Fri Nov 08 16:50:44 CST 2024
+configuration*?=4D8ECDFCF81E1ABBA931CF71A8F100592153914C
+module-resource*?\:checkstyle-xpath-suppressions.xml=A70F3C6EA2250139DE1D65F5ADFE092E0002D552
+/Users/mitchpaiva/home/paivamit/csc207/mp6/abstract/src/main/java/edu/grinnell/csc207/userInterface/Widget.java=1731004412970
+module-resource*?\:checkstyle-suppressions.xml=2C4B2CC56BAD714C18F42A3A0DE30C90CAE1CB4
+/Users/mitchpaiva/home/paivamit/csc207/mp6/abstract/src/main/java/edu/grinnell/csc207/TurnInterface.java=1731004412968

@@ -9,7 +9,6 @@ import edu.grinnell.csc207.Level;
 import edu.grinnell.csc207.TurnInterface;
 import edu.grinnell.csc207.actors.Actor;
 import edu.grinnell.csc207.actors.MotionSensor;
-import edu.grinnell.csc207.matrix.Matrix;
 import edu.grinnell.csc207.userInterface.DefaultStyle;
 import edu.grinnell.csc207.userInterface.TerminalLabel;
 
