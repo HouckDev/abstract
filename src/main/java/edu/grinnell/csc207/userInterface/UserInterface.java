@@ -6,7 +6,7 @@ import edu.grinnell.csc207.App;
 
 /**
  * A custom label and user interface with retro console styling.
- * 
+ *
  * @author Paden Houck
  */
 public class UserInterface {
@@ -22,6 +22,9 @@ public class UserInterface {
     return terminal;
   } // getTerminal
 
+  /**
+   * The owning app.
+   */
   private App owningApp;
 
   /**
@@ -33,18 +36,15 @@ public class UserInterface {
 
   /**
    * Constructs a new UserInterface.
-   * 
+   *
    * @param newOwningApp
    */
   public UserInterface(final App newOwningApp) {
     this.owningApp = newOwningApp;
 
-    // Get screen dimensions
     Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
     double width = screenSize.getWidth();
     double height = screenSize.getHeight();
-
-    // Add initial widgets
 
     terminal = new TerminalWidget(this);
     terminal.setLocation(((int) width / 2) - (terminal.getWidth() / 2),

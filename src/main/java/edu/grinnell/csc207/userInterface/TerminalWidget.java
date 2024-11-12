@@ -13,7 +13,7 @@ import edu.grinnell.csc207.App;
 
 /**
  * A custom label with retro console styling.
- * 
+ *
  * @author Paden Houck
  */
 public class TerminalWidget extends Widget {
@@ -22,13 +22,19 @@ public class TerminalWidget extends Widget {
    */
   private final int commandPromptLength = 20;
 
+  /**
+   * The console log.
+   */
   Box consoleLog;
 
+  /**
+   * The scroll pane.
+   */
   JScrollPane scrollPane;
 
   /**
    * Constructs a new terminal widget.
-   * 
+   *
    * @param owningUserInterface
    */
   public TerminalWidget(final UserInterface owningUserInterface) {
@@ -108,6 +114,11 @@ public class TerminalWidget extends Widget {
     addConsoleOutput("TYPE 'HELP' TO VIEW CMDS");
   } // terminalWidget
 
+  /**
+   * Function to add console output.
+   *
+   * @param s a string.
+   */
   public void addConsoleOutput(String s) {
     JScrollBar vertical = scrollPane.getVerticalScrollBar();
     consoleLog.add(new TerminalLabel(s));
@@ -115,7 +126,12 @@ public class TerminalWidget extends Widget {
     vertical.setValue(vertical.getMaximum());
   } // addConsoleOutput
 
-
+  /**
+   * Function to add console output.
+   *
+   * @param s string.
+   * @param c color.
+   */
   public void addConsoleOutput(String s, Color c) {
     JScrollBar vertical = scrollPane.getVerticalScrollBar();
     TerminalLabel newLabel = new TerminalLabel(s);
@@ -124,4 +140,4 @@ public class TerminalWidget extends Widget {
     validate();
     vertical.setValue(vertical.getMaximum());
   } // addConsoleOutput
-}
+} // terminalWidget

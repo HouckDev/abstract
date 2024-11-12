@@ -5,7 +5,7 @@ import java.awt.Label;
 
 /**
  * A custom label with retro console styling.
- * 
+ *
  * @author Paden Houck
  */
 public class TerminalLabel extends Label {

@@ -8,7 +8,7 @@ import javax.swing.Box;
 
 /**
  * The pop up widget that appears when there is an alert.
- * 
+ *
  * @author Mitch Paiva and Paden Houck
  */
 public class AlertPopupWidget extends Widget {

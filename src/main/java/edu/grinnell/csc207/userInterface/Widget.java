@@ -20,10 +20,10 @@ public class Widget extends JFrame {
 
   /**
    * Construct a widget with a parent UI.
-   * 
+   *
    * @param owningUserInterface
    */
   public Widget(final UserInterface owningUserInterface) {
     this.userInterface = owningUserInterface;
-  }
-}
+  } // widget
+} // widget

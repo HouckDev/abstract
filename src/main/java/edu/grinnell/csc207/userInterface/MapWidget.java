@@ -7,13 +7,13 @@ import edu.grinnell.csc207.rooms.Room;
 
 /**
  * Class for the map.
- * 
+ *
  * @author Mitch Paiva and Paden Houck
  */
 public class MapWidget extends Widget {
   /**
    * Constructs a new MapWidget.
-   * 
+   *
    * @param owningUserInterface
    */
   public MapWidget(final UserInterface owningUserInterface) {

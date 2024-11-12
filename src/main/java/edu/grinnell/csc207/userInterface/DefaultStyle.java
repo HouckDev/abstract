@@ -4,7 +4,7 @@ import java.awt.Color;
 
 /**
  * Default style.
- * 
+ *
  * @author Mitch Paiva and Paden Houck
  */
 public class DefaultStyle {

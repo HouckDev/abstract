@@ -8,20 +8,29 @@ import java.awt.Toolkit;
 
 /**
  * MotionSensor Represents a motion sensor actor If an actor moves through here during a turn,
- * prompt the UI with a warning
- * 
+ * prompt the UI with a warning.
+ *
  * @author Mitch Paiva and Paden Houck
  */
 public class MotionSensor extends Actor {
-  // keeps track of the previous amount of items in each room
+  /**
+   * Keeps track of the previous count.
+   */
   int previousCount = 0;
 
 
-  // create a new motionsensor
+  /**
+   * Create a new motion sensor.
+   *
+   * @param newLevel a new level.
+   */
   public MotionSensor(Level newLevel) {
     super(newLevel);
   } // MotionSensor
 
+  /**
+   * Get display text.
+   */
   @Override
   public void getDisplayText() {
     App.runningApp.getUserInterface().getTerminal().addConsoleOutput("SENSOR");
@@ -29,7 +38,7 @@ public class MotionSensor extends Actor {
 
   /**
    * If a motion sensor is triggered, send an alert to the user.
-   * 
+   *
    */
   @Override
   public void advanceTurn() {

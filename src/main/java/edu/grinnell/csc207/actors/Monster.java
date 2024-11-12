@@ -11,41 +11,59 @@ import edu.grinnell.csc207.userInterface.GameOverWidget;
 
 /**
  * Monster Represents a monster actor Can be prevented by doors and detected by motion sensors.
- * 
+ *
  * @author Mitch Paiva and Paden Houck
  */
 public class Monster extends Actor {
+  /**
+   * The agression counter.
+   */
+  private int aggressionCounter = 8;
 
-  private int AGGRESSION_COUNTER = 8;
+  /**
+   * The moves counter.
+   */
   private int moves = 1; // 'fix' for monster insta moving across the map bcz of level iterating
-  // create a new monster
 
-  public Monster(Level newLevel, int cfg_aggression) {
+  /**
+   * Creates a new conster.
+   *
+   * @param newLevel
+   * @param cfgAggression
+   */
+  public Monster(Level newLevel, int cfgAggression) {
     super(newLevel);
-    AGGRESSION_COUNTER = cfg_aggression;
+    aggressionCounter = cfgAggression;
   } // monster
 
-  // create a new monster
+  /**
+   * Creates a new monster.
+   *
+   * @param newLevel
+   */
   public Monster(Level newLevel) {
     super(newLevel);
   } // monster
 
+  /**
+   * Get display text.
+   */
   @Override
   public void getDisplayText() {
     App.runningApp.getUserInterface().getTerminal().addConsoleOutput("SYS$ERROR",
         DefaultStyle.getErrorTextColor());
-  }
+  } // getDisplayText
 
   /**
    * Advance the monster's movement to a valid room without a closed door.
-   * 
+   *
    */
   @Override
   public void advanceTurn() {
     if (moves <= 0) {
       moves = 3;
       return;
-    }
+    } // if
     moves--;
     int[][] directions = {{1, 0}, {0, 1}, {-1, 0}, {0, -1}};
     int direction = (int) (Math.random() * directions.length);
@@ -63,7 +81,7 @@ public class Monster extends Actor {
 
     boolean isNotValid = true;
 
-    while (isNotValid && (movesCounter < AGGRESSION_COUNTER)) {
+    while (isNotValid && (movesCounter < aggressionCounter)) {
       direction = (int) (Math.random() * directions.length);
       movesCounter += 1;
       if (!(getPosition()[0] + directions[direction][0] > 0
@@ -71,7 +89,7 @@ public class Monster extends Actor {
           && getPosition()[1] + directions[direction][1] > 0 && getPosition()[1]
               + directions[direction][1] < getOwningLevel().getLevelRooms().height())) {
         continue;
-      }
+      } // if
       Room currentDesiredRoom = getOwningLevel().getLevelRooms().get(
           getPosition()[0] + directions[direction][0], getPosition()[1] + directions[direction][1]);
 
@@ -82,16 +100,16 @@ public class Monster extends Actor {
           if (actor instanceof Door) {
             if (((Door) actor).isClosed()) {
               isNotValid = true;
-            }
+            } // if
           } // if
         } // for
       } // if
     } // while
 
-    if (!(movesCounter == AGGRESSION_COUNTER)) {
+    if (!(movesCounter == aggressionCounter)) {
       (getOwningLevel().getLevelRooms().get(getPosition()[0] + directions[direction][0],
           getPosition()[1] + directions[direction][1])).addActor(this);
-      System.out.println("DEBUG: Monster moved to " + getCurrentRoom().getRoomID());
+      // System.out.println("DEBUG: Monster moved to " + getCurrentRoom().getRoomID());
     } // if
     if (getCurrentRoom() instanceof OfficeRoom) {
       App.runningApp.getUserInterface().getTerminal()

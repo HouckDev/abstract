@@ -7,7 +7,7 @@ import edu.grinnell.csc207.rooms.Room;
 
 /**
  * Actor Base class for an 'actor', an object that has a tangible prescense in the game level.
- * 
+ *
  * @author Mitch Paiva and Paden Houck
  */
 public class Actor implements TurnInterface, CommandInterface {
@@ -17,24 +17,28 @@ public class Actor implements TurnInterface, CommandInterface {
    */
   private Level owningLevel;
   /**
-   * The room that this actor is in
+   * The room that this actor is in.
    */
   private Room currentRoom;
 
-  public void getDisplayText() {}
+  /**
+   * Get the display text.
+   */
+  public void getDisplayText() {
+  } // getDisplayText
 
   /**
-   * @param currentRoom the room
+   * @return currentRoom the current room.
    */
   public Room getCurrentRoom() {
     return currentRoom;
   } // getCurrentRoom
 
   /**
-   * @param currentRoom the room to be set to
+   * @param room the room to be set to
    */
-  public void setCurrentRoom(Room currentRoom) {
-    this.currentRoom = currentRoom;
+  public void setCurrentRoom(Room room) {
+    this.currentRoom = room;
   } // setCurrentRoom
 
   /**
@@ -44,6 +48,11 @@ public class Actor implements TurnInterface, CommandInterface {
     return owningLevel;
   } // getOwningLevle
 
+  /**
+   * A function to get the position of the specified actor.
+   *
+   * @return position
+   */
   public int[] getPosition() {
     for (int y = 0; y < getOwningLevel().getLevelRooms().height(); y++) {
       for (int x = 0; x < getOwningLevel().getLevelRooms().height(); x++) {
@@ -57,16 +66,25 @@ public class Actor implements TurnInterface, CommandInterface {
 
   /**
    * Constructs a new actor within a level.
-   * 
+   *
    * @param newlevel
    */
   public Actor(Level newlevel) {
     this.owningLevel = newlevel;
   } // Actor
 
+  /**
+   * Function to advance the turn.
+   */
   @Override
-  public void advanceTurn() {} // advanceTurn
+  public void advanceTurn() {
+  } // advanceTurn
 
+  /**
+   * Parses the command.
+   *
+   * @param command the command inputted.
+   */
   @Override
   public String parseCommand(String command) {
     return "ERROR: Command Not Valid";

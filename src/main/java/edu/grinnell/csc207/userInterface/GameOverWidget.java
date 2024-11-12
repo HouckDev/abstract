@@ -8,13 +8,13 @@ import javax.swing.Box;
 
 /**
  * Class for the game over screen.
- * 
+ *
  * @author Mitch Paiva and Paden Houck
  */
 public class GameOverWidget extends Widget {
   /**
    * Constructs a new alert Popup.
-   * 
+   *
    * @param owningUserInterface
    */
   public GameOverWidget(final UserInterface owningUserInterface) {
