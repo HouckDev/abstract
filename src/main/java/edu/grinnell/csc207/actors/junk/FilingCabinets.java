@@ -16,6 +16,6 @@ public class FilingCabinets extends Junk {
   @Override
   public void getDisplayText() {
     App.runningApp.getUserInterface().getTerminal().addConsoleOutput("Cabinets");
-  }
+  } // getDisplayText
 
-}
+} // Filing Cabinets

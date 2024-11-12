@@ -52,14 +52,14 @@ public class Level implements TurnInterface {
 
       ) {
         direction = (int) (Math.random() * directions.length);
-      }
+      } // while
       this.level.set(rootX + (directions[direction][0] * 1), rootY + (directions[direction][1] * 1),
           new Hallway(this));
       this.level.set(rootX + (directions[direction][0] * 2), rootY + (directions[direction][1] * 2),
           new FacilityRoom(this));
       rootX = rootX + (directions[direction][0] * 2);
       rootY = rootY + (directions[direction][1] * 2);
-    }
+    } // for
     // Place the Player Office
     this.level.set(rootX,rootY,
         new OfficeRoom(this));

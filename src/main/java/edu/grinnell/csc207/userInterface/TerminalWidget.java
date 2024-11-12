@@ -53,7 +53,7 @@ public class TerminalWidget extends Widget {
     consoleLog = Box.createVerticalBox();
     for (int i = 0; i < 9; i++) {
       consoleLog.add(new TerminalLabel(""));
-    }
+    } // for
     consoleLog.setBackground(DefaultStyle.getBackgroundColor());
     scrollPane = new JScrollPane(consoleLog);
     scrollPane = new JScrollPane(consoleLog);
@@ -85,14 +85,14 @@ public class TerminalWidget extends Widget {
             if (App.runningApp.getCurrentGame().getPlayerActions() <= 0) {
               App.runningApp.getCurrentGame().advanceTurn();
 
-            }
+            } // if
 
             break;
 
           default:
             break;
-        }
-      }
+        } // switch
+      } // actionPerformed
     });
 
     setSize(400, 300);
@@ -101,14 +101,14 @@ public class TerminalWidget extends Widget {
 
     addConsoleOutput("USER LOGGED IN");
     addConsoleOutput("TYPE 'HELP' TO VIEW CMDS");
-  }
+  } // terminalWidget
 
   public void addConsoleOutput(String s) {
     JScrollBar vertical = scrollPane.getVerticalScrollBar();
     consoleLog.add(new TerminalLabel(s));
     validate();
     vertical.setValue(vertical.getMaximum());
-  }
+  } // addConsoleOutput
 
 
   public void addConsoleOutput(String s, Color c) {
@@ -118,5 +118,5 @@ public class TerminalWidget extends Widget {
     consoleLog.add(newLabel);
     validate();
     vertical.setValue(vertical.getMaximum());
-  }
+  } // addConsoleOutput
 }

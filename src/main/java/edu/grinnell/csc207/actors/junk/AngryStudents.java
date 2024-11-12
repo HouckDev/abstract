@@ -16,6 +16,6 @@ public class AngryStudents extends Junk {
   @Override
   public void getDisplayText() {
     App.runningApp.getUserInterface().getTerminal().addConsoleOutput("Two angry CS students");
-  }
+  } // getDisplayText
 
-}
+} // angryStudents

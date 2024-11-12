@@ -24,7 +24,7 @@ public class MotionSensor extends Actor {
   @Override
   public void getDisplayText() {
     App.runningApp.getUserInterface().getTerminal().addConsoleOutput("SENSOR");
-  }
+  } // getDisplayText
 
   /**
    * If a motion sensor is triggered, send an alert to the user.

@@ -111,7 +111,7 @@ public class Room implements TurnInterface, CommandInterface {
       } // if
       
     } catch (Exception e) {
-    }
+    } // catch
     return "ERROR: INVALID OBJECT";
   } // parseCommand
 

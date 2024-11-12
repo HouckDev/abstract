@@ -16,6 +16,6 @@ public class Garbage extends Junk {
   @Override
   public void getDisplayText() {
     App.runningApp.getUserInterface().getTerminal().addConsoleOutput("Pile of garbage");
-  }
+  } // getDisplayText
 
-}
+} // Garbage

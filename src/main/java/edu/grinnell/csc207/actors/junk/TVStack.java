@@ -16,6 +16,6 @@ public class TVStack extends Junk {
   @Override
   public void getDisplayText() {
     App.runningApp.getUserInterface().getTerminal().addConsoleOutput("Stack of cracked TV's");
-  }
+  } // getDisplayText
 
-}
+} // TVstack

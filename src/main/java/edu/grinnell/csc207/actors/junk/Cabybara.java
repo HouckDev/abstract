@@ -16,6 +16,6 @@ public class Cabybara extends Junk {
   @Override
   public void getDisplayText() {
     App.runningApp.getUserInterface().getTerminal().addConsoleOutput("One legendary capybara");
-  }
+  } // getDisplayText
 
-}
+} // Cabybara

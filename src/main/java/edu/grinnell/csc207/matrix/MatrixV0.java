@@ -38,9 +38,9 @@ public class MatrixV0<T> implements Matrix<T> {
     for (int x = 0; x < width; x++) {
       for (int y = 0; y < height; y++) {
         this.contents[y][x] = this.defaultObject;
-      }
+      } // for
 
-    }
+    } // for
   } // MatrixV0(int, int, T)
 
   /**
@@ -105,7 +105,7 @@ public class MatrixV0<T> implements Matrix<T> {
       return contents[0].length;
     } else {
       return this.defaultWidth;
-    }
+    } // else
   } // width()
 
   /**
@@ -124,7 +124,6 @@ public class MatrixV0<T> implements Matrix<T> {
     try {
       this.insertRow(row, vals);
     } catch (ArraySizeException e) {
-      // TODO Auto-generated catch block
       e.printStackTrace();
     } // catch
   } // insertRow(int)
@@ -176,7 +175,6 @@ public class MatrixV0<T> implements Matrix<T> {
     try {
       this.insertCol(col, vals);
     } catch (ArraySizeException e) {
-      // TODO Auto-generated catch block
       e.printStackTrace();
     } // catch
   } // insertCol(int)

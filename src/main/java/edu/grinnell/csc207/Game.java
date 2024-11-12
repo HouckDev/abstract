@@ -12,12 +12,9 @@ import edu.grinnell.csc207.rooms.Room;
 import edu.grinnell.csc207.userInterface.MapWidget;
 
 /**
- * Game Holds and updates the game state,
- * contains the parameters for difficulty, etc. Basic game
- * premise: player is stuck in a control room,
- * a monster is hunting for them, they can use a console
- * to influence the level around them to keep it away player
- * inputs actions every turn via a console
+ * Game Holds and updates the game state, contains the parameters for difficulty, etc. Basic game
+ * premise: player is stuck in a control room, a monster is hunting for them, they can use a console
+ * to influence the level around them to keep it away player inputs actions every turn via a console
  * input game ends if the monster enters the same room as the player.
  */
 public class Game implements TurnInterface, CommandInterface {
@@ -43,12 +40,7 @@ public class Game implements TurnInterface, CommandInterface {
   private static final int DEFAULT_CONFIG_LEVEL_ROOMS = 16;
 
   /**
-   * Used in calculations.
-   */
-
-  /**
-   * Keeps track of the player actions
-   * availible in the current turn.
+   * Keeps track of the player actions availible in the current turn.
    */
   private int playerActions = DEFAULT_PLAYER_ACTIONS;
 
@@ -79,7 +71,7 @@ public class Game implements TurnInterface, CommandInterface {
    */
   public void setPlayerActions(final int actions) {
     this.playerActions = actions;
-  }
+  } // setPlayerActions
 
   /**
    * A simple function to grab the game state.
@@ -89,24 +81,22 @@ public class Game implements TurnInterface, CommandInterface {
   public String getGameState() {
     return gameState;
 
-  }
+  } // getGameState
 
   /**
-   * A simple function to grab the game state with
-   * player input and game logic taken into account.
+   * A simple function to grab the game state with player input and game logic taken into account.
    *
    * @param gamesState
    */
   public void setGameState(final String gamesState) {
     this.gameState = gamesState;
 
-  }
+  } // getGameState
 
   /**
    * A simple function to grab the player actions.
    *
-   * @return the player actions to be
-   * fed to the game's main logic.
+   * @return the player actions to be fed to the game's main logic.
    */
   public int getPlayerActions() {
     return playerActions;
@@ -132,8 +122,7 @@ public class Game implements TurnInterface, CommandInterface {
   } // Game
 
   /**
-   * Begins the game by allowing the player
-   * three moves and then spawns the monster.
+   * Begins the game by allowing the player three moves and then spawns the monster.
    */
   public void beginGame() {
     // generate the level
@@ -169,8 +158,7 @@ public class Game implements TurnInterface, CommandInterface {
     } // for
 
     tempRooms.get((int) (Math.random() * tempRooms.size()))
-        .addActor(new Monster(this.getCurrentLevel(),
-        this.configMonsterAggression));
+        .addActor(new Monster(this.getCurrentLevel(), this.configMonsterAggression));
 
     // Add the map widget
     // Get screen dimensions
@@ -212,20 +200,20 @@ public class Game implements TurnInterface, CommandInterface {
 
                 } catch (Exception e) {
                   return "SETTING MUST BE AN INT";
-                }
+                } // catch
               case "L_SIZE":
                 int value2 = 9;
                 try {
                   value2 = Integer.valueOf(commandList[2]);
                   if (value2 % 2 == 0 && value2 > 3) {
                     throw new Exception();
-                  }
+                  } // if statement
                   configLevelSize = value2;
                   return "SET LEVEL SIZE TO " + configLevelSize;
 
                 } catch (Exception e) {
                   return "SETTING MUST BE AN ODD INT > 3";
-                }
+                } // catch
               case "L_ROOMS":
                 int value3 = 32;
                 try {
@@ -235,10 +223,10 @@ public class Game implements TurnInterface, CommandInterface {
 
                 } catch (Exception e) {
                   return "SETTING MUST BE AN ODD INT";
-                }
+                } // catch
               default:
                 return "INVALID CONFIG SETTING";
-            }
+            } // switch
           case "HELP":
             App.runningApp.getUserInterface().getTerminal()
                 .addConsoleOutput("START - Start the game");
@@ -253,7 +241,7 @@ public class Game implements TurnInterface, CommandInterface {
             return "";
           default:
             break;
-        }
+        } // switch
         return "INVALID COMMAND";
       case "PLAY":
         if (command.equals("HELP")) {
@@ -266,11 +254,11 @@ public class Game implements TurnInterface, CommandInterface {
           App.runningApp.getUserInterface().getTerminal()
               .addConsoleOutput("[ROOM #] [Object #] CLOSE - Lock a door for a few turns");
 
-        }
+        } // switch
         String nextCommand = "";
         if (commandList.length > 1) {
           nextCommand = commandList[1];
-        }
+        } // if
         for (int y = 0; y < getCurrentLevel().getLevelRooms().height(); y++) {
           for (int x = 0; x < getCurrentLevel().getLevelRooms().height(); x++) {
             if (getCurrentLevel().getLevelRooms().get(y, x) != null
@@ -282,10 +270,13 @@ public class Game implements TurnInterface, CommandInterface {
         return "ERROR: INVALID ROOM";
       default:
         break;
-    }
+    } // switch
     return "ERROR: INVALID GAME STATE";
   } // recieveCommandPrompt
 
+  /**
+   * Resets the players avalible actions to 3 and updates the game state by advancing the level.
+   */
   @Override
   public void advanceTurn() {
     playerActions = 3;

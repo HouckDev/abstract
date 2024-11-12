@@ -1,42 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <checkstyle version="9.3">
-<file name="/Users/mitchpaiva/home/paivamit/csc207/mp6/abstract/src/main/java/edu/grinnell/csc207/CommandInterface.java">
-<error line="7" column="1" severity="error" message="Missing a Javadoc comment." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocTypeCheck"/>
-<error line="15" severity="error" message="Line matches the illegal pattern &apos;end brace without comment&apos;." source="com.puppycrawl.tools.checkstyle.checks.regexp.RegexpCheck"/>
-</file>
-<file name="/Users/mitchpaiva/home/paivamit/csc207/mp6/abstract/src/main/java/edu/grinnell/csc207/Game.java">
-<error line="45" column="3" severity="error" message="Javadoc comment is placed in the wrong location." source="com.puppycrawl.tools.checkstyle.checks.javadoc.InvalidJavadocPositionCheck"/>
-<error line="82" severity="error" message="Line matches the illegal pattern &apos;end brace without comment&apos;." source="com.puppycrawl.tools.checkstyle.checks.regexp.RegexpCheck"/>
-<error line="92" severity="error" message="Line matches the illegal pattern &apos;end brace without comment&apos;." source="com.puppycrawl.tools.checkstyle.checks.regexp.RegexpCheck"/>
-<error line="103" severity="error" message="Line matches the illegal pattern &apos;end brace without comment&apos;." source="com.puppycrawl.tools.checkstyle.checks.regexp.RegexpCheck"/>
-<error line="215" severity="error" message="Line matches the illegal pattern &apos;end brace without comment&apos;." source="com.puppycrawl.tools.checkstyle.checks.regexp.RegexpCheck"/>
-<error line="222" severity="error" message="Line matches the illegal pattern &apos;end brace without comment&apos;." source="com.puppycrawl.tools.checkstyle.checks.regexp.RegexpCheck"/>
-<error line="228" severity="error" message="Line matches the illegal pattern &apos;end brace without comment&apos;." source="com.puppycrawl.tools.checkstyle.checks.regexp.RegexpCheck"/>
-<error line="238" severity="error" message="Line matches the illegal pattern &apos;end brace without comment&apos;." source="com.puppycrawl.tools.checkstyle.checks.regexp.RegexpCheck"/>
-<error line="241" severity="error" message="Line matches the illegal pattern &apos;end brace without comment&apos;." source="com.puppycrawl.tools.checkstyle.checks.regexp.RegexpCheck"/>
-<error line="256" severity="error" message="Line matches the illegal pattern &apos;end brace without comment&apos;." source="com.puppycrawl.tools.checkstyle.checks.regexp.RegexpCheck"/>
-<error line="269" severity="error" message="Line matches the illegal pattern &apos;end brace without comment&apos;." source="com.puppycrawl.tools.checkstyle.checks.regexp.RegexpCheck"/>
-<error line="273" severity="error" message="Line matches the illegal pattern &apos;end brace without comment&apos;." source="com.puppycrawl.tools.checkstyle.checks.regexp.RegexpCheck"/>
-<error line="285" severity="error" message="Line matches the illegal pattern &apos;end brace without comment&apos;." source="com.puppycrawl.tools.checkstyle.checks.regexp.RegexpCheck"/>
-<error line="289" column="3" severity="error" message="Class &apos;Game&apos; looks like designed for extension (can be subclassed), but the method &apos;advanceTurn&apos; does not have javadoc that explains how to do that safely. If class is not designed for extension consider making the class &apos;Game&apos; final or making the method &apos;advanceTurn&apos; static/final/abstract/empty, or adding allowed annotation for the method." source="com.puppycrawl.tools.checkstyle.checks.design.DesignForExtensionCheck"/>
-</file>
 <file name="/Users/mitchpaiva/home/paivamit/csc207/mp6/abstract/src/main/java/edu/grinnell/csc207/actors/Door.java">
-<error line="6" severity="error" message="First sentence should end with a period." source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocStyleCheck"/>
 <error line="11" column="3" severity="error" message="Missing a Javadoc comment." source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocVariableCheck"/>
 <error line="12" column="3" severity="error" message="Missing a Javadoc comment." source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocVariableCheck"/>
-<error line="14" severity="error" message="First sentence should end with a period." source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocStyleCheck"/>
 <error line="17" severity="error" message="@return tag should be present and have description." source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocMethodCheck"/>
-<error line="21" severity="error" message="First sentence should end with a period." source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocStyleCheck"/>
 <error line="23" severity="error" message="Line has trailing spaces." source="com.puppycrawl.tools.checkstyle.checks.regexp.RegexpSinglelineCheck"/>
 <error line="26" column="33" severity="error" message="&apos;isClosed&apos; hides a field." source="com.puppycrawl.tools.checkstyle.checks.coding.HiddenFieldCheck"/>
-<error line="30" severity="error" message="First sentence should end with a period." source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocStyleCheck"/>
 <error line="32" severity="error" message="Line has trailing spaces." source="com.puppycrawl.tools.checkstyle.checks.regexp.RegexpSinglelineCheck"/>
 <error line="42" severity="error" message="Line has trailing spaces." source="com.puppycrawl.tools.checkstyle.checks.regexp.RegexpSinglelineCheck"/>
 <error line="44" severity="error" message="Line has trailing spaces." source="com.puppycrawl.tools.checkstyle.checks.regexp.RegexpSinglelineCheck"/>
 <error line="57" column="3" severity="error" message="Class &apos;Door&apos; looks like designed for extension (can be subclassed), but the method &apos;getDisplayText&apos; does not have javadoc that explains how to do that safely. If class is not designed for extension consider making the class &apos;Door&apos; final or making the method &apos;getDisplayText&apos; static/final/abstract/empty, or adding allowed annotation for the method." source="com.puppycrawl.tools.checkstyle.checks.design.DesignForExtensionCheck"/>
-<error line="65" severity="error" message="Line matches the illegal pattern &apos;end brace without comment&apos;." source="com.puppycrawl.tools.checkstyle.checks.regexp.RegexpCheck"/>
-<error line="66" severity="error" message="Line matches the illegal pattern &apos;end brace without comment&apos;." source="com.puppycrawl.tools.checkstyle.checks.regexp.RegexpCheck"/>
-<error line="68" severity="error" message="First sentence should end with a period." source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocStyleCheck"/>
 <error line="70" severity="error" message="Line has trailing spaces." source="com.puppycrawl.tools.checkstyle.checks.regexp.RegexpSinglelineCheck"/>
 </file>
 <file name="/Users/mitchpaiva/home/paivamit/csc207/mp6/abstract/src/main/java/edu/grinnell/csc207/actors/junk/Garbage.java">
@@ -44,47 +17,36 @@
 <error line="7" severity="error" message="First sentence should end with a period." source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocStyleCheck"/>
 <error line="9" severity="error" message="Line has trailing spaces." source="com.puppycrawl.tools.checkstyle.checks.regexp.RegexpSinglelineCheck"/>
 <error line="16" column="3" severity="error" message="Class &apos;Garbage&apos; looks like designed for extension (can be subclassed), but the method &apos;getDisplayText&apos; does not have javadoc that explains how to do that safely. If class is not designed for extension consider making the class &apos;Garbage&apos; final or making the method &apos;getDisplayText&apos; static/final/abstract/empty, or adding allowed annotation for the method." source="com.puppycrawl.tools.checkstyle.checks.design.DesignForExtensionCheck"/>
-<error line="19" severity="error" message="Line matches the illegal pattern &apos;end brace without comment&apos;." source="com.puppycrawl.tools.checkstyle.checks.regexp.RegexpCheck"/>
-<error line="21" severity="error" message="Line matches the illegal pattern &apos;end brace without comment&apos;." source="com.puppycrawl.tools.checkstyle.checks.regexp.RegexpCheck"/>
 </file>
 <file name="/Users/mitchpaiva/home/paivamit/csc207/mp6/abstract/src/main/java/edu/grinnell/csc207/actors/junk/TVStack.java">
 <error line="6" column="1" severity="error" message="Missing a Javadoc comment." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocTypeCheck"/>
 <error line="7" severity="error" message="First sentence should end with a period." source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocStyleCheck"/>
 <error line="9" severity="error" message="Line has trailing spaces." source="com.puppycrawl.tools.checkstyle.checks.regexp.RegexpSinglelineCheck"/>
 <error line="16" column="3" severity="error" message="Class &apos;TVStack&apos; looks like designed for extension (can be subclassed), but the method &apos;getDisplayText&apos; does not have javadoc that explains how to do that safely. If class is not designed for extension consider making the class &apos;TVStack&apos; final or making the method &apos;getDisplayText&apos; static/final/abstract/empty, or adding allowed annotation for the method." source="com.puppycrawl.tools.checkstyle.checks.design.DesignForExtensionCheck"/>
-<error line="19" severity="error" message="Line matches the illegal pattern &apos;end brace without comment&apos;." source="com.puppycrawl.tools.checkstyle.checks.regexp.RegexpCheck"/>
-<error line="21" severity="error" message="Line matches the illegal pattern &apos;end brace without comment&apos;." source="com.puppycrawl.tools.checkstyle.checks.regexp.RegexpCheck"/>
 </file>
 <file name="/Users/mitchpaiva/home/paivamit/csc207/mp6/abstract/src/main/java/edu/grinnell/csc207/actors/junk/FilingCabinets.java">
 <error line="6" column="1" severity="error" message="Missing a Javadoc comment." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocTypeCheck"/>
 <error line="7" severity="error" message="First sentence should end with a period." source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocStyleCheck"/>
 <error line="9" severity="error" message="Line has trailing spaces." source="com.puppycrawl.tools.checkstyle.checks.regexp.RegexpSinglelineCheck"/>
 <error line="16" column="3" severity="error" message="Class &apos;FilingCabinets&apos; looks like designed for extension (can be subclassed), but the method &apos;getDisplayText&apos; does not have javadoc that explains how to do that safely. If class is not designed for extension consider making the class &apos;FilingCabinets&apos; final or making the method &apos;getDisplayText&apos; static/final/abstract/empty, or adding allowed annotation for the method." source="com.puppycrawl.tools.checkstyle.checks.design.DesignForExtensionCheck"/>
-<error line="19" severity="error" message="Line matches the illegal pattern &apos;end brace without comment&apos;." source="com.puppycrawl.tools.checkstyle.checks.regexp.RegexpCheck"/>
-<error line="21" severity="error" message="Line matches the illegal pattern &apos;end brace without comment&apos;." source="com.puppycrawl.tools.checkstyle.checks.regexp.RegexpCheck"/>
 </file>
 <file name="/Users/mitchpaiva/home/paivamit/csc207/mp6/abstract/src/main/java/edu/grinnell/csc207/actors/junk/AngryStudents.java">
 <error line="6" column="1" severity="error" message="Missing a Javadoc comment." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocTypeCheck"/>
 <error line="7" severity="error" message="First sentence should end with a period." source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocStyleCheck"/>
 <error line="9" severity="error" message="Line has trailing spaces." source="com.puppycrawl.tools.checkstyle.checks.regexp.RegexpSinglelineCheck"/>
 <error line="16" column="3" severity="error" message="Class &apos;AngryStudents&apos; looks like designed for extension (can be subclassed), but the method &apos;getDisplayText&apos; does not have javadoc that explains how to do that safely. If class is not designed for extension consider making the class &apos;AngryStudents&apos; final or making the method &apos;getDisplayText&apos; static/final/abstract/empty, or adding allowed annotation for the method." source="com.puppycrawl.tools.checkstyle.checks.design.DesignForExtensionCheck"/>
-<error line="19" severity="error" message="Line matches the illegal pattern &apos;end brace without comment&apos;." source="com.puppycrawl.tools.checkstyle.checks.regexp.RegexpCheck"/>
-<error line="21" severity="error" message="Line matches the illegal pattern &apos;end brace without comment&apos;." source="com.puppycrawl.tools.checkstyle.checks.regexp.RegexpCheck"/>
 </file>
 <file name="/Users/mitchpaiva/home/paivamit/csc207/mp6/abstract/src/main/java/edu/grinnell/csc207/actors/junk/Junk.java">
 <error line="7" column="1" severity="error" message="Missing a Javadoc comment." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocTypeCheck"/>
 <error line="9" severity="error" message="First sentence should end with a period." source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocStyleCheck"/>
 <error line="11" severity="error" message="Line has trailing spaces." source="com.puppycrawl.tools.checkstyle.checks.regexp.RegexpSinglelineCheck"/>
 <error line="18" column="3" severity="error" message="Class &apos;Junk&apos; looks like designed for extension (can be subclassed), but the method &apos;getDisplayText&apos; does not have javadoc that explains how to do that safely. If class is not designed for extension consider making the class &apos;Junk&apos; final or making the method &apos;getDisplayText&apos; static/final/abstract/empty, or adding allowed annotation for the method." source="com.puppycrawl.tools.checkstyle.checks.design.DesignForExtensionCheck"/>
-<error line="21" severity="error" message="Line matches the illegal pattern &apos;end brace without comment&apos;." source="com.puppycrawl.tools.checkstyle.checks.regexp.RegexpCheck"/>
 </file>
 <file name="/Users/mitchpaiva/home/paivamit/csc207/mp6/abstract/src/main/java/edu/grinnell/csc207/actors/junk/Cabybara.java">
 <error line="6" column="1" severity="error" message="Missing a Javadoc comment." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocTypeCheck"/>
 <error line="7" severity="error" message="First sentence should end with a period." source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocStyleCheck"/>
 <error line="9" severity="error" message="Line has trailing spaces." source="com.puppycrawl.tools.checkstyle.checks.regexp.RegexpSinglelineCheck"/>
 <error line="16" column="3" severity="error" message="Class &apos;Cabybara&apos; looks like designed for extension (can be subclassed), but the method &apos;getDisplayText&apos; does not have javadoc that explains how to do that safely. If class is not designed for extension consider making the class &apos;Cabybara&apos; final or making the method &apos;getDisplayText&apos; static/final/abstract/empty, or adding allowed annotation for the method." source="com.puppycrawl.tools.checkstyle.checks.design.DesignForExtensionCheck"/>
-<error line="19" severity="error" message="Line matches the illegal pattern &apos;end brace without comment&apos;." source="com.puppycrawl.tools.checkstyle.checks.regexp.RegexpCheck"/>
-<error line="21" severity="error" message="Line matches the illegal pattern &apos;end brace without comment&apos;." source="com.puppycrawl.tools.checkstyle.checks.regexp.RegexpCheck"/>
 </file>
 <file name="/Users/mitchpaiva/home/paivamit/csc207/mp6/abstract/src/main/java/edu/grinnell/csc207/actors/MotionSensor.java">
 <error line="8" column="1" severity="error" message="Duplicate import to line 3 - edu.grinnell.csc207.App." source="com.puppycrawl.tools.checkstyle.checks.imports.RedundantImportCheck"/>
@@ -92,7 +54,6 @@
 <error line="16" column="3" severity="error" message="Missing a Javadoc comment." source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocVariableCheck"/>
 <error line="20" column="3" severity="error" message="Missing a Javadoc comment." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
 <error line="24" column="3" severity="error" message="Class &apos;MotionSensor&apos; looks like designed for extension (can be subclassed), but the method &apos;getDisplayText&apos; does not have javadoc that explains how to do that safely. If class is not designed for extension consider making the class &apos;MotionSensor&apos; final or making the method &apos;getDisplayText&apos; static/final/abstract/empty, or adding allowed annotation for the method." source="com.puppycrawl.tools.checkstyle.checks.design.DesignForExtensionCheck"/>
-<error line="27" severity="error" message="Line matches the illegal pattern &apos;end brace without comment&apos;." source="com.puppycrawl.tools.checkstyle.checks.regexp.RegexpCheck"/>
 <error line="31" severity="error" message="Line has trailing spaces." source="com.puppycrawl.tools.checkstyle.checks.regexp.RegexpSinglelineCheck"/>
 </file>
 <file name="/Users/mitchpaiva/home/paivamit/csc207/mp6/abstract/src/main/java/edu/grinnell/csc207/actors/Player.java">
@@ -155,17 +116,10 @@
 <error line="20" column="3" severity="error" message="Missing a Javadoc comment." source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocVariableCheck"/>
 <error line="22" column="3" severity="error" message="Missing a Javadoc comment." source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocVariableCheck"/>
 <error line="26" severity="error" message="Line has trailing spaces." source="com.puppycrawl.tools.checkstyle.checks.regexp.RegexpSinglelineCheck"/>
-<error line="56" severity="error" message="Line matches the illegal pattern &apos;end brace without comment&apos;." source="com.puppycrawl.tools.checkstyle.checks.regexp.RegexpCheck"/>
-<error line="88" severity="error" message="Line matches the illegal pattern &apos;end brace without comment&apos;." source="com.puppycrawl.tools.checkstyle.checks.regexp.RegexpCheck"/>
-<error line="94" severity="error" message="Line matches the illegal pattern &apos;end brace without comment&apos;." source="com.puppycrawl.tools.checkstyle.checks.regexp.RegexpCheck"/>
-<error line="95" severity="error" message="Line matches the illegal pattern &apos;end brace without comment&apos;." source="com.puppycrawl.tools.checkstyle.checks.regexp.RegexpCheck"/>
-<error line="104" severity="error" message="Line matches the illegal pattern &apos;end brace without comment&apos;." source="com.puppycrawl.tools.checkstyle.checks.regexp.RegexpCheck"/>
 <error line="106" column="3" severity="error" message="Class &apos;TerminalWidget&apos; looks like designed for extension (can be subclassed), but the method &apos;addConsoleOutput&apos; does not have javadoc that explains how to do that safely. If class is not designed for extension consider making the class &apos;TerminalWidget&apos; final or making the method &apos;addConsoleOutput&apos; static/final/abstract/empty, or adding allowed annotation for the method." source="com.puppycrawl.tools.checkstyle.checks.design.DesignForExtensionCheck"/>
 <error line="106" column="3" severity="error" message="Missing a Javadoc comment." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
-<error line="111" severity="error" message="Line matches the illegal pattern &apos;end brace without comment&apos;." source="com.puppycrawl.tools.checkstyle.checks.regexp.RegexpCheck"/>
 <error line="114" column="3" severity="error" message="Class &apos;TerminalWidget&apos; looks like designed for extension (can be subclassed), but the method &apos;addConsoleOutput&apos; does not have javadoc that explains how to do that safely. If class is not designed for extension consider making the class &apos;TerminalWidget&apos; final or making the method &apos;addConsoleOutput&apos; static/final/abstract/empty, or adding allowed annotation for the method." source="com.puppycrawl.tools.checkstyle.checks.design.DesignForExtensionCheck"/>
 <error line="114" column="3" severity="error" message="Missing a Javadoc comment." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
-<error line="121" severity="error" message="Line matches the illegal pattern &apos;end brace without comment&apos;." source="com.puppycrawl.tools.checkstyle.checks.regexp.RegexpCheck"/>
 <error line="122" severity="error" message="Line matches the illegal pattern &apos;end brace without comment&apos;." source="com.puppycrawl.tools.checkstyle.checks.regexp.RegexpCheck"/>
 </file>
 <file name="/Users/mitchpaiva/home/paivamit/csc207/mp6/abstract/src/main/java/edu/grinnell/csc207/userInterface/Widget.java">
@@ -181,8 +135,6 @@
 <error line="12" column="3" severity="error" message="Missing a Javadoc comment." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
 <error line="16" column="3" severity="error" message="Missing a Javadoc comment." source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocVariableCheck"/>
 <error line="17" column="3" severity="error" message="Missing a Javadoc comment." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
-</file>
-<file name="/Users/mitchpaiva/home/paivamit/csc207/mp6/abstract/src/main/java/edu/grinnell/csc207/userInterface/TerminalLabel.java">
 </file>
 <file name="/Users/mitchpaiva/home/paivamit/csc207/mp6/abstract/src/main/java/edu/grinnell/csc207/userInterface/AlertPopupWidget.java">
 <error line="9" column="1" severity="error" message="Missing a Javadoc comment." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocTypeCheck"/>
@@ -240,7 +192,6 @@
 <error line="101" severity="error" message="Line matches the illegal pattern &apos;end brace without comment&apos;." source="com.puppycrawl.tools.checkstyle.checks.regexp.RegexpCheck"/>
 <error line="102" column="45" severity="error" message="&apos;,&apos; is not followed by whitespace." source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAfterCheck"/>
 <error line="112" severity="error" message="Line has trailing spaces." source="com.puppycrawl.tools.checkstyle.checks.regexp.RegexpSinglelineCheck"/>
-<error line="114" severity="error" message="Line matches the illegal pattern &apos;end brace without comment&apos;." source="com.puppycrawl.tools.checkstyle.checks.regexp.RegexpCheck"/>
 </file>
 <file name="/Users/mitchpaiva/home/paivamit/csc207/mp6/abstract/src/main/java/edu/grinnell/csc207/rooms/OfficeRoom.java">
 <error line="9" column="1" severity="error" message="Missing a Javadoc comment." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocTypeCheck"/>
@@ -267,8 +218,6 @@
 <error line="38" column="28" severity="error" message="Name &apos;ROOM_COUNT&apos; must match pattern &apos;^[a-z][a-zA-Z0-9]*$&apos;." source="com.puppycrawl.tools.checkstyle.checks.naming.ParameterNameCheck"/>
 <error line="38" column="44" severity="error" message="Expected @param tag for &apos;SIZE&apos;." source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocMethodCheck"/>
 <error line="38" column="44" severity="error" message="Name &apos;SIZE&apos; must match pattern &apos;^[a-z][a-zA-Z0-9]*$&apos;." source="com.puppycrawl.tools.checkstyle.checks.naming.ParameterNameCheck"/>
-<error line="55" severity="error" message="Line matches the illegal pattern &apos;end brace without comment&apos;." source="com.puppycrawl.tools.checkstyle.checks.regexp.RegexpCheck"/>
-<error line="62" severity="error" message="Line matches the illegal pattern &apos;end brace without comment&apos;." source="com.puppycrawl.tools.checkstyle.checks.regexp.RegexpCheck"/>
 <error line="64" column="25" severity="error" message="&apos;,&apos; is not followed by whitespace." source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAfterCheck"/>
 <error line="68" column="3" severity="error" message="Class &apos;Level&apos; looks like designed for extension (can be subclassed), but the method &apos;advanceTurn&apos; does not have javadoc that explains how to do that safely. If class is not designed for extension consider making the class &apos;Level&apos; final or making the method &apos;advanceTurn&apos; static/final/abstract/empty, or adding allowed annotation for the method." source="com.puppycrawl.tools.checkstyle.checks.design.DesignForExtensionCheck"/>
 </file>
@@ -279,16 +228,11 @@
 <error line="17" column="3" severity="error" message="Missing a Javadoc comment." source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocVariableCheck"/>
 <error line="18" column="3" severity="error" message="Missing a Javadoc comment." source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocVariableCheck"/>
 <error line="19" column="3" severity="error" message="Missing a Javadoc comment." source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocVariableCheck"/>
-<error line="41" severity="error" message="Line matches the illegal pattern &apos;end brace without comment&apos;." source="com.puppycrawl.tools.checkstyle.checks.regexp.RegexpCheck"/>
-<error line="43" severity="error" message="Line matches the illegal pattern &apos;end brace without comment&apos;." source="com.puppycrawl.tools.checkstyle.checks.regexp.RegexpCheck"/>
-<error line="108" severity="error" message="Line matches the illegal pattern &apos;end brace without comment&apos;." source="com.puppycrawl.tools.checkstyle.checks.regexp.RegexpCheck"/>
-<error line="230" column="23" severity="error" message="Must have at least one statement." source="com.puppycrawl.tools.checkstyle.checks.blocks.EmptyBlockCheck"/>
-<error line="256" column="23" severity="error" message="Must have at least one statement." source="com.puppycrawl.tools.checkstyle.checks.blocks.EmptyBlockCheck"/>
+<error line="228" column="23" severity="error" message="Must have at least one statement." source="com.puppycrawl.tools.checkstyle.checks.blocks.EmptyBlockCheck"/>
+<error line="254" column="23" severity="error" message="Must have at least one statement." source="com.puppycrawl.tools.checkstyle.checks.blocks.EmptyBlockCheck"/>
 </file>
 <file name="/Users/mitchpaiva/home/paivamit/csc207/mp6/abstract/src/main/java/edu/grinnell/csc207/matrix/Matrix.java">
 <error line="78" severity="error" message="Line has trailing spaces." source="com.puppycrawl.tools.checkstyle.checks.regexp.RegexpSinglelineCheck"/>
-</file>
-<file name="/Users/mitchpaiva/home/paivamit/csc207/mp6/abstract/src/main/java/edu/grinnell/csc207/matrix/ArraySizeException.java">
 </file>
 <file name="/Users/mitchpaiva/home/paivamit/csc207/mp6/abstract/src/main/java/edu/grinnell/csc207/package-info.java">
 <error line="1" severity="error" message="File does not end with a newline." source="com.puppycrawl.tools.checkstyle.checks.NewlineAtEndOfFileCheck"/>

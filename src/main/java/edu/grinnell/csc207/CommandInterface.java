@@ -4,6 +4,9 @@
  */
 package edu.grinnell.csc207;
 
+/**
+   * The main command interface.
+   */
 public interface CommandInterface {
   /**
    * Parse a command from the terminal.
@@ -12,4 +15,4 @@ public interface CommandInterface {
    * @return string to feed to the game logic
    */
   String parseCommand(String command); // advanceTurn
-}
+} // CommandInterface

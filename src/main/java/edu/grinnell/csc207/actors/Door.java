@@ -4,7 +4,7 @@ import edu.grinnell.csc207.App;
 import edu.grinnell.csc207.Level;
 
 /**
- * Door Represents a door actor Can be shut to prevent movement of actors
+ * Door Represents a door actor Can be shut to prevent movement of actors.
  */
 public class Door extends Actor {
   // add boolean for status of door
@@ -12,14 +12,14 @@ public class Door extends Actor {
   private int timer = 0;
 
   /**
-   * Set is closed to false
+   * Set is closed to false.
    */
   public boolean isClosed() {
     return isClosed;
   } // isClosed
 
   /**
-   * Set is closed to false
+   * Set is closed to false.
    * 
    * @param isClosed
    */
@@ -28,7 +28,7 @@ public class Door extends Actor {
   } // setClosed
 
   /**
-   * Create a new door
+   * Create a new door.
    * 
    * @param newLevel
    */
@@ -62,11 +62,11 @@ public class Door extends Actor {
     } else {
       App.runningApp.getUserInterface().getTerminal().addConsoleOutput("DOOR [Open]");
 
-    }
-  }
+    } // else
+  } // getDisplayText
 
   /**
-   * Advance the timer for the door
+   * Advance the timer for the door.
    * 
    */
   @Override

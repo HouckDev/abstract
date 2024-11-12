@@ -18,5 +18,5 @@ public class Junk extends Actor {
   @Override
   public void getDisplayText() {
     App.runningApp.getUserInterface().getTerminal().addConsoleOutput("JUNK");
-  }
+  } // getDisplayText
 } // Door
