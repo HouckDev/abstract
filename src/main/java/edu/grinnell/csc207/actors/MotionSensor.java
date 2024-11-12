@@ -14,7 +14,7 @@ import edu.grinnell.csc207.App;
 public class MotionSensor extends Actor {
   // keeps track of the previous amount of items in each room
   int previousCount = 0;
-  
+
 
   // create a new motionsensor
   public MotionSensor(Level newLevel) {
@@ -23,7 +23,7 @@ public class MotionSensor extends Actor {
 
   @Override
   public void getDisplayText() {
-    App.runningApp.getUserInterface().getTerminal().addConsoleOutput( "SENSOR");
+    App.runningApp.getUserInterface().getTerminal().addConsoleOutput("SENSOR");
   }
 
   /**
@@ -37,10 +37,11 @@ public class MotionSensor extends Actor {
       Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
       double width = screenSize.getWidth();
       double height = screenSize.getHeight();
-      AlertPopupWidget testPopup = new AlertPopupWidget(App.runningApp.getUserInterface(),"Motion In Room " + getCurrentRoom().getRoomID());
+      AlertPopupWidget testPopup = new AlertPopupWidget(App.runningApp.getUserInterface(),
+          "Motion In Room " + getCurrentRoom().getRoomID());
       testPopup.setLocation(((int) width / 2) - (testPopup.getWidth() / 2),
           ((int) height / 2) - (testPopup.getHeight() / 2));
-          previousCount = getCurrentRoom().getContents().size();
+      previousCount = getCurrentRoom().getContents().size();
     } // if statement
   } // advanceTurn
 } // MotionSensor

@@ -11,12 +11,13 @@ public class OfficeRoom extends Room {
     super(newLevel);
     addActor(new Player(newLevel));
   } // OfficeRoom
+
   @Override
   public JComponent constructMapWidget() {
     Box roomWidget = Box.createVerticalBox();
 
     roomWidget.add(new TerminalLabel("+---+"));
-    roomWidget.add(new TerminalLabel("|" + this.getRoomID() +"|"));
+    roomWidget.add(new TerminalLabel("|" + this.getRoomID() + "|"));
     roomWidget.add(new TerminalLabel("| @ |"));
     roomWidget.add(new TerminalLabel("|   |"));
     roomWidget.add(new TerminalLabel("+---+"));
@@ -24,5 +25,5 @@ public class OfficeRoom extends Room {
 
     return roomWidget;
   } // constructMapWidget
-  
+
 } // OfficeRoom

@@ -22,6 +22,7 @@ public class Monster extends Actor {
   private int AGGRESSION_COUNTER = 8;
   private int moves = 1; // 'fix' for monster insta moving across the map bcz of level iterating
   // create a new monster
+
   public Monster(Level newLevel, int cfg_aggression) {
     super(newLevel);
     AGGRESSION_COUNTER = cfg_aggression;
@@ -44,7 +45,10 @@ public class Monster extends Actor {
    */
   @Override
   public void advanceTurn() {
-    if (moves <= 0) {moves = 3; return;}
+    if (moves <= 0) {
+      moves = 3;
+      return;
+    }
     moves--;
     int[][] directions = {{1, 0}, {0, 1}, {-1, 0}, {0, -1}};
     int direction = (int) (Math.random() * directions.length);
@@ -65,8 +69,10 @@ public class Monster extends Actor {
     while (isNotValid && (movesCounter < AGGRESSION_COUNTER)) {
       direction = (int) (Math.random() * directions.length);
       movesCounter += 1;
-      if (!(getPosition()[0] + directions[direction][0] > 0 && getPosition()[0] + directions[direction][0] < getOwningLevel().getLevelRooms().width() && 
-      getPosition()[1] + directions[direction][1] > 0 && getPosition()[1] + directions[direction][1] < getOwningLevel().getLevelRooms().height())) {
+      if (!(getPosition()[0] + directions[direction][0] > 0
+          && getPosition()[0] + directions[direction][0] < getOwningLevel().getLevelRooms().width()
+          && getPosition()[1] + directions[direction][1] > 0 && getPosition()[1]
+              + directions[direction][1] < getOwningLevel().getLevelRooms().height())) {
         continue;
       }
       Room currentDesiredRoom = getOwningLevel().getLevelRooms().get(
@@ -93,7 +99,7 @@ public class Monster extends Actor {
     if (getCurrentRoom() instanceof OfficeRoom) {
       App.runningApp.getUserInterface().getTerminal()
           .addConsoleOutput("YOUR OFFICE IS NO LONGER SAFE...");
-          moves = 0;
+      moves = 0;
     } // if
   } // advanceTurn
 

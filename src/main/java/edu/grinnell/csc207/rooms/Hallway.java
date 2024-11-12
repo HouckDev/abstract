@@ -11,7 +11,7 @@ public class Hallway extends Room {
     super(newLevel);
     addActor(new Door(newLevel));
   } // Hallway
-  
+
   @Override
   public JComponent constructMapWidget() {
     Box roomWidget = Box.createVerticalBox();

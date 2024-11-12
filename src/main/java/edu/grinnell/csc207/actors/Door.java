@@ -36,9 +36,9 @@ public class Door extends Actor {
     super(newLevel);
   } // door
 
-    /**
-   * parses the command and tells the door to close if applicable, 
-   * then sets the amount of time the door will be closed for.
+  /**
+   * parses the command and tells the door to close if applicable, then sets the amount of time the
+   * door will be closed for.
    * 
    * @param command
    * 
@@ -57,10 +57,10 @@ public class Door extends Actor {
   @Override
   public void getDisplayText() {
     if (isClosed()) {
-      App.runningApp.getUserInterface().getTerminal().addConsoleOutput( "DOOR [Closed]");
+      App.runningApp.getUserInterface().getTerminal().addConsoleOutput("DOOR [Closed]");
 
     } else {
-      App.runningApp.getUserInterface().getTerminal().addConsoleOutput( "DOOR [Open]");
+      App.runningApp.getUserInterface().getTerminal().addConsoleOutput("DOOR [Open]");
 
     }
   }
@@ -76,4 +76,4 @@ public class Door extends Actor {
       this.isClosed = false;
     } // if
   } // advanceTurn
-} // Door 
+} // Door

@@ -1,3 +1,6 @@
+/*
+ * Basic package for CS 207.
+ */
 package edu.grinnell.csc207;
 
 import java.awt.Dimension;
@@ -9,34 +12,102 @@ import edu.grinnell.csc207.rooms.Room;
 import edu.grinnell.csc207.userInterface.MapWidget;
 
 /**
- * Game Holds and updates the game state, contains the parameters
- * for difficulty, etc. Basic game premise: player is stuck in a
- * control room, a monster is hunting for them, they can use a console
- * to influence the level around them to keep it away player inputs
- * actions every turn via a console input game ends if the monster
- * enters the same room as the player.
+ * Game Holds and updates the game state,
+ * contains the parameters for difficulty, etc. Basic game
+ * premise: player is stuck in a control room,
+ * a monster is hunting for them, they can use a console
+ * to influence the level around them to keep it away player
+ * inputs actions every turn via a console
+ * input game ends if the monster enters the same room as the player.
  */
 public class Game implements TurnInterface, CommandInterface {
-  int playerActions = 5;
-  private String gameState = "CONFIG";
-  private int CONFIG_MONSTER_AGGRESSION = 8;
-  private int CONFIG_LEVEL_SIZE = 7;
-  private int CONFIG_LEVEL_ROOMS = 16;
 
-  public void setPlayerActions(int playerActions) {
-    this.playerActions = playerActions;
+  /**
+   * Default Value.
+   */
+  private static final int DEFAULT_MONSTER_AGGRESSION = 8;
+
+  /**
+   * Default Value.
+   */
+  private static final int DEFAULT_PLAYER_ACTIONS = 5;
+
+  /**
+   * Default Value.
+   */
+  private static final int DEFAULT_LEVEL_SIZE = 7;
+
+  /**
+   * Default Value.
+   */
+  private static final int DEFAULT_CONFIG_LEVEL_ROOMS = 16;
+
+  /**
+   * Used in calculations.
+   */
+
+  /**
+   * Keeps track of the player actions
+   * availible in the current turn.
+   */
+  private int playerActions = DEFAULT_PLAYER_ACTIONS;
+
+  /**
+   * Keeps track of the game state.
+   */
+  private String gameState = "CONFIG";
+
+  /**
+   * Keeps track of the monster agression.
+   */
+  private int configMonsterAggression = DEFAULT_MONSTER_AGGRESSION;
+
+  /**
+   * Keeps track of the level size.
+   */
+  private int configLevelSize = DEFAULT_LEVEL_SIZE;
+
+  /**
+   * Keeps track of the amount of rooms in a level.
+   */
+  private int configLevelRooms = DEFAULT_CONFIG_LEVEL_ROOMS;
+
+  /**
+   * set the player actions when called to the variable playerActions.
+   *
+   * @param actions the variable playeractions set by the player.
+   */
+  public void setPlayerActions(final int actions) {
+    this.playerActions = actions;
   }
 
+  /**
+   * A simple function to grab the game state.
+   *
+   * @return gameState
+   */
   public String getGameState() {
     return gameState;
 
   }
 
-  public void setGameState(String gameState) {
-    this.gameState = gameState;
+  /**
+   * A simple function to grab the game state with
+   * player input and game logic taken into account.
+   *
+   * @param gamesState
+   */
+  public void setGameState(final String gamesState) {
+    this.gameState = gamesState;
 
   }
 
+  /**
+   * A simple function to grab the player actions.
+   *
+   * @return the player actions to be
+   * fed to the game's main logic.
+   */
   public int getPlayerActions() {
     return playerActions;
   } // getPlayerActions
@@ -44,7 +115,7 @@ public class Game implements TurnInterface, CommandInterface {
   /**
    * The level the game is running.
    */
-  Level level;
+  private Level level;
 
   /**
    * @return the current level
@@ -61,11 +132,12 @@ public class Game implements TurnInterface, CommandInterface {
   } // Game
 
   /**
-   * Begins the game by allowing the player three moves and then spawns the monster.
+   * Begins the game by allowing the player
+   * three moves and then spawns the monster.
    */
   public void beginGame() {
     // generate the level
-    level.generate(CONFIG_LEVEL_ROOMS, CONFIG_LEVEL_SIZE);
+    level.generate(configLevelRooms, configLevelSize);
     App.runningApp.getUserInterface().getTerminal()
         .addConsoleOutput("ACTIONS LEFT: " + playerActions);
 
@@ -97,7 +169,8 @@ public class Game implements TurnInterface, CommandInterface {
     } // for
 
     tempRooms.get((int) (Math.random() * tempRooms.size()))
-        .addActor(new Monster(this.getCurrentLevel(), this.CONFIG_MONSTER_AGGRESSION));
+        .addActor(new Monster(this.getCurrentLevel(),
+        this.configMonsterAggression));
 
     // Add the map widget
     // Get screen dimensions
@@ -111,10 +184,11 @@ public class Game implements TurnInterface, CommandInterface {
 
   /**
    * Parse a command action from the terminal.
-   * 
+   *
    * @param command
+   * @return String to feed to the terminal.
    */
-  public String parseCommand(String command) {
+  public String parseCommand(final String command) {
     String[] commandList = command.split(" ", 3);
     switch (getGameState()) {
       case "CONFIG":
@@ -133,8 +207,8 @@ public class Game implements TurnInterface, CommandInterface {
                 int value = 8;
                 try {
                   value = Integer.valueOf(commandList[2]);
-                  CONFIG_MONSTER_AGGRESSION = value;
-                  return "SET MONSTER AGGRESSION TO " + CONFIG_MONSTER_AGGRESSION;
+                  configMonsterAggression = value;
+                  return "SET MONSTER AGGRESSION TO " + configMonsterAggression;
 
                 } catch (Exception e) {
                   return "SETTING MUST BE AN INT";
@@ -146,8 +220,8 @@ public class Game implements TurnInterface, CommandInterface {
                   if (value2 % 2 == 0 && value2 > 3) {
                     throw new Exception();
                   }
-                  CONFIG_LEVEL_SIZE = value2;
-                  return "SET LEVEL SIZE TO " + CONFIG_LEVEL_SIZE;
+                  configLevelSize = value2;
+                  return "SET LEVEL SIZE TO " + configLevelSize;
 
                 } catch (Exception e) {
                   return "SETTING MUST BE AN ODD INT > 3";
@@ -156,8 +230,8 @@ public class Game implements TurnInterface, CommandInterface {
                 int value3 = 32;
                 try {
                   value3 = Integer.valueOf(commandList[2]);
-                  CONFIG_LEVEL_ROOMS = value3;
-                  return "SET LEVEL ROOMS TO " + CONFIG_LEVEL_ROOMS;
+                  configLevelRooms = value3;
+                  return "SET LEVEL ROOMS TO " + configLevelRooms;
 
                 } catch (Exception e) {
                   return "SETTING MUST BE AN ODD INT";
@@ -170,12 +244,12 @@ public class Game implements TurnInterface, CommandInterface {
                 .addConsoleOutput("START - Start the game");
             App.runningApp.getUserInterface().getTerminal()
                 .addConsoleOutput("CONFIG [SETTING] - Set a config option");
-            App.runningApp.getUserInterface().getTerminal().addConsoleOutput("- M_AGGRESSION - ["
-                + CONFIG_MONSTER_AGGRESSION + "] The aggression of the monster");
             App.runningApp.getUserInterface().getTerminal().addConsoleOutput(
-                "- L_SIZE - [" + CONFIG_LEVEL_SIZE + "] The dimensions of the level");
+                "- M_AGGRESSION - [" + configMonsterAggression + "] The aggression of the monster");
             App.runningApp.getUserInterface().getTerminal().addConsoleOutput(
-                "- L_ROOMS - [" + CONFIG_LEVEL_ROOMS + "] The potential max count of rooms");
+                "- L_SIZE - [" + configLevelSize + "] The dimensions of the level");
+            App.runningApp.getUserInterface().getTerminal().addConsoleOutput(
+                "- L_ROOMS - [" + configLevelRooms + "] The potential max count of rooms");
             return "";
           default:
             break;

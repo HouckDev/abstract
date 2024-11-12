@@ -19,4 +19,4 @@ public class Junk extends Actor {
   public void getDisplayText() {
     App.runningApp.getUserInterface().getTerminal().addConsoleOutput("JUNK");
   }
-} // Door 
+} // Door

@@ -20,6 +20,7 @@ public class Actor implements TurnInterface, CommandInterface {
   private Room currentRoom;
 
   public void getDisplayText() {}
+
   /**
    * @param currentRoom the room
    */
@@ -45,7 +46,7 @@ public class Actor implements TurnInterface, CommandInterface {
     for (int y = 0; y < getOwningLevel().getLevelRooms().height(); y++) {
       for (int x = 0; x < getOwningLevel().getLevelRooms().height(); x++) {
         if (getOwningLevel().getLevelRooms().get(y, x) == getCurrentRoom()) {
-          return new int[]{x,y};
+          return new int[] {x, y};
         } // if
       } // for
     } // for
