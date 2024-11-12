@@ -109,7 +109,7 @@ public class Monster extends Actor {
     if (!(movesCounter == aggressionCounter)) {
       (getOwningLevel().getLevelRooms().get(getPosition()[0] + directions[direction][0],
           getPosition()[1] + directions[direction][1])).addActor(this);
-      // System.out.println("DEBUG: Monster moved to " + getCurrentRoom().getRoomID());
+      System.out.println("DEBUG: Monster moved to " + getCurrentRoom().getRoomID());
     } // if
     if (getCurrentRoom() instanceof OfficeRoom) {
       App.runningApp.getUserInterface().getTerminal()

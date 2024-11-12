@@ -1,4 +1,4 @@
-#Mon Nov 11 23:20:32 CST 2024
+#Mon Nov 11 23:25:54 CST 2024
 /Users/mitchpaiva/home/paivamit/csc207/mp6/abstract/src/main/java/edu/grinnell/csc207/actors/junk/TVStack.java=1731385946388
 /Users/mitchpaiva/home/paivamit/csc207/mp6/abstract/src/main/java/edu/grinnell/csc207/actors/junk/FilingCabinets.java=1731385947884
 /Users/mitchpaiva/home/paivamit/csc207/mp6/abstract/src/main/java/edu/grinnell/csc207/userInterface/Widget.java=1731387450444
@@ -8,6 +8,7 @@
 /Users/mitchpaiva/home/paivamit/csc207/mp6/abstract/src/main/java/edu/grinnell/csc207/CommandInterface.java=1731388573558
 /Users/mitchpaiva/home/paivamit/csc207/mp6/abstract/src/main/java/edu/grinnell/csc207/userInterface/AlertPopupWidget.java=1731387614929
 /Users/mitchpaiva/home/paivamit/csc207/mp6/abstract/src/main/java/edu/grinnell/csc207/rooms/OfficeRoom.java=1731388447126
+/Users/mitchpaiva/home/paivamit/csc207/mp6/abstract/src/main/java/edu/grinnell/csc207/matrix/Matrix.java=1731388864608
 /Users/mitchpaiva/home/paivamit/csc207/mp6/abstract/src/main/java/edu/grinnell/csc207/rooms/Hallway.java=1731388519801
 /Users/mitchpaiva/home/paivamit/csc207/mp6/abstract/src/main/java/edu/grinnell/csc207/matrix/IOUtils.java=1731388765879
 /Users/mitchpaiva/home/paivamit/csc207/mp6/abstract/src/main/java/edu/grinnell/csc207/actors/junk/Cabybara.java=1731385949328
@@ -24,7 +25,6 @@ configuration*?=433E45C7B1505616F03B17D60446488BD4B5A6D1
 /Users/mitchpaiva/home/paivamit/csc207/mp6/abstract/src/main/java/edu/grinnell/csc207/actors/Player.java=1731386497157
 /Users/mitchpaiva/home/paivamit/csc207/mp6/abstract/src/main/java/edu/grinnell/csc207/userInterface/TerminalWidget.java=1731387426566
 /Users/mitchpaiva/home/paivamit/csc207/mp6/abstract/src/main/java/edu/grinnell/csc207/Game.java=1731388606761
-/Users/mitchpaiva/home/paivamit/csc207/mp6/abstract/src/main/java/edu/grinnell/csc207/actors/Monster.java=1731387011342
 module-resource*?\:checkstyle-xpath-suppressions.xml=A70F3C6EA2250139DE1D65F5ADFE092E0002D552
 /Users/mitchpaiva/home/paivamit/csc207/mp6/abstract/src/main/java/edu/grinnell/csc207/userInterface/TerminalLabel.java=1731387584105
 module-resource*?\:checkstyle-suppressions.xml=2C4B2CC56BAD714C18F42A3A0DE30C90CAE1CB4
