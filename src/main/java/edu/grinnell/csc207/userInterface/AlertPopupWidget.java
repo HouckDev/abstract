@@ -14,8 +14,9 @@ import javax.swing.Box;
 public class AlertPopupWidget extends Widget {
   /**
    * Constructs a new alert Popup.
-   * 
+   *
    * @param owningUserInterface
+   * @param alertText
    */
   public AlertPopupWidget(final UserInterface owningUserInterface, String alertText) {
     super(owningUserInterface);

@@ -11,7 +11,7 @@ import java.awt.Label;
 public class TerminalLabel extends Label {
   /**
    * Constructs a new TerminalLabel.
-   * 
+   *
    * @param text
    */
   public TerminalLabel(final String text) {

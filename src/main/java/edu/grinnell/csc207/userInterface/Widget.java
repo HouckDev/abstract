@@ -16,7 +16,7 @@ public class Widget extends JFrame {
    */
   public UserInterface getUserInterface() {
     return userInterface;
-  }
+  } // UserInterface
 
   /**
    * Construct a widget with a parent UI.
