@@ -14,29 +14,46 @@ import edu.grinnell.csc207.userInterface.TerminalLabel;
 
 /**
  * Room Represents a room, contains a list of actors reprsenting the contents.
- * 
+ *
  * @author Mitch Paiva and Paden Houck
  */
 public class Room implements TurnInterface, CommandInterface {
+  /**
+   * Makes a new array list for the room.
+   */
   private ArrayList<Actor> contents = new ArrayList<Actor>();
+
+  /**
+   * The owning level.
+   */
   Level owningLevel;
+
+  /**
+   * The room ID.
+   */
   String roomID = String.valueOf((int) (Math.random() * 10))
       + String.valueOf((int) (Math.random() * 10)) + String.valueOf((int) (Math.random() * 10));
 
+  /**
+   * Function to get the room ID.
+   *
+   * @return roomID
+   */
   public String getRoomID() {
     return roomID;
   } // Room class
 
   /**
-   * @return the contents of this room
+   * @return the contents of this room.
+   *
    */
   public ArrayList<Actor> getContents() {
     return contents;
   } // getContents
 
   /**
-   * Add an actor to this room, move it from the previous room
-   * 
+   * Add an actor to this room, move it from the previous room.
+   *
    * @param newActor
    */
   public void addActor(Actor newActor) {
@@ -48,7 +65,7 @@ public class Room implements TurnInterface, CommandInterface {
   } // addActor
 
   /**
-   * @param newActor the actor to remove
+   * @param newActor the actor to remove.
    */
   public void removeActor(Actor newActor) {
     newActor.setCurrentRoom(null);
@@ -56,8 +73,8 @@ public class Room implements TurnInterface, CommandInterface {
   } // removeActor
 
   /**
-   * Construct a new room
-   * 
+   * Construct a new room.
+   *
    * @param newOwningLevel
    */
   public Room(Level newOwningLevel) {
@@ -66,8 +83,8 @@ public class Room implements TurnInterface, CommandInterface {
 
   /**
    * constructMapWidget Constructs a new Widget to represent this room in the map.
-   * 
-   * @return the widget to represent this room
+   *
+   * @return the widget to represent this room.
    */
   public JComponent constructMapWidget() {
     Box roomWidget = Box.createVerticalBox();
@@ -81,6 +98,9 @@ public class Room implements TurnInterface, CommandInterface {
     return roomWidget;
   } // constructMapWidget
 
+  /**
+   * Advances the turn.
+   */
   @Override
   public void advanceTurn() {
     ArrayList<Actor> temp = getContents();
@@ -90,6 +110,11 @@ public class Room implements TurnInterface, CommandInterface {
     } // for
   } // advanceTurn
 
+  /**
+   * Parses the command.
+   *
+   * @param command
+   */
   @Override
   public String parseCommand(String command) {
     if (command.isBlank()) {
@@ -105,7 +130,7 @@ public class Room implements TurnInterface, CommandInterface {
         } // if else
       } // for
       return "";
-    }
+    } // if
     String[] commandList = command.split(" ", 2);
     if (commandList[0].equals("MOTION")) {
       addActor(new MotionSensor(owningLevel));

@@ -13,6 +13,11 @@ import edu.grinnell.csc207.actors.junk.TVStack;
  * @author Mitch Paiva and Paden Houck
  */
 public class FacilityRoom extends Room {
+  /**
+   * A room type that represents a room with items.
+   *
+   * @param newLevel
+   */
   public FacilityRoom(Level newLevel) {
     super(newLevel);
     // Calculate junk to spawn

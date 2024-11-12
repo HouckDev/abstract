@@ -2,34 +2,9 @@
 <checkstyle version="9.3">
 <file name="/Users/mitchpaiva/home/paivamit/csc207/mp6/abstract/src/main/java/edu/grinnell/csc207/App.java">
 <error line="13" column="21" severity="error" message="Variable &apos;runningApp&apos; must be private and have accessor methods." source="com.puppycrawl.tools.checkstyle.checks.design.VisibilityModifierCheck"/>
-<error line="50" column="4" severity="error" message="&apos;ctor def modifier&apos; has incorrect indentation level 3, expected level should be 2." source="com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheck"/>
-</file>
-<file name="/Users/mitchpaiva/home/paivamit/csc207/mp6/abstract/src/main/java/edu/grinnell/csc207/rooms/Room.java">
-<error line="17" severity="error" message="Line has trailing spaces." source="com.puppycrawl.tools.checkstyle.checks.regexp.RegexpSinglelineCheck"/>
-<error line="21" column="3" severity="error" message="Missing a Javadoc comment." source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocVariableCheck"/>
-<error line="22" column="3" severity="error" message="Missing a Javadoc comment." source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocVariableCheck"/>
-<error line="23" column="3" severity="error" message="Missing a Javadoc comment." source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocVariableCheck"/>
-<error line="26" column="3" severity="error" message="Class &apos;Room&apos; looks like designed for extension (can be subclassed), but the method &apos;getRoomID&apos; does not have javadoc that explains how to do that safely. If class is not designed for extension consider making the class &apos;Room&apos; final or making the method &apos;getRoomID&apos; static/final/abstract/empty, or adding allowed annotation for the method." source="com.puppycrawl.tools.checkstyle.checks.design.DesignForExtensionCheck"/>
-<error line="26" column="3" severity="error" message="Missing a Javadoc comment." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
-<error line="37" severity="error" message="First sentence should end with a period." source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocStyleCheck"/>
-<error line="39" severity="error" message="Line has trailing spaces." source="com.puppycrawl.tools.checkstyle.checks.regexp.RegexpSinglelineCheck"/>
-<error line="58" severity="error" message="First sentence should end with a period." source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocStyleCheck"/>
-<error line="60" severity="error" message="Line has trailing spaces." source="com.puppycrawl.tools.checkstyle.checks.regexp.RegexpSinglelineCheck"/>
-<error line="69" severity="error" message="Line has trailing spaces." source="com.puppycrawl.tools.checkstyle.checks.regexp.RegexpSinglelineCheck"/>
-<error line="84" column="3" severity="error" message="Class &apos;Room&apos; looks like designed for extension (can be subclassed), but the method &apos;advanceTurn&apos; does not have javadoc that explains how to do that safely. If class is not designed for extension consider making the class &apos;Room&apos; final or making the method &apos;advanceTurn&apos; static/final/abstract/empty, or adding allowed annotation for the method." source="com.puppycrawl.tools.checkstyle.checks.design.DesignForExtensionCheck"/>
-<error line="93" column="3" severity="error" message="Class &apos;Room&apos; looks like designed for extension (can be subclassed), but the method &apos;parseCommand&apos; does not have javadoc that explains how to do that safely. If class is not designed for extension consider making the class &apos;Room&apos; final or making the method &apos;parseCommand&apos; static/final/abstract/empty, or adding allowed annotation for the method." source="com.puppycrawl.tools.checkstyle.checks.design.DesignForExtensionCheck"/>
-<error line="108" severity="error" message="Line matches the illegal pattern &apos;end brace without comment&apos;." source="com.puppycrawl.tools.checkstyle.checks.regexp.RegexpCheck"/>
-</file>
-<file name="/Users/mitchpaiva/home/paivamit/csc207/mp6/abstract/src/main/java/edu/grinnell/csc207/rooms/OfficeRoom.java">
-<error line="15" column="3" severity="error" message="Missing a Javadoc comment." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
-<error line="20" column="3" severity="error" message="Class &apos;OfficeRoom&apos; looks like designed for extension (can be subclassed), but the method &apos;constructMapWidget&apos; does not have javadoc that explains how to do that safely. If class is not designed for extension consider making the class &apos;OfficeRoom&apos; final or making the method &apos;constructMapWidget&apos; static/final/abstract/empty, or adding allowed annotation for the method." source="com.puppycrawl.tools.checkstyle.checks.design.DesignForExtensionCheck"/>
-</file>
-<file name="/Users/mitchpaiva/home/paivamit/csc207/mp6/abstract/src/main/java/edu/grinnell/csc207/rooms/FacilityRoom.java">
-<error line="16" column="3" severity="error" message="Missing a Javadoc comment." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
 </file>
 <file name="/Users/mitchpaiva/home/paivamit/csc207/mp6/abstract/src/main/java/edu/grinnell/csc207/rooms/Hallway.java">
-<error line="15" column="3" severity="error" message="Missing a Javadoc comment." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
-<error line="20" column="3" severity="error" message="Class &apos;Hallway&apos; looks like designed for extension (can be subclassed), but the method &apos;constructMapWidget&apos; does not have javadoc that explains how to do that safely. If class is not designed for extension consider making the class &apos;Hallway&apos; final or making the method &apos;constructMapWidget&apos; static/final/abstract/empty, or adding allowed annotation for the method." source="com.puppycrawl.tools.checkstyle.checks.design.DesignForExtensionCheck"/>
+<error line="25" column="3" severity="error" message="Class &apos;Hallway&apos; looks like designed for extension (can be subclassed), but the method &apos;constructMapWidget&apos; does not have javadoc that explains how to do that safely. If class is not designed for extension consider making the class &apos;Hallway&apos; final or making the method &apos;constructMapWidget&apos; static/final/abstract/empty, or adding allowed annotation for the method." source="com.puppycrawl.tools.checkstyle.checks.design.DesignForExtensionCheck"/>
 </file>
 <file name="/Users/mitchpaiva/home/paivamit/csc207/mp6/abstract/src/main/java/edu/grinnell/csc207/TurnInterface.java">
 <error line="3" column="1" severity="error" message="Missing a Javadoc comment." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocTypeCheck"/>

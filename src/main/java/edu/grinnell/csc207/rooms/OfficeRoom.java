@@ -12,11 +12,19 @@ import edu.grinnell.csc207.userInterface.TerminalLabel;
  * @author Mitch Paiva and Paden Houck
  */
 public class OfficeRoom extends Room {
+  /**
+   * A room type that represents a room with items.
+   *
+   * @param newLevel
+   */
   public OfficeRoom(Level newLevel) {
     super(newLevel);
     addActor(new Player(newLevel));
   } // OfficeRoom
 
+  /**
+   * A function to construct the map widget.
+   */
   @Override
   public JComponent constructMapWidget() {
     Box roomWidget = Box.createVerticalBox();

@@ -12,6 +12,11 @@ import edu.grinnell.csc207.actors.Door;
  * @author Mitch Paiva and Paden Houck
  */
 public class Hallway extends Room {
+  /**
+   * A room type that represents a room with items.
+   *
+   * @param newLevel
+   */
   public Hallway(Level newLevel) {
     super(newLevel);
     addActor(new Door(newLevel));
