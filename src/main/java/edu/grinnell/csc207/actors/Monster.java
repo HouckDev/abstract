@@ -2,21 +2,18 @@ package edu.grinnell.csc207.actors;
 
 import java.awt.Dimension;
 import java.awt.Toolkit;
-import java.util.Random;
 import edu.grinnell.csc207.App;
 import edu.grinnell.csc207.Level;
-import edu.grinnell.csc207.matrix.MatrixV0;
-import edu.grinnell.csc207.rooms.Hallway;
 import edu.grinnell.csc207.rooms.OfficeRoom;
 import edu.grinnell.csc207.rooms.Room;
-import edu.grinnell.csc207.userInterface.AlertPopupWidget;
 import edu.grinnell.csc207.userInterface.DefaultStyle;
 import edu.grinnell.csc207.userInterface.GameOverWidget;
 
 /**
- * Monster Represents a monster actor Can be prevented by doors and detected by motion sensors
+ * Monster Represents a monster actor Can be prevented by doors and detected by motion sensors.
+ * 
+ * @author Mitch Paiva and Paden Houck
  */
-
 public class Monster extends Actor {
 
   private int AGGRESSION_COUNTER = 8;

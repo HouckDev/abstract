@@ -5,7 +5,7 @@ import java.lang.reflect.Array;
 /**
  * An implementation of two-dimensional matrices.
  *
- * @author Your Name Here
+ * @author Paden Houck
  * @author Samuel A. Rebelsky
  *
  * @param <T> The type of values stored in the matrix.

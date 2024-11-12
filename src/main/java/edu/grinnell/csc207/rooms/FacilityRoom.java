@@ -7,6 +7,11 @@ import edu.grinnell.csc207.actors.junk.FilingCabinets;
 import edu.grinnell.csc207.actors.junk.Garbage;
 import edu.grinnell.csc207.actors.junk.TVStack;
 
+/**
+ * A room type that represents a room with items.
+ *
+ * @author Mitch Paiva and Paden Houck
+ */
 public class FacilityRoom extends Room {
   public FacilityRoom(Level newLevel) {
     super(newLevel);

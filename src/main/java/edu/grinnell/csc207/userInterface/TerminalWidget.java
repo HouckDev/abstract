@@ -11,6 +11,11 @@ import javax.swing.JScrollPane;
 import javax.swing.JTextField;
 import edu.grinnell.csc207.App;
 
+/**
+ * A custom label with retro console styling.
+ * 
+ * @author Paden Houck
+ */
 public class TerminalWidget extends Widget {
   /**
    * Constant for the command prompt length.

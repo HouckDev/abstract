@@ -6,9 +6,15 @@ import java.awt.Font;
 import java.awt.Label;
 import javax.swing.Box;
 
+/**
+ * Class for the game over screen.
+ * 
+ * @author Mitch Paiva and Paden Houck
+ */
 public class GameOverWidget extends Widget {
   /**
    * Constructs a new alert Popup.
+   * 
    * @param owningUserInterface
    */
   public GameOverWidget(final UserInterface owningUserInterface) {
@@ -18,7 +24,7 @@ public class GameOverWidget extends Widget {
     // mainPanel = new UIPanel();
     // getContentPane().add(mainPanel);
     // frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
-    
+
     Box vertbox = Box.createVerticalBox();
 
     Label alertLabel = new Label("YOUR ARE DEAD");
@@ -26,7 +32,7 @@ public class GameOverWidget extends Widget {
     alertLabel.setFont(alertFont);
     alertLabel.setForeground(new Color(255, 255, 255));
     vertbox.add(alertLabel);
-    
+
     Label alertTextLabel = new Label("The Monster Entered The Office");
     Font alertTextFont = new Font(Font.MONOSPACED, Font.PLAIN, 12);
     alertTextLabel.setFont(alertTextFont);

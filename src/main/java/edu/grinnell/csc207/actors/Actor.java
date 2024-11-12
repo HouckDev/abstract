@@ -7,6 +7,8 @@ import edu.grinnell.csc207.rooms.Room;
 
 /**
  * Actor Base class for an 'actor', an object that has a tangible prescense in the game level.
+ * 
+ * @author Mitch Paiva and Paden Houck
  */
 public class Actor implements TurnInterface, CommandInterface {
 

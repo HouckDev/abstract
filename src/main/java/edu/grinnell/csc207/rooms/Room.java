@@ -14,11 +14,15 @@ import edu.grinnell.csc207.userInterface.TerminalLabel;
 
 /**
  * Room Represents a room, contains a list of actors reprsenting the contents.
+ * 
+ * @author Mitch Paiva and Paden Houck
  */
 public class Room implements TurnInterface, CommandInterface {
   private ArrayList<Actor> contents = new ArrayList<Actor>();
   Level owningLevel;
-  String roomID = String.valueOf((int) (Math.random()*10)) + String.valueOf((int) (Math.random()*10)) + String.valueOf((int) (Math.random()*10));
+  String roomID = String.valueOf((int) (Math.random() * 10))
+      + String.valueOf((int) (Math.random() * 10)) + String.valueOf((int) (Math.random() * 10));
+
   public String getRoomID() {
     return roomID;
   } // Room class
@@ -32,6 +36,7 @@ public class Room implements TurnInterface, CommandInterface {
 
   /**
    * Add an actor to this room, move it from the previous room
+   * 
    * @param newActor
    */
   public void addActor(Actor newActor) {
@@ -52,6 +57,7 @@ public class Room implements TurnInterface, CommandInterface {
 
   /**
    * Construct a new room
+   * 
    * @param newOwningLevel
    */
   public Room(Level newOwningLevel) {
@@ -67,7 +73,7 @@ public class Room implements TurnInterface, CommandInterface {
     Box roomWidget = Box.createVerticalBox();
 
     roomWidget.add(new TerminalLabel("+---+"));
-    roomWidget.add(new TerminalLabel("|" + this.getRoomID() +"|"));
+    roomWidget.add(new TerminalLabel("|" + this.getRoomID() + "|"));
     roomWidget.add(new TerminalLabel("|   |"));
     roomWidget.add(new TerminalLabel("|   |"));
     roomWidget.add(new TerminalLabel("+---+"));
@@ -78,7 +84,7 @@ public class Room implements TurnInterface, CommandInterface {
   @Override
   public void advanceTurn() {
     ArrayList<Actor> temp = getContents();
-    for (int i = 0 ; i < temp.size(); i++) {
+    for (int i = 0; i < temp.size(); i++) {
       Actor actor = temp.get(i);
       actor.advanceTurn();
     } // for
@@ -92,14 +98,15 @@ public class Room implements TurnInterface, CommandInterface {
         Actor actor = this.contents.get(i);
         App.runningApp.getUserInterface().getTerminal().addConsoleOutput(i + ":");
         if (Math.random() > 0.8) {
-          App.runningApp.getUserInterface().getTerminal().addConsoleOutput("SYS$ERROR",DefaultStyle.getErrorTextColor());
+          App.runningApp.getUserInterface().getTerminal().addConsoleOutput("SYS$ERROR",
+              DefaultStyle.getErrorTextColor());
         } else {
           actor.getDisplayText();
         } // if else
       } // for
       return "";
     }
-    String[] commandList = command.split(" ",2);
+    String[] commandList = command.split(" ", 2);
     if (commandList[0].equals("MOTION")) {
       addActor(new MotionSensor(owningLevel));
       return "Motion Sensor Added To Room " + this.getRoomID();
@@ -109,7 +116,7 @@ public class Room implements TurnInterface, CommandInterface {
       if (value >= 0 && value < getContents().size()) {
         return getContents().get(value).parseCommand(commandList[1]);
       } // if
-      
+
     } catch (Exception e) {
     } // catch
     return "ERROR: INVALID OBJECT";

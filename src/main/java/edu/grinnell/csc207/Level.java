@@ -28,7 +28,7 @@ public class Level implements TurnInterface {
    * Generate a new level given the default parameters.
    */
   public Level() {
-    
+
 
   } // Level
 
@@ -61,8 +61,7 @@ public class Level implements TurnInterface {
       rootY = rootY + (directions[direction][1] * 2);
     } // for
     // Place the Player Office
-    this.level.set(rootX,rootY,
-        new OfficeRoom(this));
+    this.level.set(rootX, rootY, new OfficeRoom(this));
   } // generate
 
   @Override

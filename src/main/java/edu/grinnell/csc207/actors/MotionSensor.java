@@ -5,11 +5,12 @@ import edu.grinnell.csc207.Level;
 import edu.grinnell.csc207.userInterface.AlertPopupWidget;
 import java.awt.Dimension;
 import java.awt.Toolkit;
-import edu.grinnell.csc207.App;
 
 /**
  * MotionSensor Represents a motion sensor actor If an actor moves through here during a turn,
  * prompt the UI with a warning
+ * 
+ * @author Mitch Paiva and Paden Houck
  */
 public class MotionSensor extends Actor {
   // keeps track of the previous amount of items in each room

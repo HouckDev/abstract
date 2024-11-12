@@ -4,6 +4,11 @@ import java.awt.Dimension;
 import java.awt.Toolkit;
 import edu.grinnell.csc207.App;
 
+/**
+ * A custom label and user interface with retro console styling.
+ * 
+ * @author Paden Houck
+ */
 public class UserInterface {
   /**
    * the application this UI is connected to.
@@ -28,6 +33,7 @@ public class UserInterface {
 
   /**
    * Constructs a new UserInterface.
+   * 
    * @param newOwningApp
    */
   public UserInterface(final App newOwningApp) {
@@ -45,8 +51,8 @@ public class UserInterface {
         ((int) height / 2) - (terminal.getHeight() / 2));
 
     // AlertPopupWidget testPopup = new AlertPopupWidget(this,"Test");
-    //  testPopup.setLocation(((int) width / 2) - (testPopup.getWidth() / 2),
-    //     ((int) height / 2) - (testPopup.getHeight() / 2));
+    // testPopup.setLocation(((int) width / 2) - (testPopup.getWidth() / 2),
+    // ((int) height / 2) - (testPopup.getHeight() / 2));
   } // UserInterface(App)
 } // UserInterface
 

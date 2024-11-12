@@ -5,10 +5,13 @@ import java.awt.Label;
 
 /**
  * A custom label with retro console styling.
+ * 
+ * @author Paden Houck
  */
 public class TerminalLabel extends Label {
   /**
    * Constructs a new TerminalLabel.
+   * 
    * @param text
    */
   public TerminalLabel(final String text) {

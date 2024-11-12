@@ -6,6 +6,11 @@ import edu.grinnell.csc207.Level;
 import edu.grinnell.csc207.userInterface.TerminalLabel;
 import edu.grinnell.csc207.actors.Door;
 
+/**
+ * A room type that represents a hallway with a door.
+ *
+ * @author Mitch Paiva and Paden Houck
+ */
 public class Hallway extends Room {
   public Hallway(Level newLevel) {
     super(newLevel);

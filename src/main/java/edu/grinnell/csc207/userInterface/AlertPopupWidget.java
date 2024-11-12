@@ -6,19 +6,25 @@ import java.awt.Font;
 import java.awt.Label;
 import javax.swing.Box;
 
+/**
+ * The pop up widget that appears when there is an alert.
+ * 
+ * @author Mitch Paiva and Paden Houck
+ */
 public class AlertPopupWidget extends Widget {
   /**
    * Constructs a new alert Popup.
+   * 
    * @param owningUserInterface
    */
-  public AlertPopupWidget(final UserInterface owningUserInterface,String alertText) {
+  public AlertPopupWidget(final UserInterface owningUserInterface, String alertText) {
     super(owningUserInterface);
     setTitle("Alert");
     getContentPane().setLayout(new BorderLayout());
     // mainPanel = new UIPanel();
     // getContentPane().add(mainPanel);
     // frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
-    
+
     Box vertbox = Box.createVerticalBox();
 
     Label alertLabel = new Label("ALERT");
@@ -26,7 +32,7 @@ public class AlertPopupWidget extends Widget {
     alertLabel.setFont(alertFont);
     alertLabel.setForeground(new Color(255, 255, 255));
     vertbox.add(alertLabel);
-    
+
     Label alertTextLabel = new Label(alertText);
     Font alertTextFont = new Font(Font.MONOSPACED, Font.PLAIN, 12);
     alertTextLabel.setFont(alertTextFont);

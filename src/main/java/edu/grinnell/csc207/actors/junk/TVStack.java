@@ -3,16 +3,24 @@ package edu.grinnell.csc207.actors.junk;
 import edu.grinnell.csc207.App;
 import edu.grinnell.csc207.Level;
 
+/**
+ * A junk type that has a chance to spawn in a room.
+ *
+ * @author Mitch Paiva and Paden Houck
+ */
 public class TVStack extends Junk {
   /**
-   * Create a new junk actor
-   * 
+   * Create a new junk actor.
+   *
    * @param newLevel
    */
   public TVStack(Level newLevel) {
     super(newLevel);
   } // TVStack
 
+  /**
+   * Gets the display text.
+   */
   @Override
   public void getDisplayText() {
     App.runningApp.getUserInterface().getTerminal().addConsoleOutput("Stack of cracked TV's");

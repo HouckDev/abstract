@@ -3,8 +3,7 @@ package edu.grinnell.csc207.userInterface;
 import javax.swing.JFrame;
 
 /**
- * A freestanding frame 'widget' that can interact with the
- * gamestate through the owning UI.
+ * A freestanding frame 'widget' that can interact with the gamestate through the owning UI.
  */
 public class Widget extends JFrame {
   /**
@@ -21,6 +20,7 @@ public class Widget extends JFrame {
 
   /**
    * Construct a widget with a parent UI.
+   * 
    * @param owningUserInterface
    */
   public Widget(final UserInterface owningUserInterface) {
