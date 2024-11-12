@@ -22,6 +22,11 @@ public class Hallway extends Room {
     addActor(new Door(newLevel));
   } // Hallway
 
+  /**
+   * Function to construct the widget.
+   *
+   * @return roomWidget
+   */
   @Override
   public JComponent constructMapWidget() {
     Box roomWidget = Box.createVerticalBox();

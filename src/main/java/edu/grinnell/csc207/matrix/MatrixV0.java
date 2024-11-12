@@ -14,8 +14,19 @@ public class MatrixV0<T> implements Matrix<T> {
   // +--------+------------------------------------------------------
   // | Fields |
   // +--------+
+  /**
+   * The contents.
+   */
   T[][] contents;
+
+  /**
+   * The default width.
+   */
   int defaultWidth;
+
+   /**
+   * The default object.
+   */
   T defaultObject;
 
   // +--------------+------------------------------------------------

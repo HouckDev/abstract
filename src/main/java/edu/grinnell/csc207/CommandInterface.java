@@ -1,5 +1,7 @@
-/*
+/**
  * This package contains classes and interfaces for the game's operation and central logic.
+ *
+ * @author Mitch Paiva and Paden Houck
  */
 package edu.grinnell.csc207;
 

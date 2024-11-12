@@ -1,5 +1,6 @@
-/*
+/**
  * Basic package for CS 207.
+ *
  */
 package edu.grinnell.csc207;
 
@@ -16,6 +17,8 @@ import edu.grinnell.csc207.userInterface.MapWidget;
  * premise: player is stuck in a control room, a monster is hunting for them, they can use a console
  * to influence the level around them to keep it away player inputs actions every turn via a console
  * input game ends if the monster enters the same room as the player.
+ *
+ * @author Mitch Paiva and Paden Houck
  */
 public class Game implements TurnInterface, CommandInterface {
 

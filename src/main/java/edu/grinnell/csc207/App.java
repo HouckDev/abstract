@@ -4,6 +4,8 @@ import edu.grinnell.csc207.userInterface.UserInterface;
 
 /**
  * App Represents the game app, manages the game object.
+ *
+ * @author Mitch Paiva and Paden Houck
  */
 public class App {
 

@@ -1,32 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <checkstyle version="9.3">
 <file name="/Users/mitchpaiva/home/paivamit/csc207/mp6/abstract/src/main/java/edu/grinnell/csc207/App.java">
-<error line="13" column="21" severity="error" message="Variable &apos;runningApp&apos; must be private and have accessor methods." source="com.puppycrawl.tools.checkstyle.checks.design.VisibilityModifierCheck"/>
-</file>
-<file name="/Users/mitchpaiva/home/paivamit/csc207/mp6/abstract/src/main/java/edu/grinnell/csc207/rooms/Hallway.java">
-<error line="25" column="3" severity="error" message="Class &apos;Hallway&apos; looks like designed for extension (can be subclassed), but the method &apos;constructMapWidget&apos; does not have javadoc that explains how to do that safely. If class is not designed for extension consider making the class &apos;Hallway&apos; final or making the method &apos;constructMapWidget&apos; static/final/abstract/empty, or adding allowed annotation for the method." source="com.puppycrawl.tools.checkstyle.checks.design.DesignForExtensionCheck"/>
-</file>
-<file name="/Users/mitchpaiva/home/paivamit/csc207/mp6/abstract/src/main/java/edu/grinnell/csc207/TurnInterface.java">
-<error line="3" column="1" severity="error" message="Missing a Javadoc comment." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocTypeCheck"/>
-<error line="9" severity="error" message="Line matches the illegal pattern &apos;end brace without comment&apos;." source="com.puppycrawl.tools.checkstyle.checks.regexp.RegexpCheck"/>
+<error line="15" column="21" severity="error" message="Variable &apos;runningApp&apos; must be private and have accessor methods." source="com.puppycrawl.tools.checkstyle.checks.design.VisibilityModifierCheck"/>
 </file>
 <file name="/Users/mitchpaiva/home/paivamit/csc207/mp6/abstract/src/main/java/edu/grinnell/csc207/Level.java">
-<error line="35" severity="error" message="First sentence should end with a period." source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocStyleCheck"/>
-<error line="38" column="28" severity="error" message="Expected @param tag for &apos;ROOM_COUNT&apos;." source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocMethodCheck"/>
-<error line="38" column="28" severity="error" message="Name &apos;ROOM_COUNT&apos; must match pattern &apos;^[a-z][a-zA-Z0-9]*$&apos;." source="com.puppycrawl.tools.checkstyle.checks.naming.ParameterNameCheck"/>
-<error line="38" column="44" severity="error" message="Expected @param tag for &apos;SIZE&apos;." source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocMethodCheck"/>
-<error line="38" column="44" severity="error" message="Name &apos;SIZE&apos; must match pattern &apos;^[a-z][a-zA-Z0-9]*$&apos;." source="com.puppycrawl.tools.checkstyle.checks.naming.ParameterNameCheck"/>
-<error line="67" column="3" severity="error" message="Class &apos;Level&apos; looks like designed for extension (can be subclassed), but the method &apos;advanceTurn&apos; does not have javadoc that explains how to do that safely. If class is not designed for extension consider making the class &apos;Level&apos; final or making the method &apos;advanceTurn&apos; static/final/abstract/empty, or adding allowed annotation for the method." source="com.puppycrawl.tools.checkstyle.checks.design.DesignForExtensionCheck"/>
 </file>
 <file name="/Users/mitchpaiva/home/paivamit/csc207/mp6/abstract/src/main/java/edu/grinnell/csc207/matrix/IOUtils.java">
-<error line="53" severity="error" message="Line matches the illegal pattern &apos;STUB still in code&apos;." source="com.puppycrawl.tools.checkstyle.checks.regexp.RegexpCheck"/>
 </file>
 <file name="/Users/mitchpaiva/home/paivamit/csc207/mp6/abstract/src/main/java/edu/grinnell/csc207/matrix/MatrixV0.java">
-<error line="17" column="3" severity="error" message="Missing a Javadoc comment." source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocVariableCheck"/>
-<error line="18" column="3" severity="error" message="Missing a Javadoc comment." source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocVariableCheck"/>
-<error line="19" column="3" severity="error" message="Missing a Javadoc comment." source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocVariableCheck"/>
-<error line="228" column="23" severity="error" message="Must have at least one statement." source="com.puppycrawl.tools.checkstyle.checks.blocks.EmptyBlockCheck"/>
-<error line="254" column="23" severity="error" message="Must have at least one statement." source="com.puppycrawl.tools.checkstyle.checks.blocks.EmptyBlockCheck"/>
+<error line="239" column="23" severity="error" message="Must have at least one statement." source="com.puppycrawl.tools.checkstyle.checks.blocks.EmptyBlockCheck"/>
+<error line="265" column="23" severity="error" message="Must have at least one statement." source="com.puppycrawl.tools.checkstyle.checks.blocks.EmptyBlockCheck"/>
 </file>
 <file name="/Users/mitchpaiva/home/paivamit/csc207/mp6/abstract/src/main/java/edu/grinnell/csc207/matrix/Matrix.java">
 <error line="78" severity="error" message="Line has trailing spaces." source="com.puppycrawl.tools.checkstyle.checks.regexp.RegexpSinglelineCheck"/>

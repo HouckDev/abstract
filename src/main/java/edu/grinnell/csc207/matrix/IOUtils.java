@@ -50,6 +50,6 @@ public class IOUtils {
    */
   public static String readCommand(PrintWriter pen, BufferedReader eyes, String prompt,
       String[] commands) {
-    return ""; // STUB
+    return "";
   } // readCommand(PrintWrtier, BufferedReader, String, String[])
 } // class IOUtils
